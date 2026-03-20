@@ -4,9 +4,8 @@ Combines sleep, stress, body battery, HRV, and activity data into unified daily 
 """
 
 import json
-import os
-from datetime import datetime, timedelta
-from typing import Dict, List, Optional, Any
+from datetime import datetime
+from typing import Dict, List, Optional
 from dataclasses import dataclass, asdict
 from pathlib import Path
 
@@ -91,7 +90,6 @@ class GarminDataParser:
         self._parse_sleep_data(data_folder)
         self._parse_health_status(data_folder)
         self._parse_uds_data(data_folder)
-        self._parse_activities(data_folder)
         
         # Sort by date and return
         sorted_dates = sorted(self.daily_data.keys(), reverse=True)
@@ -116,6 +114,8 @@ class GarminDataParser:
                     continue
                 
                 date_str = record.get('calendarDate')
+                if not date_str:
+                    continue
                 day = self._get_or_create_day(date_str)
                 
                 # Sleep scores
@@ -152,6 +152,8 @@ class GarminDataParser:
                     continue
                 
                 date_str = record.get('calendarDate')
+                if not date_str:
+                    continue
                 day = self._get_or_create_day(date_str)
                 
                 metrics = record.get('metrics', [])
@@ -181,6 +183,8 @@ class GarminDataParser:
                     continue
                 
                 date_str = record.get('calendarDate')
+                if not date_str:
+                    continue
                 day = self._get_or_create_day(date_str)
                 
                 # Basic metrics
@@ -188,7 +192,8 @@ class GarminDataParser:
                 day.distance_meters = record.get('wellnessDistanceMeters', 0.0)
                 day.active_calories = int(record.get('activeKilocalories', 0))
                 day.total_calories = int(record.get('totalKilocalories', 0))
-                day.floors_climbed = int(record.get('floorsAscendedInMeters', 0) / 3)
+                # floorsAscendedInMeters can be None — guard against TypeError
+                day.floors_climbed = int((record.get('floorsAscendedInMeters') or 0) / 3)
                 day.min_hr = record.get('minHeartRate', 0)
                 day.max_hr = record.get('maxHeartRate', 0)
                 day.resting_hr = record.get('restingHeartRate', day.resting_hr)
@@ -236,34 +241,6 @@ class GarminDataParser:
                     day.avg_respiration = resp.get('avgWakingRespirationValue', 0.0)
                     day.lowest_respiration = resp.get('lowestRespirationValue', 0.0)
                     day.highest_respiration = resp.get('highestRespirationValue', 0.0)
-    
-    def _parse_activities(self, data_folder: Path):
-        """Parse workout/activity data"""
-        fitness_dir = data_folder / "DI_CONNECT" / "DI-Connect-Fitness"
-        
-        for file in fitness_dir.glob("*_summarizedActivities.json"):
-            with open(file, 'r', encoding='utf-8') as f:
-                activities = json.load(f)
-            
-            # Activities is usually a dict with activity list
-            activity_list = activities if isinstance(activities, list) else activities.get('summarizedActivitiesExport', [])
-            
-            for activity in activity_list:
-                if not isinstance(activity, dict):
-                    continue
-                    
-                # Extract date from start time
-                start_time = activity.get('startTimeLocal', activity.get('beginTimestamp'))
-                if start_time:
-                    if isinstance(start_time, str):
-                        date_str = start_time[:10]
-                    else:
-                        # Timestamp in milliseconds
-                        dt = datetime.fromtimestamp(start_time / 1000)
-                        date_str = dt.strftime('%Y-%m-%d')
-                    
-                    # Mark this day as having workout
-                    # Could add more workout details here
     
     def to_json(self) -> str:
         """Export all data as JSON"""

@@ -7,8 +7,8 @@ Discovers hidden patterns, anomalies, and correlations
 import json
 import math
 from pathlib import Path
-from datetime import datetime, timedelta
-from typing import Dict, List, Tuple, Optional
+from datetime import datetime
+from typing import Dict, List, Optional
 from collections import defaultdict
 
 # Load data
@@ -16,7 +16,9 @@ DATA_FILE = Path(__file__).parent / "parsed_health_data.json"
 
 
 def load_data() -> List[Dict]:
-    """Load parsed health data"""
+    """Load parsed health data. Returns empty list if file doesn't exist."""
+    if not DATA_FILE.exists():
+        return []
     with open(DATA_FILE, 'r') as f:
         return json.load(f)
 
@@ -121,7 +123,7 @@ def calculate_lagged_correlations(data: List[Dict]) -> Dict:
         ('deep_sleep_minutes', 'body_battery_start', 1, "Deep Sleep → Next Day Battery"),
         ('body_battery_end', 'sleep_score', 0, "Evening Battery → Same Night Sleep"),
         ('active_minutes', 'deep_sleep_minutes', 0, "Exercise → Deep Sleep"),
-        ('high_stress_minutes', 'hrv', 1, "High Stress Duration → Next Day HRV"),
+        ('stress_high_minutes', 'hrv', 1, "High Stress Duration → Next Day HRV"),
     ]
     
     results = []
@@ -220,7 +222,9 @@ def detect_anomalies(data: List[Dict]) -> Dict:
             continue
         
         mean = sum(values) / len(values)
-        std = math.sqrt(sum((v - mean) ** 2 for v in values) / len(values))
+        # Use sample std (Bessel's correction: n-1) for statistical accuracy
+        n_vals = len(values)
+        std = math.sqrt(sum((v - mean) ** 2 for v in values) / (n_vals - 1)) if n_vals > 1 else 0.0
         
         if std == 0:
             continue
@@ -309,12 +313,12 @@ def analyze_weekly_patterns(data: List[Dict]) -> Dict:
         try:
             date = datetime.strptime(day['date'], '%Y-%m-%d')
             dow = date.weekday()
-            
+
             for m in metrics:
                 val = day.get(m, 0)
                 if val and val > 0:
                     by_day[dow][m].append(float(val))
-        except:
+        except (ValueError, KeyError):
             continue
     
     # Calculate averages and find best/worst

@@ -39,6 +39,22 @@ except ImportError:
 # Get the parsed data path
 DATA_FILE = Path(__file__).parent / "parsed_health_data.json"
 
+# ---- In-memory cache ----
+_data_cache: list = []
+_cache_mtime: float = 0.0
+
+def _load_health_data() -> list:
+    """Load health data with mtime-based in-memory cache."""
+    global _data_cache, _cache_mtime
+    if not DATA_FILE.exists():
+        return []
+    mtime = DATA_FILE.stat().st_mtime
+    if mtime != _cache_mtime:
+        with open(DATA_FILE, 'r') as f:
+            _data_cache = json.load(f)
+        _cache_mtime = mtime
+    return _data_cache
+
 # Track background sync state
 _sync_state = {
     "running": False,
@@ -126,10 +142,9 @@ class CORSRequestHandler(SimpleHTTPRequestHandler):
     # ========== HEALTH DATA ENDPOINTS ==========
 
     def serve_health_data(self, date=None):
-        """Serve all health data or specific date"""
+        """Serve all health data or specific date (uses in-memory cache)"""
         try:
-            with open(DATA_FILE, 'r') as f:
-                data = json.load(f)
+            data = _load_health_data()
 
             if date:
                 day_data = next((d for d in data if d['date'] == date), None)
@@ -149,24 +164,23 @@ class CORSRequestHandler(SimpleHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(json.dumps(response, indent=2).encode())
 
-        except FileNotFoundError:
+        except Exception as e:
             self.send_response(500)
             self.send_header('Content-Type', 'application/json')
             self.end_headers()
-            self.wfile.write(json.dumps({"error": "Data file not found"}).encode())
+            self.wfile.write(json.dumps({"error": str(e)}).encode())
 
     def serve_summary(self):
-        """Serve summary statistics"""
+        """Serve summary statistics (uses in-memory cache)"""
         try:
-            with open(DATA_FILE, 'r') as f:
-                data = json.load(f)
+            data = _load_health_data()
+
+            def _safe_avg(items, key):
+                """Average of non-zero values; returns 0 if none."""
+                vals = [d[key] for d in items if (d.get(key) or 0) > 0]
+                return sum(vals) / len(vals) if vals else 0
 
             if data:
-                avg_sleep = sum(d['sleep_score'] for d in data if d['sleep_score'] > 0) / len([d for d in data if d['sleep_score'] > 0])
-                avg_hrv = sum(d['hrv'] for d in data if d['hrv'] > 0) / len([d for d in data if d['hrv'] > 0])
-                avg_stress = sum(d['avg_stress'] for d in data if d['avg_stress'] > 0) / len([d for d in data if d['avg_stress'] > 0])
-                avg_steps = sum(d['steps'] for d in data) / len(data)
-
                 summary = {
                     "total_days": len(data),
                     "date_range": {
@@ -174,10 +188,10 @@ class CORSRequestHandler(SimpleHTTPRequestHandler):
                         "end": data[0]['date']
                     },
                     "averages": {
-                        "sleep_score": round(avg_sleep, 1),
-                        "hrv": round(avg_hrv, 1),
-                        "stress": round(avg_stress, 1),
-                        "steps": round(avg_steps, 0)
+                        "sleep_score": round(_safe_avg(data, 'sleep_score'), 1),
+                        "hrv": round(_safe_avg(data, 'hrv'), 1),
+                        "stress": round(_safe_avg(data, 'avg_stress'), 1),
+                        "steps": round(_safe_avg(data, 'steps'), 0)
                     },
                     "recent_day": data[0]
                 }

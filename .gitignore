@@ -33,3 +33,6 @@ backend/.env
 
 # Logs
 *.log
+
+# Working documents (not for version control)
+PULL_REQUEST.md
