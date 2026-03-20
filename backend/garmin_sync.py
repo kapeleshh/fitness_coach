@@ -49,9 +49,13 @@ try:
         GarminConnectConnectionError,
         GarminConnectTooManyRequestsError,
     )
-except ImportError:
-    print("❌ garminconnect not installed. Run: pip install garminconnect")
-    sys.exit(1)
+except ImportError as _import_err:
+    # Only exit when run directly as a script, not when imported by api_server.py
+    if __name__ == "__main__":
+        print("❌ garminconnect not installed. Run: cd backend && uv sync")
+        sys.exit(1)
+    else:
+        raise
 
 # Paths
 BACKEND_DIR = Path(__file__).parent
