@@ -1,0 +1,29 @@
+# Personal health data - DO NOT COMMIT
+data/
+
+# Generated/parsed data artifacts
+backend/parsed_health_data.json
+
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+env/
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
