@@ -100,7 +100,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
                                 Text(
                                   'Based on ${healthApiService.totalDays} days of data',
                                   style: TextStyle(
-                                    color: Colors.white.withOpacity(0.8),
+                                    color: Colors.white.withValues(alpha: 0.8),
                                     fontSize: 14,
                                   ),
                                 ),
@@ -123,7 +123,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    Text(
+                    const Text(
                       'Patterns found in your data',
                       style: TextStyle(
                         color: AppTheme.textSecondary,
@@ -151,7 +151,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
                         ),
                       )
                     else
-                      ..._correlations.map((c) => _buildCorrelationCard(c)).toList(),
+                      ..._correlations.map((c) => _buildCorrelationCard(c)),
                     
                     const SizedBox(height: 24),
                     
@@ -308,7 +308,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: strengthColor.withOpacity(0.3),
+          color: strengthColor.withValues(alpha: 0.3),
           width: 1,
         ),
       ),
@@ -320,7 +320,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: strengthColor.withOpacity(0.1),
+                  color: strengthColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -337,7 +337,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                    color: AppTheme.primaryColor.withOpacity(0.1),
+                    color: AppTheme.primaryColor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: const Text(
@@ -370,7 +370,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
               Expanded(
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       'Correlation',
                       style: TextStyle(
                         fontSize: 11,
@@ -391,7 +391,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
               Expanded(
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       'Data Points',
                       style: TextStyle(
                         fontSize: 11,
@@ -433,10 +433,10 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
     
     if (corr > 0) {
       return 'When your $m1 increases, your $m2 tends to increase as well. '
-             'This is a ${strength} positive relationship.';
+             'This is a $strength positive relationship.';
     } else {
       return 'When your $m1 increases, your $m2 tends to decrease. '
-             'This is a ${strength} negative relationship.';
+             'This is a $strength negative relationship.';
     }
   }
 
@@ -448,7 +448,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
       return Container(
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: Colors.orange.withOpacity(0.1),
+          color: Colors.orange.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(8),
         ),
         child: const Row(
@@ -479,9 +479,9 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: strengthColor.withOpacity(0.1),
+        color: strengthColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: strengthColor.withOpacity(0.3)),
+        border: Border.all(color: strengthColor.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [
@@ -603,7 +603,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
                       width: 20,
                       height: height,
                       decoration: BoxDecoration(
-                        color: color.withOpacity(0.7),
+                        color: color.withValues(alpha: 0.7),
                         borderRadius: BorderRadius.circular(4),
                       ),
                     ),

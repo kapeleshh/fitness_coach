@@ -1,6 +1,5 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import '../services/health_api_service.dart';
 import '../theme/app_theme.dart';
 
 /// Dashboard showing YOUR real Garmin data from API
@@ -24,24 +23,14 @@ class _RealDataDashboardState extends State<RealDataDashboard> {
   }
 
   Future<void> _loadData() async {
-    try {
-      // Fetch from API
-      final summaryRes = await http.get(Uri.parse('http://localhost:8081/api/summary'));
-      final dataRes = await http.get(Uri.parse('http://localhost:8081/api/health-data'));
-      
-      if (summaryRes.statusCode == 200 && dataRes.statusCode == 200) {
-        setState(() {
-          _summary = json.decode(summaryRes.body);
-          _healthData = json.decode(dataRes.body);
-          _isLoading = false;
-        });
-      }
-    } catch (e) {
-      setState(() {
-        _error = 'Could not connect to API. Make sure the server is running on port 8081.';
-        _isLoading = false;
-      });
-    }
+    await healthApiService.refresh();
+    if (!mounted) return;
+    setState(() {
+      _summary = healthApiService.summary;
+      _healthData = healthApiService.healthData;
+      _error = healthApiService.error;
+      _isLoading = false;
+    });
   }
 
   @override
@@ -91,9 +80,11 @@ class _RealDataDashboardState extends State<RealDataDashboard> {
       );
     }
 
-    final today = _summary?['recent_day'] ?? {};
-    final averages = _summary?['averages'] ?? {};
-    final totalDays = _summary?['total_days'] ?? 0;
+    final today =
+        (_summary?['recent_day'] as Map<String, dynamic>?) ?? <String, dynamic>{};
+    final averages =
+        (_summary?['averages'] as Map<String, dynamic>?) ?? <String, dynamic>{};
+    final totalDays = (_summary?['total_days'] as int?) ?? 0;
 
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
@@ -207,7 +198,7 @@ class _RealDataDashboardState extends State<RealDataDashboard> {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.white.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
@@ -225,7 +216,7 @@ class _RealDataDashboardState extends State<RealDataDashboard> {
           Text(
             label,
             style: TextStyle(
-              color: Colors.white.withOpacity(0.8),
+              color: Colors.white.withValues(alpha: 0.8),
               fontSize: 11,
             ),
           ),
@@ -242,7 +233,7 @@ class _RealDataDashboardState extends State<RealDataDashboard> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -286,7 +277,7 @@ class _RealDataDashboardState extends State<RealDataDashboard> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: AppTheme.sleepColor.withOpacity(0.1),
+                color: AppTheme.sleepColor.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Row(

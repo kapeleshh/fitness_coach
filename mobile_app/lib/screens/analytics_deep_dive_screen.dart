@@ -1,6 +1,5 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import '../services/health_api_service.dart';
 import '../theme/app_theme.dart';
 
 /// Analytics Deep Dive - AI Pattern Analysis from YOUR Garmin data
@@ -37,23 +36,19 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
   
   Future<void> _loadAnalytics() async {
     setState(() => _isLoading = true);
-    
+
     try {
-      final responses = await Future.wait([
-        http.get(Uri.parse('http://localhost:8081/api/analytics/correlations')),
-        http.get(Uri.parse('http://localhost:8081/api/analytics/anomalies')),
-        http.get(Uri.parse('http://localhost:8081/api/analytics/weekly')),
-        http.get(Uri.parse('http://localhost:8081/api/analytics/baselines')),
-      ]);
-      
+      final analytics = await healthApiService.fetchAnalytics();
+      if (!mounted) return;
       setState(() {
-        _correlations = json.decode(responses[0].body);
-        _anomalies = json.decode(responses[1].body);
-        _weeklyPatterns = json.decode(responses[2].body);
-        _baselines = json.decode(responses[3].body);
+        _correlations = analytics['correlations'];
+        _anomalies = analytics['anomalies'];
+        _weeklyPatterns = analytics['weekly'];
+        _baselines = analytics['baselines'];
         _isLoading = false;
       });
     } catch (e) {
+      if (!mounted) return;
       setState(() => _isLoading = false);
     }
   }
@@ -128,7 +123,7 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
                       Text(
                         '${strongCorrs.length} significant patterns found',
                         style: TextStyle(
-                          color: Colors.white.withOpacity(0.8),
+                          color: Colors.white.withValues(alpha: 0.8),
                         ),
                       ),
                     ],
@@ -147,7 +142,7 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
             ),
           ),
           const SizedBox(height: 12),
-          ...strongCorrs.map((c) => _buildCorrelationItem(c)).toList(),
+          ...strongCorrs.map((c) => _buildCorrelationItem(c)),
         ],
       ),
     );
@@ -179,7 +174,7 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withOpacity(0.3)),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Row(
         children: [
@@ -187,7 +182,7 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
             width: 50,
             height: 50,
             decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Center(
@@ -237,7 +232,7 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
@@ -274,7 +269,7 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
             ),
           ),
           const SizedBox(height: 12),
-          ...insights.map((i) => _buildInsightCard(i)).toList(),
+          ...insights.map((i) => _buildInsightCard(i)),
           const SizedBox(height: 24),
           
           // Pattern charts
@@ -315,7 +310,7 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: AppTheme.primaryColor.withOpacity(0.1),
+                  color: AppTheme.primaryColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -401,8 +396,8 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
                         color: d['day'] == bestDay?['day'] 
                             ? color 
                             : (d['day'] == worstDay?['day'] 
-                                ? color.withOpacity(0.3) 
-                                : color.withOpacity(0.6)),
+                                ? color.withValues(alpha: 0.3) 
+                                : color.withValues(alpha: 0.6)),
                         borderRadius: BorderRadius.circular(4),
                       ),
                     ),
@@ -446,9 +441,9 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: AppTheme.stressColor.withOpacity(0.1),
+              color: AppTheme.stressColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: AppTheme.stressColor.withOpacity(0.3)),
+              border: Border.all(color: AppTheme.stressColor.withValues(alpha: 0.3)),
             ),
             child: Row(
               children: [
@@ -506,7 +501,7 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
             ),
           ),
           const SizedBox(height: 12),
-          ...worstDays.take(5).map((d) => _buildAnomalyDay(d)).toList(),
+          ...worstDays.take(5).map((d) => _buildAnomalyDay(d)),
         ],
       ),
     );
@@ -539,8 +534,8 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
                   color: day['severe_count'] > 0 
-                      ? AppTheme.stressColor.withOpacity(0.1)
-                      : Colors.orange.withOpacity(0.1),
+                      ? AppTheme.stressColor.withValues(alpha: 0.1)
+                      : Colors.orange.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -567,7 +562,7 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
               return Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: sevColor.withOpacity(0.1),
+                  color: sevColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
@@ -600,12 +595,14 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
             ),
           ),
           const SizedBox(height: 8),
-          const Text(
-            'Based on 86 days of your data',
-            style: TextStyle(color: AppTheme.textSecondary),
+          Text(
+            healthApiService.totalDays > 0
+                ? 'Based on ${healthApiService.totalDays} days of your data'
+                : 'Based on your synced Garmin data',
+            style: const TextStyle(color: AppTheme.textSecondary),
           ),
           const SizedBox(height: 16),
-          ...baselines.entries.map((e) => _buildBaselineCard(e.key, e.value)).toList(),
+          ...baselines.entries.map((e) => _buildBaselineCard(e.key, e.value)),
         ],
       ),
     );
@@ -668,7 +665,7 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: statusColor.withOpacity(0.1),
+                  color: statusColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -708,7 +705,7 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
                     alignment: const Alignment(0.5, 0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: color.withOpacity(0.3),
+                        color: color.withValues(alpha: 0.3),
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),

@@ -66,7 +66,7 @@ class _InsightsFeedScreenState extends State<InsightsFeedScreen> {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        AppTheme.primaryColor.withOpacity(0.1),
+                        AppTheme.primaryColor.withValues(alpha: 0.1),
                         AppTheme.backgroundColor,
                       ],
                     ),
@@ -117,15 +117,15 @@ class _InsightsFeedScreenState extends State<InsightsFeedScreen> {
               
               // Insights List
               if (_insights.isEmpty)
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Padding(
-                    padding: const EdgeInsets.all(32),
+                    padding: EdgeInsets.all(32),
                     child: Column(
                       children: [
-                        const Icon(Icons.check_circle, 
+                        Icon(Icons.check_circle, 
                             size: 64, color: AppTheme.successColor),
-                        const SizedBox(height: 16),
-                        const Text(
+                        SizedBox(height: 16),
+                        Text(
                           'All Looking Good! 🎉',
                           style: TextStyle(
                             fontSize: 18,
@@ -133,7 +133,7 @@ class _InsightsFeedScreenState extends State<InsightsFeedScreen> {
                             color: AppTheme.textPrimary,
                           ),
                         ),
-                        const SizedBox(height: 8),
+                        SizedBox(height: 8),
                         Text(
                           'Your metrics are within healthy ranges today.',
                           style: TextStyle(
@@ -203,7 +203,7 @@ class _InsightsFeedScreenState extends State<InsightsFeedScreen> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.primaryColor.withOpacity(0.3),
+            color: AppTheme.primaryColor.withValues(alpha: 0.3),
             blurRadius: 15,
             offset: const Offset(0, 8),
           ),
@@ -219,7 +219,7 @@ class _InsightsFeedScreenState extends State<InsightsFeedScreen> {
                 height: 100,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                 ),
                 child: Stack(
                   alignment: Alignment.center,
@@ -230,7 +230,7 @@ class _InsightsFeedScreenState extends State<InsightsFeedScreen> {
                       child: CircularProgressIndicator(
                         value: _healthScore / 100,
                         strokeWidth: 8,
-                        backgroundColor: Colors.white.withOpacity(0.3),
+                        backgroundColor: Colors.white.withValues(alpha: 0.3),
                         valueColor: AlwaysStoppedAnimation(scoreColor),
                       ),
                     ),
@@ -248,7 +248,7 @@ class _InsightsFeedScreenState extends State<InsightsFeedScreen> {
                         Text(
                           scoreLabel,
                           style: TextStyle(
-                            color: Colors.white.withOpacity(0.8),
+                            color: Colors.white.withValues(alpha: 0.8),
                             fontSize: 11,
                           ),
                         ),
@@ -275,7 +275,7 @@ class _InsightsFeedScreenState extends State<InsightsFeedScreen> {
                     Text(
                       _today?['date'] ?? 'Today',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.8),
+                        color: Colors.white.withValues(alpha: 0.8),
                         fontSize: 14,
                       ),
                     ),
@@ -314,7 +314,7 @@ class _InsightsFeedScreenState extends State<InsightsFeedScreen> {
         Text(
           label,
           style: TextStyle(
-            color: Colors.white.withOpacity(0.7),
+            color: Colors.white.withValues(alpha: 0.7),
             fontSize: 11,
           ),
         ),
@@ -332,12 +332,12 @@ class _InsightsFeedScreenState extends State<InsightsFeedScreen> {
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: color.withOpacity(0.3),
+          color: color.withValues(alpha: 0.3),
           width: 1,
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -351,7 +351,7 @@ class _InsightsFeedScreenState extends State<InsightsFeedScreen> {
             width: 48,
             height: 48,
             decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Center(
@@ -373,7 +373,7 @@ class _InsightsFeedScreenState extends State<InsightsFeedScreen> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 8, vertical: 2),
                       decoration: BoxDecoration(
-                        color: color.withOpacity(0.1),
+                        color: color.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(
