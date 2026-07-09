@@ -1,0 +1,438 @@
+{
+  "path": "/api/analytics/anomalies",
+  "status": 200,
+  "body": {
+    "all_anomalies": [
+      {
+        "date": "2026-07-07",
+        "metric": "sleep_score",
+        "metric_name": "Sleep Score",
+        "value": 56,
+        "baseline": 74.7,
+        "z_score": -1.65,
+        "severity": "mild",
+        "direction": "below",
+        "deviation_pct": 25.0
+      },
+      {
+        "date": "2026-06-30",
+        "metric": "resting_hr",
+        "metric_name": "Resting HR",
+        "value": 60,
+        "baseline": 53.1,
+        "z_score": 1.61,
+        "severity": "mild",
+        "direction": "above",
+        "deviation_pct": 12.9
+      },
+      {
+        "date": "2026-06-29",
+        "metric": "hrv",
+        "metric_name": "HRV",
+        "value": 44.5,
+        "baseline": 59.5,
+        "z_score": -1.54,
+        "severity": "mild",
+        "direction": "below",
+        "deviation_pct": 25.2
+      },
+      {
+        "date": "2026-06-25",
+        "metric": "hrv",
+        "metric_name": "HRV",
+        "value": 42.9,
+        "baseline": 59.5,
+        "z_score": -1.7,
+        "severity": "mild",
+        "direction": "below",
+        "deviation_pct": 27.9
+      },
+      {
+        "date": "2026-06-23",
+        "metric": "avg_stress",
+        "metric_name": "Stress",
+        "value": 52,
+        "baseline": 36.6,
+        "z_score": 1.59,
+        "severity": "mild",
+        "direction": "above",
+        "deviation_pct": 42.1
+      },
+      {
+        "date": "2026-06-18",
+        "metric": "hrv",
+        "metric_name": "HRV",
+        "value": 42.9,
+        "baseline": 59.5,
+        "z_score": -1.7,
+        "severity": "mild",
+        "direction": "below",
+        "deviation_pct": 27.9
+      },
+      {
+        "date": "2026-06-14",
+        "metric": "sleep_score",
+        "metric_name": "Sleep Score",
+        "value": 57,
+        "baseline": 74.7,
+        "z_score": -1.56,
+        "severity": "mild",
+        "direction": "below",
+        "deviation_pct": 23.6
+      },
+      {
+        "date": "2026-06-09",
+        "metric": "resting_hr",
+        "metric_name": "Resting HR",
+        "value": 60,
+        "baseline": 53.1,
+        "z_score": 1.61,
+        "severity": "mild",
+        "direction": "above",
+        "deviation_pct": 12.9
+      },
+      {
+        "date": "2026-06-08",
+        "metric": "sleep_score",
+        "metric_name": "Sleep Score",
+        "value": 55,
+        "baseline": 74.7,
+        "z_score": -1.73,
+        "severity": "mild",
+        "direction": "below",
+        "deviation_pct": 26.3
+      },
+      {
+        "date": "2026-06-07",
+        "metric": "hrv",
+        "metric_name": "HRV",
+        "value": 44.7,
+        "baseline": 59.5,
+        "z_score": -1.52,
+        "severity": "mild",
+        "direction": "below",
+        "deviation_pct": 24.9
+      },
+      {
+        "date": "2026-06-04",
+        "metric": "hrv",
+        "metric_name": "HRV",
+        "value": 43.4,
+        "baseline": 59.5,
+        "z_score": -1.65,
+        "severity": "mild",
+        "direction": "below",
+        "deviation_pct": 27.1
+      },
+      {
+        "date": "2026-06-04",
+        "metric": "resting_hr",
+        "metric_name": "Resting HR",
+        "value": 60,
+        "baseline": 53.1,
+        "z_score": 1.61,
+        "severity": "mild",
+        "direction": "above",
+        "deviation_pct": 12.9
+      },
+      {
+        "date": "2026-05-30",
+        "metric": "sleep_score",
+        "metric_name": "Sleep Score",
+        "value": 56,
+        "baseline": 74.7,
+        "z_score": -1.65,
+        "severity": "mild",
+        "direction": "below",
+        "deviation_pct": 25.0
+      },
+      {
+        "date": "2026-05-30",
+        "metric": "resting_hr",
+        "metric_name": "Resting HR",
+        "value": 60,
+        "baseline": 53.1,
+        "z_score": 1.61,
+        "severity": "mild",
+        "direction": "above",
+        "deviation_pct": 12.9
+      },
+      {
+        "date": "2026-05-23",
+        "metric": "avg_stress",
+        "metric_name": "Stress",
+        "value": 52,
+        "baseline": 36.6,
+        "z_score": 1.59,
+        "severity": "mild",
+        "direction": "above",
+        "deviation_pct": 42.1
+      },
+      {
+        "date": "2026-05-16",
+        "metric": "hrv",
+        "metric_name": "HRV",
+        "value": 42.6,
+        "baseline": 59.5,
+        "z_score": -1.73,
+        "severity": "mild",
+        "direction": "below",
+        "deviation_pct": 28.4
+      },
+      {
+        "date": "2026-05-04",
+        "metric": "sleep_score",
+        "metric_name": "Sleep Score",
+        "value": 56,
+        "baseline": 74.7,
+        "z_score": -1.65,
+        "severity": "mild",
+        "direction": "below",
+        "deviation_pct": 25.0
+      },
+      {
+        "date": "2026-04-26",
+        "metric": "sleep_score",
+        "metric_name": "Sleep Score",
+        "value": 57,
+        "baseline": 74.7,
+        "z_score": -1.56,
+        "severity": "mild",
+        "direction": "below",
+        "deviation_pct": 23.6
+      },
+      {
+        "date": "2026-04-21",
+        "metric": "hrv",
+        "metric_name": "HRV",
+        "value": 44.2,
+        "baseline": 59.5,
+        "z_score": -1.57,
+        "severity": "mild",
+        "direction": "below",
+        "deviation_pct": 25.8
+      },
+      {
+        "date": "2026-04-19",
+        "metric": "resting_hr",
+        "metric_name": "Resting HR",
+        "value": 60,
+        "baseline": 53.1,
+        "z_score": 1.61,
+        "severity": "mild",
+        "direction": "above",
+        "deviation_pct": 12.9
+      }
+    ],
+    "worst_days": [
+      {
+        "date": "2026-06-04",
+        "anomaly_count": 2,
+        "severe_count": 0,
+        "anomalies": [
+          {
+            "date": "2026-06-04",
+            "metric": "hrv",
+            "metric_name": "HRV",
+            "value": 43.4,
+            "baseline": 59.5,
+            "z_score": -1.65,
+            "severity": "mild",
+            "direction": "below",
+            "deviation_pct": 27.1
+          },
+          {
+            "date": "2026-06-04",
+            "metric": "resting_hr",
+            "metric_name": "Resting HR",
+            "value": 60,
+            "baseline": 53.1,
+            "z_score": 1.61,
+            "severity": "mild",
+            "direction": "above",
+            "deviation_pct": 12.9
+          }
+        ]
+      },
+      {
+        "date": "2026-05-30",
+        "anomaly_count": 2,
+        "severe_count": 0,
+        "anomalies": [
+          {
+            "date": "2026-05-30",
+            "metric": "sleep_score",
+            "metric_name": "Sleep Score",
+            "value": 56,
+            "baseline": 74.7,
+            "z_score": -1.65,
+            "severity": "mild",
+            "direction": "below",
+            "deviation_pct": 25.0
+          },
+          {
+            "date": "2026-05-30",
+            "metric": "resting_hr",
+            "metric_name": "Resting HR",
+            "value": 60,
+            "baseline": 53.1,
+            "z_score": 1.61,
+            "severity": "mild",
+            "direction": "above",
+            "deviation_pct": 12.9
+          }
+        ]
+      },
+      {
+        "date": "2026-07-07",
+        "anomaly_count": 1,
+        "severe_count": 0,
+        "anomalies": [
+          {
+            "date": "2026-07-07",
+            "metric": "sleep_score",
+            "metric_name": "Sleep Score",
+            "value": 56,
+            "baseline": 74.7,
+            "z_score": -1.65,
+            "severity": "mild",
+            "direction": "below",
+            "deviation_pct": 25.0
+          }
+        ]
+      },
+      {
+        "date": "2026-06-30",
+        "anomaly_count": 1,
+        "severe_count": 0,
+        "anomalies": [
+          {
+            "date": "2026-06-30",
+            "metric": "resting_hr",
+            "metric_name": "Resting HR",
+            "value": 60,
+            "baseline": 53.1,
+            "z_score": 1.61,
+            "severity": "mild",
+            "direction": "above",
+            "deviation_pct": 12.9
+          }
+        ]
+      },
+      {
+        "date": "2026-06-29",
+        "anomaly_count": 1,
+        "severe_count": 0,
+        "anomalies": [
+          {
+            "date": "2026-06-29",
+            "metric": "hrv",
+            "metric_name": "HRV",
+            "value": 44.5,
+            "baseline": 59.5,
+            "z_score": -1.54,
+            "severity": "mild",
+            "direction": "below",
+            "deviation_pct": 25.2
+          }
+        ]
+      },
+      {
+        "date": "2026-06-25",
+        "anomaly_count": 1,
+        "severe_count": 0,
+        "anomalies": [
+          {
+            "date": "2026-06-25",
+            "metric": "hrv",
+            "metric_name": "HRV",
+            "value": 42.9,
+            "baseline": 59.5,
+            "z_score": -1.7,
+            "severity": "mild",
+            "direction": "below",
+            "deviation_pct": 27.9
+          }
+        ]
+      },
+      {
+        "date": "2026-06-23",
+        "anomaly_count": 1,
+        "severe_count": 0,
+        "anomalies": [
+          {
+            "date": "2026-06-23",
+            "metric": "avg_stress",
+            "metric_name": "Stress",
+            "value": 52,
+            "baseline": 36.6,
+            "z_score": 1.59,
+            "severity": "mild",
+            "direction": "above",
+            "deviation_pct": 42.1
+          }
+        ]
+      },
+      {
+        "date": "2026-06-18",
+        "anomaly_count": 1,
+        "severe_count": 0,
+        "anomalies": [
+          {
+            "date": "2026-06-18",
+            "metric": "hrv",
+            "metric_name": "HRV",
+            "value": 42.9,
+            "baseline": 59.5,
+            "z_score": -1.7,
+            "severity": "mild",
+            "direction": "below",
+            "deviation_pct": 27.9
+          }
+        ]
+      },
+      {
+        "date": "2026-06-14",
+        "anomaly_count": 1,
+        "severe_count": 0,
+        "anomalies": [
+          {
+            "date": "2026-06-14",
+            "metric": "sleep_score",
+            "metric_name": "Sleep Score",
+            "value": 57,
+            "baseline": 74.7,
+            "z_score": -1.56,
+            "severity": "mild",
+            "direction": "below",
+            "deviation_pct": 23.6
+          }
+        ]
+      },
+      {
+        "date": "2026-06-09",
+        "anomaly_count": 1,
+        "severe_count": 0,
+        "anomalies": [
+          {
+            "date": "2026-06-09",
+            "metric": "resting_hr",
+            "metric_name": "Resting HR",
+            "value": 60,
+            "baseline": 53.1,
+            "z_score": 1.61,
+            "severity": "mild",
+            "direction": "above",
+            "deviation_pct": 12.9
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "total_anomalies": 20,
+      "severe_count": 0,
+      "moderate_count": 0,
+      "days_with_anomalies": 18
+    }
+  }
+}

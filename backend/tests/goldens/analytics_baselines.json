@@ -1,0 +1,162 @@
+{
+  "path": "/api/analytics/baselines",
+  "status": 200,
+  "body": {
+    "baselines": {
+      "sleep_score": {
+        "name": "Sleep Score",
+        "higher_better": true,
+        "mean": 74.7,
+        "std": 11.3,
+        "min": 55.0,
+        "max": 92.0,
+        "percentiles": {
+          "p10": 59.0,
+          "p25": 64.0,
+          "p50": 76.0,
+          "p75": 84.0,
+          "p90": 90.0
+        },
+        "current_avg": 64.9,
+        "status": "fair",
+        "optimal_range": {
+          "low": 84.0,
+          "high": 90.0
+        },
+        "sample_size": 90
+      },
+      "hrv": {
+        "name": "HRV",
+        "higher_better": true,
+        "mean": 59.5,
+        "std": 9.7,
+        "min": 42.6,
+        "max": 77.8,
+        "percentiles": {
+          "p10": 46.3,
+          "p25": 52.2,
+          "p50": 59.0,
+          "p75": 66.0,
+          "p90": 74.4
+        },
+        "current_avg": 65.7,
+        "status": "good",
+        "optimal_range": {
+          "low": 66.0,
+          "high": 74.4
+        },
+        "sample_size": 90
+      },
+      "avg_stress": {
+        "name": "Average Stress",
+        "higher_better": false,
+        "mean": 36.6,
+        "std": 9.7,
+        "min": 20.0,
+        "max": 52.0,
+        "percentiles": {
+          "p10": 22.0,
+          "p25": 29.0,
+          "p50": 36.0,
+          "p75": 46.0,
+          "p90": 50.0
+        },
+        "current_avg": 35.1,
+        "status": "good",
+        "optimal_range": {
+          "low": 22.0,
+          "high": 29.0
+        },
+        "sample_size": 90
+      },
+      "body_battery_start": {
+        "name": "Morning Energy",
+        "higher_better": true,
+        "mean": 64.1,
+        "std": 16.5,
+        "min": 40.0,
+        "max": 95.0,
+        "percentiles": {
+          "p10": 44.0,
+          "p25": 50.0,
+          "p50": 62.0,
+          "p75": 79.0,
+          "p90": 91.0
+        },
+        "current_avg": 75.3,
+        "status": "good",
+        "optimal_range": {
+          "low": 79.0,
+          "high": 91.0
+        },
+        "sample_size": 90
+      },
+      "steps": {
+        "name": "Daily Steps",
+        "higher_better": true,
+        "mean": 9784.6,
+        "std": 3736.5,
+        "min": 3106.0,
+        "max": 16353.0,
+        "percentiles": {
+          "p10": 4901.0,
+          "p25": 6349.0,
+          "p50": 9948.0,
+          "p75": 12726.0,
+          "p90": 14814.0
+        },
+        "current_avg": 9758.0,
+        "status": "fair",
+        "optimal_range": {
+          "low": 12726.0,
+          "high": 14814.0
+        },
+        "sample_size": 90
+      },
+      "deep_sleep_minutes": {
+        "name": "Deep Sleep",
+        "higher_better": true,
+        "mean": 80.3,
+        "std": 20.7,
+        "min": 40.0,
+        "max": 110.0,
+        "percentiles": {
+          "p10": 50.0,
+          "p25": 63.0,
+          "p50": 82.0,
+          "p75": 98.0,
+          "p90": 108.0
+        },
+        "current_avg": 77.9,
+        "status": "fair",
+        "optimal_range": {
+          "low": 98.0,
+          "high": 108.0
+        },
+        "sample_size": 90
+      },
+      "resting_hr": {
+        "name": "Resting HR",
+        "higher_better": false,
+        "mean": 53.1,
+        "std": 4.2,
+        "min": 46.0,
+        "max": 60.0,
+        "percentiles": {
+          "p10": 47.0,
+          "p25": 50.0,
+          "p50": 54.0,
+          "p75": 57.0,
+          "p90": 59.0
+        },
+        "current_avg": 54.7,
+        "status": "fair",
+        "optimal_range": {
+          "low": 47.0,
+          "high": 50.0
+        },
+        "sample_size": 90
+      }
+    }
+  }
+}

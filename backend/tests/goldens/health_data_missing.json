@@ -1,0 +1,7 @@
+{
+  "path": "/api/health-data/2020-01-01",
+  "status": 404,
+  "body": {
+    "error": "No data for 2020-01-01"
+  }
+}

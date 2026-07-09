@@ -1,0 +1,56 @@
+{
+  "path": "/api/summary",
+  "status": 200,
+  "body": {
+    "total_days": 90,
+    "date_range": {
+      "start": "2026-04-09",
+      "end": "2026-07-07"
+    },
+    "averages": {
+      "sleep_score": 74.7,
+      "hrv": 59.5,
+      "stress": 36.6,
+      "steps": 9785.0
+    },
+    "recent_day": {
+      "date": "2026-07-07",
+      "sleep_score": 56,
+      "deep_sleep_minutes": 75,
+      "light_sleep_minutes": 211,
+      "rem_sleep_minutes": 88,
+      "awake_minutes": 18,
+      "sleep_start_time": "2026-07-06T22:57:00.0",
+      "sleep_end_time": "2026-07-07T06:16:00.0",
+      "avg_sleep_stress": 27.5,
+      "sleep_insight": "NEGATIVE_LONG_AWAKE_TIME",
+      "sleep_feedback": "POOR_CONTINUITY",
+      "resting_hr": 46,
+      "min_hr": 40,
+      "max_hr": 125,
+      "hrv": 49.9,
+      "hrv_status": "UNBALANCED",
+      "body_battery_start": 80,
+      "body_battery_end": 12,
+      "body_battery_high": 84,
+      "body_battery_low": 12,
+      "body_battery_charged": 65,
+      "body_battery_drained": 52,
+      "avg_stress": 46,
+      "max_stress": 77,
+      "stress_rest_minutes": 529,
+      "stress_low_minutes": 300,
+      "stress_medium_minutes": 65,
+      "stress_high_minutes": 56,
+      "steps": 3106,
+      "distance_meters": 10395.12,
+      "active_calories": 363,
+      "total_calories": 2765,
+      "floors_climbed": 14,
+      "active_minutes": 55,
+      "avg_respiration": 13.6,
+      "lowest_respiration": 12.9,
+      "highest_respiration": 18.7
+    }
+  }
+}

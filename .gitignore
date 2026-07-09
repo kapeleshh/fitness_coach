@@ -3,6 +3,9 @@ data/
 
 # Generated/parsed data artifacts
 backend/parsed_health_data.json
+backend/fitness.db
+backend/fitness.db-wal
+backend/fitness.db-shm
 
 # Python
 *.pyc

@@ -1,26 +1,26 @@
 """
 AI Pattern Analysis Engine
-Advanced analytics for Garmin health data using pandas/numpy
-Discovers hidden patterns, anomalies, and correlations
+Pure-stdlib statistics over Garmin health data (correlations, anomalies,
+weekly patterns, baselines, trends).
 """
 
 import json
 import math
-from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Optional
 from collections import defaultdict
 
-# Load data
-DATA_FILE = Path(__file__).parent / "parsed_health_data.json"
-
 
 def load_data() -> List[Dict]:
-    """Load parsed health data. Returns empty list if file doesn't exist."""
-    if not DATA_FILE.exists():
-        return []
-    with open(DATA_FILE, 'r') as f:
-        return json.load(f)
+    """Load daily wellness records (newest first) from SQLite.
+
+    Returned in the legacy zero-filled shape this module's statistics
+    currently expect (missing values as 0 — a known limitation slated for
+    the analytics-rework backlog; the DB itself stores NULLs correctly).
+    """
+    import db
+    db.init_db()
+    return db.get_all_days(legacy_zero_fill=True)
 
 
 # ============= CORRELATION MATRIX =============

@@ -1,0 +1,23 @@
+{
+  "path": "/api/nope",
+  "status": 404,
+  "body": {
+    "error": "Not found",
+    "endpoints": [
+      "GET  /api/health-data",
+      "GET  /api/health-data/YYYY-MM-DD",
+      "GET  /api/summary",
+      "GET  /api/analytics",
+      "GET  /api/analytics/correlations",
+      "GET  /api/analytics/lagged",
+      "GET  /api/analytics/anomalies",
+      "GET  /api/analytics/weekly",
+      "GET  /api/analytics/baselines",
+      "GET  /api/analytics/trends",
+      "GET  /api/sync/status",
+      "POST /api/sync/latest",
+      "POST /api/sync/full",
+      "POST /api/sync/range"
+    ]
+  }
+}

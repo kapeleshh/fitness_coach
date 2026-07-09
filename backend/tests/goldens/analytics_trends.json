@@ -1,0 +1,44 @@
+{
+  "path": "/api/analytics/trends",
+  "status": 200,
+  "body": {
+    "trends": {
+      "sleep_score": {
+        "recent_avg": 64.9,
+        "previous_avg": 75.6,
+        "change": -10.7,
+        "change_pct": -14.2,
+        "direction": "worsening"
+      },
+      "hrv": {
+        "recent_avg": 65.7,
+        "previous_avg": 55.4,
+        "change": 10.3,
+        "change_pct": 18.7,
+        "direction": "improving"
+      },
+      "avg_stress": {
+        "recent_avg": 35.1,
+        "previous_avg": 34.9,
+        "change": 0.3,
+        "change_pct": 0.8,
+        "direction": "stable"
+      },
+      "body_battery_start": {
+        "recent_avg": 75.3,
+        "previous_avg": 58.1,
+        "change": 17.1,
+        "change_pct": 29.5,
+        "direction": "improving"
+      },
+      "steps": {
+        "recent_avg": 9758.0,
+        "previous_avg": 13836.0,
+        "change": -4078.0,
+        "change_pct": -29.5,
+        "direction": "worsening"
+      }
+    },
+    "window_days": 7
+  }
+}

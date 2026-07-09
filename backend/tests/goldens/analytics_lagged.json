@@ -1,0 +1,35 @@
+{
+  "path": "/api/analytics/lagged",
+  "status": 200,
+  "body": {
+    "lagged_correlations": [
+      {
+        "metric1": "stress_high_minutes",
+        "metric2": "hrv",
+        "lag_days": 1,
+        "description": "High Stress Duration \u2192 Next Day HRV",
+        "correlation": 0.185,
+        "strength": "minimal",
+        "insight": "Higher stress_high_minutes tends to lead to higher HRV the next day"
+      },
+      {
+        "metric1": "deep_sleep_minutes",
+        "metric2": "body_battery_start",
+        "lag_days": 1,
+        "description": "Deep Sleep \u2192 Next Day Battery",
+        "correlation": 0.164,
+        "strength": "minimal",
+        "insight": "Higher deep sleep tends to lead to higher morning energy the next day"
+      },
+      {
+        "metric1": "steps",
+        "metric2": "sleep_score",
+        "lag_days": 0,
+        "description": "Activity \u2192 Same Night Sleep",
+        "correlation": -0.153,
+        "strength": "minimal",
+        "insight": "Higher step count tends to lead to lower sleep quality the same day"
+      }
+    ]
+  }
+}

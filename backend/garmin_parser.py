@@ -4,7 +4,6 @@ Combines sleep, stress, body battery, HRV, and activity data into unified daily 
 """
 
 import json
-from datetime import datetime
 from typing import Dict, List, Optional
 from dataclasses import dataclass, asdict
 from pathlib import Path
@@ -282,9 +281,17 @@ def main():
             print(f"   ❤️ HRV: {day.hrv}ms | Resting HR: {day.resting_hr}bpm")
             print(f"   🚶 Steps: {day.steps:,} | Calories: {day.total_calories:,}")
     
-    # Save to file
+    # Save to the legacy JSON file (kept for the fresh-machine import path)
     output_path = script_dir / "backend" / "parsed_health_data.json"
     parser.save_to_file(str(output_path))
+
+    # Upsert into SQLite — the live store the API reads from. Without this,
+    # re-running the parser would only rewrite the JSON, which the server
+    # ignores once the database already has rows.
+    import db
+    db.init_db()
+    n = db.upsert_days([asdict(d) for d in parser.daily_data.values()])
+    print(f"Upserted {n} days into the database ({db.db_path()})")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,1238 @@
+{
+  "path": "/api/analytics",
+  "status": 200,
+  "body": {
+    "data_summary": {
+      "total_days": 90,
+      "date_range": {
+        "start": "2026-04-09",
+        "end": "2026-07-07"
+      }
+    },
+    "correlation_matrix": {
+      "matrix": {
+        "sleep_score": {
+          "sleep_score": 1.0,
+          "hrv": 0.054,
+          "avg_stress": 0.017,
+          "body_battery_start": -0.087,
+          "body_battery_end": -0.148,
+          "steps": -0.153,
+          "deep_sleep_minutes": 0.061,
+          "light_sleep_minutes": -0.047,
+          "rem_sleep_minutes": -0.058,
+          "resting_hr": -0.077,
+          "total_calories": -0.075,
+          "active_minutes": 0.018
+        },
+        "hrv": {
+          "sleep_score": 0.054,
+          "hrv": 1.0,
+          "avg_stress": 0.085,
+          "body_battery_start": 0.13,
+          "body_battery_end": -0.069,
+          "steps": -0.08,
+          "deep_sleep_minutes": 0.142,
+          "light_sleep_minutes": 0.171,
+          "rem_sleep_minutes": -0.052,
+          "resting_hr": -0.127,
+          "total_calories": 0.031,
+          "active_minutes": 0.077
+        },
+        "avg_stress": {
+          "sleep_score": 0.017,
+          "hrv": 0.085,
+          "avg_stress": 1.0,
+          "body_battery_start": -0.137,
+          "body_battery_end": -0.061,
+          "steps": -0.132,
+          "deep_sleep_minutes": -0.141,
+          "light_sleep_minutes": 0.034,
+          "rem_sleep_minutes": 0.038,
+          "resting_hr": 0.141,
+          "total_calories": 0.036,
+          "active_minutes": 0.158
+        },
+        "body_battery_start": {
+          "sleep_score": -0.087,
+          "hrv": 0.13,
+          "avg_stress": -0.137,
+          "body_battery_start": 1.0,
+          "body_battery_end": -0.107,
+          "steps": 0.021,
+          "deep_sleep_minutes": -0.083,
+          "light_sleep_minutes": 0.098,
+          "rem_sleep_minutes": -0.186,
+          "resting_hr": 0.038,
+          "total_calories": 0.163,
+          "active_minutes": 0.0
+        },
+        "body_battery_end": {
+          "sleep_score": -0.148,
+          "hrv": -0.069,
+          "avg_stress": -0.061,
+          "body_battery_start": -0.107,
+          "body_battery_end": 1.0,
+          "steps": -0.066,
+          "deep_sleep_minutes": -0.022,
+          "light_sleep_minutes": -0.043,
+          "rem_sleep_minutes": 0.03,
+          "resting_hr": -0.071,
+          "total_calories": -0.076,
+          "active_minutes": 0.156
+        },
+        "steps": {
+          "sleep_score": -0.153,
+          "hrv": -0.08,
+          "avg_stress": -0.132,
+          "body_battery_start": 0.021,
+          "body_battery_end": -0.066,
+          "steps": 1.0,
+          "deep_sleep_minutes": 0.052,
+          "light_sleep_minutes": 0.09,
+          "rem_sleep_minutes": 0.071,
+          "resting_hr": 0.082,
+          "total_calories": -0.037,
+          "active_minutes": 0.012
+        },
+        "deep_sleep_minutes": {
+          "sleep_score": 0.061,
+          "hrv": 0.142,
+          "avg_stress": -0.141,
+          "body_battery_start": -0.083,
+          "body_battery_end": -0.022,
+          "steps": 0.052,
+          "deep_sleep_minutes": 1.0,
+          "light_sleep_minutes": 0.016,
+          "rem_sleep_minutes": -0.051,
+          "resting_hr": -0.088,
+          "total_calories": -0.172,
+          "active_minutes": -0.087
+        },
+        "light_sleep_minutes": {
+          "sleep_score": -0.047,
+          "hrv": 0.171,
+          "avg_stress": 0.034,
+          "body_battery_start": 0.098,
+          "body_battery_end": -0.043,
+          "steps": 0.09,
+          "deep_sleep_minutes": 0.016,
+          "light_sleep_minutes": 1.0,
+          "rem_sleep_minutes": 0.085,
+          "resting_hr": 0.031,
+          "total_calories": -0.067,
+          "active_minutes": -0.039
+        },
+        "rem_sleep_minutes": {
+          "sleep_score": -0.058,
+          "hrv": -0.052,
+          "avg_stress": 0.038,
+          "body_battery_start": -0.186,
+          "body_battery_end": 0.03,
+          "steps": 0.071,
+          "deep_sleep_minutes": -0.051,
+          "light_sleep_minutes": 0.085,
+          "rem_sleep_minutes": 1.0,
+          "resting_hr": -0.01,
+          "total_calories": 0.034,
+          "active_minutes": -0.016
+        },
+        "resting_hr": {
+          "sleep_score": -0.077,
+          "hrv": -0.127,
+          "avg_stress": 0.141,
+          "body_battery_start": 0.038,
+          "body_battery_end": -0.071,
+          "steps": 0.082,
+          "deep_sleep_minutes": -0.088,
+          "light_sleep_minutes": 0.031,
+          "rem_sleep_minutes": -0.01,
+          "resting_hr": 1.0,
+          "total_calories": 0.145,
+          "active_minutes": -0.066
+        },
+        "total_calories": {
+          "sleep_score": -0.075,
+          "hrv": 0.031,
+          "avg_stress": 0.036,
+          "body_battery_start": 0.163,
+          "body_battery_end": -0.076,
+          "steps": -0.037,
+          "deep_sleep_minutes": -0.172,
+          "light_sleep_minutes": -0.067,
+          "rem_sleep_minutes": 0.034,
+          "resting_hr": 0.145,
+          "total_calories": 1.0,
+          "active_minutes": 0.05
+        },
+        "active_minutes": {
+          "sleep_score": 0.018,
+          "hrv": 0.077,
+          "avg_stress": 0.158,
+          "body_battery_start": 0.0,
+          "body_battery_end": 0.156,
+          "steps": 0.012,
+          "deep_sleep_minutes": -0.087,
+          "light_sleep_minutes": -0.039,
+          "rem_sleep_minutes": -0.016,
+          "resting_hr": -0.066,
+          "total_calories": 0.05,
+          "active_minutes": 1.0
+        }
+      },
+      "metrics": [
+        "sleep_score",
+        "hrv",
+        "avg_stress",
+        "body_battery_start",
+        "body_battery_end",
+        "steps",
+        "deep_sleep_minutes",
+        "light_sleep_minutes",
+        "rem_sleep_minutes",
+        "resting_hr",
+        "total_calories",
+        "active_minutes"
+      ],
+      "strong_correlations": []
+    },
+    "lagged_correlations": {
+      "lagged_correlations": [
+        {
+          "metric1": "stress_high_minutes",
+          "metric2": "hrv",
+          "lag_days": 1,
+          "description": "High Stress Duration \u2192 Next Day HRV",
+          "correlation": 0.185,
+          "strength": "minimal",
+          "insight": "Higher stress_high_minutes tends to lead to higher HRV the next day"
+        },
+        {
+          "metric1": "deep_sleep_minutes",
+          "metric2": "body_battery_start",
+          "lag_days": 1,
+          "description": "Deep Sleep \u2192 Next Day Battery",
+          "correlation": 0.164,
+          "strength": "minimal",
+          "insight": "Higher deep sleep tends to lead to higher morning energy the next day"
+        },
+        {
+          "metric1": "steps",
+          "metric2": "sleep_score",
+          "lag_days": 0,
+          "description": "Activity \u2192 Same Night Sleep",
+          "correlation": -0.153,
+          "strength": "minimal",
+          "insight": "Higher step count tends to lead to lower sleep quality the same day"
+        }
+      ]
+    },
+    "anomalies": {
+      "all_anomalies": [
+        {
+          "date": "2026-07-07",
+          "metric": "sleep_score",
+          "metric_name": "Sleep Score",
+          "value": 56,
+          "baseline": 74.7,
+          "z_score": -1.65,
+          "severity": "mild",
+          "direction": "below",
+          "deviation_pct": 25.0
+        },
+        {
+          "date": "2026-06-30",
+          "metric": "resting_hr",
+          "metric_name": "Resting HR",
+          "value": 60,
+          "baseline": 53.1,
+          "z_score": 1.61,
+          "severity": "mild",
+          "direction": "above",
+          "deviation_pct": 12.9
+        },
+        {
+          "date": "2026-06-29",
+          "metric": "hrv",
+          "metric_name": "HRV",
+          "value": 44.5,
+          "baseline": 59.5,
+          "z_score": -1.54,
+          "severity": "mild",
+          "direction": "below",
+          "deviation_pct": 25.2
+        },
+        {
+          "date": "2026-06-25",
+          "metric": "hrv",
+          "metric_name": "HRV",
+          "value": 42.9,
+          "baseline": 59.5,
+          "z_score": -1.7,
+          "severity": "mild",
+          "direction": "below",
+          "deviation_pct": 27.9
+        },
+        {
+          "date": "2026-06-23",
+          "metric": "avg_stress",
+          "metric_name": "Stress",
+          "value": 52,
+          "baseline": 36.6,
+          "z_score": 1.59,
+          "severity": "mild",
+          "direction": "above",
+          "deviation_pct": 42.1
+        },
+        {
+          "date": "2026-06-18",
+          "metric": "hrv",
+          "metric_name": "HRV",
+          "value": 42.9,
+          "baseline": 59.5,
+          "z_score": -1.7,
+          "severity": "mild",
+          "direction": "below",
+          "deviation_pct": 27.9
+        },
+        {
+          "date": "2026-06-14",
+          "metric": "sleep_score",
+          "metric_name": "Sleep Score",
+          "value": 57,
+          "baseline": 74.7,
+          "z_score": -1.56,
+          "severity": "mild",
+          "direction": "below",
+          "deviation_pct": 23.6
+        },
+        {
+          "date": "2026-06-09",
+          "metric": "resting_hr",
+          "metric_name": "Resting HR",
+          "value": 60,
+          "baseline": 53.1,
+          "z_score": 1.61,
+          "severity": "mild",
+          "direction": "above",
+          "deviation_pct": 12.9
+        },
+        {
+          "date": "2026-06-08",
+          "metric": "sleep_score",
+          "metric_name": "Sleep Score",
+          "value": 55,
+          "baseline": 74.7,
+          "z_score": -1.73,
+          "severity": "mild",
+          "direction": "below",
+          "deviation_pct": 26.3
+        },
+        {
+          "date": "2026-06-07",
+          "metric": "hrv",
+          "metric_name": "HRV",
+          "value": 44.7,
+          "baseline": 59.5,
+          "z_score": -1.52,
+          "severity": "mild",
+          "direction": "below",
+          "deviation_pct": 24.9
+        },
+        {
+          "date": "2026-06-04",
+          "metric": "hrv",
+          "metric_name": "HRV",
+          "value": 43.4,
+          "baseline": 59.5,
+          "z_score": -1.65,
+          "severity": "mild",
+          "direction": "below",
+          "deviation_pct": 27.1
+        },
+        {
+          "date": "2026-06-04",
+          "metric": "resting_hr",
+          "metric_name": "Resting HR",
+          "value": 60,
+          "baseline": 53.1,
+          "z_score": 1.61,
+          "severity": "mild",
+          "direction": "above",
+          "deviation_pct": 12.9
+        },
+        {
+          "date": "2026-05-30",
+          "metric": "sleep_score",
+          "metric_name": "Sleep Score",
+          "value": 56,
+          "baseline": 74.7,
+          "z_score": -1.65,
+          "severity": "mild",
+          "direction": "below",
+          "deviation_pct": 25.0
+        },
+        {
+          "date": "2026-05-30",
+          "metric": "resting_hr",
+          "metric_name": "Resting HR",
+          "value": 60,
+          "baseline": 53.1,
+          "z_score": 1.61,
+          "severity": "mild",
+          "direction": "above",
+          "deviation_pct": 12.9
+        },
+        {
+          "date": "2026-05-23",
+          "metric": "avg_stress",
+          "metric_name": "Stress",
+          "value": 52,
+          "baseline": 36.6,
+          "z_score": 1.59,
+          "severity": "mild",
+          "direction": "above",
+          "deviation_pct": 42.1
+        },
+        {
+          "date": "2026-05-16",
+          "metric": "hrv",
+          "metric_name": "HRV",
+          "value": 42.6,
+          "baseline": 59.5,
+          "z_score": -1.73,
+          "severity": "mild",
+          "direction": "below",
+          "deviation_pct": 28.4
+        },
+        {
+          "date": "2026-05-04",
+          "metric": "sleep_score",
+          "metric_name": "Sleep Score",
+          "value": 56,
+          "baseline": 74.7,
+          "z_score": -1.65,
+          "severity": "mild",
+          "direction": "below",
+          "deviation_pct": 25.0
+        },
+        {
+          "date": "2026-04-26",
+          "metric": "sleep_score",
+          "metric_name": "Sleep Score",
+          "value": 57,
+          "baseline": 74.7,
+          "z_score": -1.56,
+          "severity": "mild",
+          "direction": "below",
+          "deviation_pct": 23.6
+        },
+        {
+          "date": "2026-04-21",
+          "metric": "hrv",
+          "metric_name": "HRV",
+          "value": 44.2,
+          "baseline": 59.5,
+          "z_score": -1.57,
+          "severity": "mild",
+          "direction": "below",
+          "deviation_pct": 25.8
+        },
+        {
+          "date": "2026-04-19",
+          "metric": "resting_hr",
+          "metric_name": "Resting HR",
+          "value": 60,
+          "baseline": 53.1,
+          "z_score": 1.61,
+          "severity": "mild",
+          "direction": "above",
+          "deviation_pct": 12.9
+        }
+      ],
+      "worst_days": [
+        {
+          "date": "2026-06-04",
+          "anomaly_count": 2,
+          "severe_count": 0,
+          "anomalies": [
+            {
+              "date": "2026-06-04",
+              "metric": "hrv",
+              "metric_name": "HRV",
+              "value": 43.4,
+              "baseline": 59.5,
+              "z_score": -1.65,
+              "severity": "mild",
+              "direction": "below",
+              "deviation_pct": 27.1
+            },
+            {
+              "date": "2026-06-04",
+              "metric": "resting_hr",
+              "metric_name": "Resting HR",
+              "value": 60,
+              "baseline": 53.1,
+              "z_score": 1.61,
+              "severity": "mild",
+              "direction": "above",
+              "deviation_pct": 12.9
+            }
+          ]
+        },
+        {
+          "date": "2026-05-30",
+          "anomaly_count": 2,
+          "severe_count": 0,
+          "anomalies": [
+            {
+              "date": "2026-05-30",
+              "metric": "sleep_score",
+              "metric_name": "Sleep Score",
+              "value": 56,
+              "baseline": 74.7,
+              "z_score": -1.65,
+              "severity": "mild",
+              "direction": "below",
+              "deviation_pct": 25.0
+            },
+            {
+              "date": "2026-05-30",
+              "metric": "resting_hr",
+              "metric_name": "Resting HR",
+              "value": 60,
+              "baseline": 53.1,
+              "z_score": 1.61,
+              "severity": "mild",
+              "direction": "above",
+              "deviation_pct": 12.9
+            }
+          ]
+        },
+        {
+          "date": "2026-07-07",
+          "anomaly_count": 1,
+          "severe_count": 0,
+          "anomalies": [
+            {
+              "date": "2026-07-07",
+              "metric": "sleep_score",
+              "metric_name": "Sleep Score",
+              "value": 56,
+              "baseline": 74.7,
+              "z_score": -1.65,
+              "severity": "mild",
+              "direction": "below",
+              "deviation_pct": 25.0
+            }
+          ]
+        },
+        {
+          "date": "2026-06-30",
+          "anomaly_count": 1,
+          "severe_count": 0,
+          "anomalies": [
+            {
+              "date": "2026-06-30",
+              "metric": "resting_hr",
+              "metric_name": "Resting HR",
+              "value": 60,
+              "baseline": 53.1,
+              "z_score": 1.61,
+              "severity": "mild",
+              "direction": "above",
+              "deviation_pct": 12.9
+            }
+          ]
+        },
+        {
+          "date": "2026-06-29",
+          "anomaly_count": 1,
+          "severe_count": 0,
+          "anomalies": [
+            {
+              "date": "2026-06-29",
+              "metric": "hrv",
+              "metric_name": "HRV",
+              "value": 44.5,
+              "baseline": 59.5,
+              "z_score": -1.54,
+              "severity": "mild",
+              "direction": "below",
+              "deviation_pct": 25.2
+            }
+          ]
+        },
+        {
+          "date": "2026-06-25",
+          "anomaly_count": 1,
+          "severe_count": 0,
+          "anomalies": [
+            {
+              "date": "2026-06-25",
+              "metric": "hrv",
+              "metric_name": "HRV",
+              "value": 42.9,
+              "baseline": 59.5,
+              "z_score": -1.7,
+              "severity": "mild",
+              "direction": "below",
+              "deviation_pct": 27.9
+            }
+          ]
+        },
+        {
+          "date": "2026-06-23",
+          "anomaly_count": 1,
+          "severe_count": 0,
+          "anomalies": [
+            {
+              "date": "2026-06-23",
+              "metric": "avg_stress",
+              "metric_name": "Stress",
+              "value": 52,
+              "baseline": 36.6,
+              "z_score": 1.59,
+              "severity": "mild",
+              "direction": "above",
+              "deviation_pct": 42.1
+            }
+          ]
+        },
+        {
+          "date": "2026-06-18",
+          "anomaly_count": 1,
+          "severe_count": 0,
+          "anomalies": [
+            {
+              "date": "2026-06-18",
+              "metric": "hrv",
+              "metric_name": "HRV",
+              "value": 42.9,
+              "baseline": 59.5,
+              "z_score": -1.7,
+              "severity": "mild",
+              "direction": "below",
+              "deviation_pct": 27.9
+            }
+          ]
+        },
+        {
+          "date": "2026-06-14",
+          "anomaly_count": 1,
+          "severe_count": 0,
+          "anomalies": [
+            {
+              "date": "2026-06-14",
+              "metric": "sleep_score",
+              "metric_name": "Sleep Score",
+              "value": 57,
+              "baseline": 74.7,
+              "z_score": -1.56,
+              "severity": "mild",
+              "direction": "below",
+              "deviation_pct": 23.6
+            }
+          ]
+        },
+        {
+          "date": "2026-06-09",
+          "anomaly_count": 1,
+          "severe_count": 0,
+          "anomalies": [
+            {
+              "date": "2026-06-09",
+              "metric": "resting_hr",
+              "metric_name": "Resting HR",
+              "value": 60,
+              "baseline": 53.1,
+              "z_score": 1.61,
+              "severity": "mild",
+              "direction": "above",
+              "deviation_pct": 12.9
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "total_anomalies": 20,
+        "severe_count": 0,
+        "moderate_count": 0,
+        "days_with_anomalies": 18
+      }
+    },
+    "weekly_patterns": {
+      "patterns": {
+        "sleep_score": {
+          "by_day": [
+            {
+              "day": "Monday",
+              "day_num": 0,
+              "average": 70.3,
+              "sample_size": 13
+            },
+            {
+              "day": "Tuesday",
+              "day_num": 1,
+              "average": 76.5,
+              "sample_size": 13
+            },
+            {
+              "day": "Wednesday",
+              "day_num": 2,
+              "average": 71.6,
+              "sample_size": 12
+            },
+            {
+              "day": "Thursday",
+              "day_num": 3,
+              "average": 71.5,
+              "sample_size": 13
+            },
+            {
+              "day": "Friday",
+              "day_num": 4,
+              "average": 80.5,
+              "sample_size": 13
+            },
+            {
+              "day": "Saturday",
+              "day_num": 5,
+              "average": 78.7,
+              "sample_size": 13
+            },
+            {
+              "day": "Sunday",
+              "day_num": 6,
+              "average": 73.2,
+              "sample_size": 13
+            }
+          ],
+          "best_day": {
+            "day": "Friday",
+            "day_num": 4,
+            "average": 80.5,
+            "sample_size": 13
+          },
+          "worst_day": {
+            "day": "Monday",
+            "day_num": 0,
+            "average": 70.3,
+            "sample_size": 13
+          },
+          "variance": 10.2
+        },
+        "hrv": {
+          "by_day": [
+            {
+              "day": "Monday",
+              "day_num": 0,
+              "average": 55.9,
+              "sample_size": 13
+            },
+            {
+              "day": "Tuesday",
+              "day_num": 1,
+              "average": 59.4,
+              "sample_size": 13
+            },
+            {
+              "day": "Wednesday",
+              "day_num": 2,
+              "average": 62.1,
+              "sample_size": 12
+            },
+            {
+              "day": "Thursday",
+              "day_num": 3,
+              "average": 56.6,
+              "sample_size": 13
+            },
+            {
+              "day": "Friday",
+              "day_num": 4,
+              "average": 64.2,
+              "sample_size": 13
+            },
+            {
+              "day": "Saturday",
+              "day_num": 5,
+              "average": 59.7,
+              "sample_size": 13
+            },
+            {
+              "day": "Sunday",
+              "day_num": 6,
+              "average": 59.0,
+              "sample_size": 13
+            }
+          ],
+          "best_day": {
+            "day": "Friday",
+            "day_num": 4,
+            "average": 64.2,
+            "sample_size": 13
+          },
+          "worst_day": {
+            "day": "Monday",
+            "day_num": 0,
+            "average": 55.9,
+            "sample_size": 13
+          },
+          "variance": 8.3
+        },
+        "avg_stress": {
+          "by_day": [
+            {
+              "day": "Monday",
+              "day_num": 0,
+              "average": 32.2,
+              "sample_size": 13
+            },
+            {
+              "day": "Tuesday",
+              "day_num": 1,
+              "average": 37.7,
+              "sample_size": 13
+            },
+            {
+              "day": "Wednesday",
+              "day_num": 2,
+              "average": 41.4,
+              "sample_size": 12
+            },
+            {
+              "day": "Thursday",
+              "day_num": 3,
+              "average": 39.2,
+              "sample_size": 13
+            },
+            {
+              "day": "Friday",
+              "day_num": 4,
+              "average": 34.8,
+              "sample_size": 13
+            },
+            {
+              "day": "Saturday",
+              "day_num": 5,
+              "average": 39.7,
+              "sample_size": 13
+            },
+            {
+              "day": "Sunday",
+              "day_num": 6,
+              "average": 31.5,
+              "sample_size": 13
+            }
+          ],
+          "best_day": {
+            "day": "Sunday",
+            "day_num": 6,
+            "average": 31.5,
+            "sample_size": 13
+          },
+          "worst_day": {
+            "day": "Wednesday",
+            "day_num": 2,
+            "average": 41.4,
+            "sample_size": 12
+          },
+          "variance": 9.9
+        },
+        "body_battery_start": {
+          "by_day": [
+            {
+              "day": "Monday",
+              "day_num": 0,
+              "average": 60.0,
+              "sample_size": 13
+            },
+            {
+              "day": "Tuesday",
+              "day_num": 1,
+              "average": 66.3,
+              "sample_size": 13
+            },
+            {
+              "day": "Wednesday",
+              "day_num": 2,
+              "average": 71.3,
+              "sample_size": 12
+            },
+            {
+              "day": "Thursday",
+              "day_num": 3,
+              "average": 60.2,
+              "sample_size": 13
+            },
+            {
+              "day": "Friday",
+              "day_num": 4,
+              "average": 66.8,
+              "sample_size": 13
+            },
+            {
+              "day": "Saturday",
+              "day_num": 5,
+              "average": 54.5,
+              "sample_size": 13
+            },
+            {
+              "day": "Sunday",
+              "day_num": 6,
+              "average": 70.3,
+              "sample_size": 13
+            }
+          ],
+          "best_day": {
+            "day": "Wednesday",
+            "day_num": 2,
+            "average": 71.3,
+            "sample_size": 12
+          },
+          "worst_day": {
+            "day": "Saturday",
+            "day_num": 5,
+            "average": 54.5,
+            "sample_size": 13
+          },
+          "variance": 16.8
+        },
+        "steps": {
+          "by_day": [
+            {
+              "day": "Monday",
+              "day_num": 0,
+              "average": 10807.2,
+              "sample_size": 13
+            },
+            {
+              "day": "Tuesday",
+              "day_num": 1,
+              "average": 9765.3,
+              "sample_size": 13
+            },
+            {
+              "day": "Wednesday",
+              "day_num": 2,
+              "average": 9942.4,
+              "sample_size": 12
+            },
+            {
+              "day": "Thursday",
+              "day_num": 3,
+              "average": 8507.5,
+              "sample_size": 13
+            },
+            {
+              "day": "Friday",
+              "day_num": 4,
+              "average": 10233.2,
+              "sample_size": 13
+            },
+            {
+              "day": "Saturday",
+              "day_num": 5,
+              "average": 8679.0,
+              "sample_size": 13
+            },
+            {
+              "day": "Sunday",
+              "day_num": 6,
+              "average": 10570.0,
+              "sample_size": 13
+            }
+          ],
+          "best_day": {
+            "day": "Monday",
+            "day_num": 0,
+            "average": 10807.2,
+            "sample_size": 13
+          },
+          "worst_day": {
+            "day": "Thursday",
+            "day_num": 3,
+            "average": 8507.5,
+            "sample_size": 13
+          },
+          "variance": 2299.7
+        },
+        "deep_sleep_minutes": {
+          "by_day": [
+            {
+              "day": "Monday",
+              "day_num": 0,
+              "average": 85.8,
+              "sample_size": 13
+            },
+            {
+              "day": "Tuesday",
+              "day_num": 1,
+              "average": 84.6,
+              "sample_size": 13
+            },
+            {
+              "day": "Wednesday",
+              "day_num": 2,
+              "average": 79.2,
+              "sample_size": 12
+            },
+            {
+              "day": "Thursday",
+              "day_num": 3,
+              "average": 73.5,
+              "sample_size": 13
+            },
+            {
+              "day": "Friday",
+              "day_num": 4,
+              "average": 73.4,
+              "sample_size": 13
+            },
+            {
+              "day": "Saturday",
+              "day_num": 5,
+              "average": 83.4,
+              "sample_size": 13
+            },
+            {
+              "day": "Sunday",
+              "day_num": 6,
+              "average": 81.9,
+              "sample_size": 13
+            }
+          ],
+          "best_day": {
+            "day": "Monday",
+            "day_num": 0,
+            "average": 85.8,
+            "sample_size": 13
+          },
+          "worst_day": {
+            "day": "Friday",
+            "day_num": 4,
+            "average": 73.4,
+            "sample_size": 13
+          },
+          "variance": 12.4
+        }
+      },
+      "insights": [
+        {
+          "category": "Sleep",
+          "insight": "You sleep best on Fridays (avg 80.5) and worst on Mondays (avg 70.3)",
+          "impact": "high"
+        },
+        {
+          "category": "Stress",
+          "insight": "Your lowest stress day is Sunday (avg 31.5) and highest is Wednesday (avg 41.4)",
+          "impact": "moderate"
+        },
+        {
+          "category": "Activity",
+          "insight": "You're most active on Mondays (10,807 steps avg)",
+          "impact": "moderate"
+        }
+      ]
+    },
+    "baselines": {
+      "baselines": {
+        "sleep_score": {
+          "name": "Sleep Score",
+          "higher_better": true,
+          "mean": 74.7,
+          "std": 11.3,
+          "min": 55.0,
+          "max": 92.0,
+          "percentiles": {
+            "p10": 59.0,
+            "p25": 64.0,
+            "p50": 76.0,
+            "p75": 84.0,
+            "p90": 90.0
+          },
+          "current_avg": 64.9,
+          "status": "fair",
+          "optimal_range": {
+            "low": 84.0,
+            "high": 90.0
+          },
+          "sample_size": 90
+        },
+        "hrv": {
+          "name": "HRV",
+          "higher_better": true,
+          "mean": 59.5,
+          "std": 9.7,
+          "min": 42.6,
+          "max": 77.8,
+          "percentiles": {
+            "p10": 46.3,
+            "p25": 52.2,
+            "p50": 59.0,
+            "p75": 66.0,
+            "p90": 74.4
+          },
+          "current_avg": 65.7,
+          "status": "good",
+          "optimal_range": {
+            "low": 66.0,
+            "high": 74.4
+          },
+          "sample_size": 90
+        },
+        "avg_stress": {
+          "name": "Average Stress",
+          "higher_better": false,
+          "mean": 36.6,
+          "std": 9.7,
+          "min": 20.0,
+          "max": 52.0,
+          "percentiles": {
+            "p10": 22.0,
+            "p25": 29.0,
+            "p50": 36.0,
+            "p75": 46.0,
+            "p90": 50.0
+          },
+          "current_avg": 35.1,
+          "status": "good",
+          "optimal_range": {
+            "low": 22.0,
+            "high": 29.0
+          },
+          "sample_size": 90
+        },
+        "body_battery_start": {
+          "name": "Morning Energy",
+          "higher_better": true,
+          "mean": 64.1,
+          "std": 16.5,
+          "min": 40.0,
+          "max": 95.0,
+          "percentiles": {
+            "p10": 44.0,
+            "p25": 50.0,
+            "p50": 62.0,
+            "p75": 79.0,
+            "p90": 91.0
+          },
+          "current_avg": 75.3,
+          "status": "good",
+          "optimal_range": {
+            "low": 79.0,
+            "high": 91.0
+          },
+          "sample_size": 90
+        },
+        "steps": {
+          "name": "Daily Steps",
+          "higher_better": true,
+          "mean": 9784.6,
+          "std": 3736.5,
+          "min": 3106.0,
+          "max": 16353.0,
+          "percentiles": {
+            "p10": 4901.0,
+            "p25": 6349.0,
+            "p50": 9948.0,
+            "p75": 12726.0,
+            "p90": 14814.0
+          },
+          "current_avg": 9758.0,
+          "status": "fair",
+          "optimal_range": {
+            "low": 12726.0,
+            "high": 14814.0
+          },
+          "sample_size": 90
+        },
+        "deep_sleep_minutes": {
+          "name": "Deep Sleep",
+          "higher_better": true,
+          "mean": 80.3,
+          "std": 20.7,
+          "min": 40.0,
+          "max": 110.0,
+          "percentiles": {
+            "p10": 50.0,
+            "p25": 63.0,
+            "p50": 82.0,
+            "p75": 98.0,
+            "p90": 108.0
+          },
+          "current_avg": 77.9,
+          "status": "fair",
+          "optimal_range": {
+            "low": 98.0,
+            "high": 108.0
+          },
+          "sample_size": 90
+        },
+        "resting_hr": {
+          "name": "Resting HR",
+          "higher_better": false,
+          "mean": 53.1,
+          "std": 4.2,
+          "min": 46.0,
+          "max": 60.0,
+          "percentiles": {
+            "p10": 47.0,
+            "p25": 50.0,
+            "p50": 54.0,
+            "p75": 57.0,
+            "p90": 59.0
+          },
+          "current_avg": 54.7,
+          "status": "fair",
+          "optimal_range": {
+            "low": 47.0,
+            "high": 50.0
+          },
+          "sample_size": 90
+        }
+      }
+    },
+    "trends": {
+      "trends": {
+        "sleep_score": {
+          "recent_avg": 64.9,
+          "previous_avg": 75.6,
+          "change": -10.7,
+          "change_pct": -14.2,
+          "direction": "worsening"
+        },
+        "hrv": {
+          "recent_avg": 65.7,
+          "previous_avg": 55.4,
+          "change": 10.3,
+          "change_pct": 18.7,
+          "direction": "improving"
+        },
+        "avg_stress": {
+          "recent_avg": 35.1,
+          "previous_avg": 34.9,
+          "change": 0.3,
+          "change_pct": 0.8,
+          "direction": "stable"
+        },
+        "body_battery_start": {
+          "recent_avg": 75.3,
+          "previous_avg": 58.1,
+          "change": 17.1,
+          "change_pct": 29.5,
+          "direction": "improving"
+        },
+        "steps": {
+          "recent_avg": 9758.0,
+          "previous_avg": 13836.0,
+          "change": -4078.0,
+          "change_pct": -29.5,
+          "direction": "worsening"
+        }
+      },
+      "window_days": 7
+    }
+  }
+}
