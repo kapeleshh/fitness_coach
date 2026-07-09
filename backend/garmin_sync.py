@@ -1,7 +1,7 @@
 """
 Garmin Connect Live Data Sync
-Fetches health data directly from Garmin Connect API using python-garminconnect.
-Replaces the need for manual Garmin data exports.
+Fetches health data directly from Garmin Connect API using python-garminconnect
+and upserts it into the SQLite database (see db.py).
 
 Usage:
     # Sync last 7 days
@@ -19,7 +19,6 @@ Setup:
     # Edit backend/.env with your Garmin credentials
 """
 
-import json
 import os
 import sys
 import time
@@ -28,6 +27,8 @@ import logging
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Optional
+
+import db
 
 # Load .env file if present
 def load_env():
@@ -59,7 +60,6 @@ except ImportError as _import_err:
 
 # Paths
 BACKEND_DIR = Path(__file__).parent
-DATA_FILE = BACKEND_DIR / "parsed_health_data.json"
 TOKEN_STORE = Path(os.getenv("GARMIN_TOKEN_STORE", "~/.garminconnect")).expanduser()
 
 logging.basicConfig(level=logging.WARNING)
@@ -131,53 +131,13 @@ def safe_get(func, *args, default=None, **kwargs):
 def fetch_day(client: Garmin, date_str: str) -> dict:
     """
     Fetch all health metrics for a single day from Garmin Connect.
-    Returns a dict compatible with DailyHealthData / parsed_health_data.json format.
+
+    Only keys that were actually fetched are set. A failed or rate-limited
+    sub-fetch leaves its keys absent; db.normalize_record() then stores them
+    as NULL rather than a fake 0, preserving the "NULL means not measured"
+    policy (see db.py).
     """
-    day = {
-        "date": date_str,
-        # Sleep
-        "sleep_score": 0,
-        "deep_sleep_minutes": 0,
-        "light_sleep_minutes": 0,
-        "rem_sleep_minutes": 0,
-        "awake_minutes": 0,
-        "sleep_start_time": None,
-        "sleep_end_time": None,
-        "avg_sleep_stress": 0.0,
-        "sleep_insight": "",
-        "sleep_feedback": "",
-        # Heart Rate & HRV
-        "resting_hr": 0,
-        "min_hr": 0,
-        "max_hr": 0,
-        "hrv": 0.0,
-        "hrv_status": "UNKNOWN",
-        # Body Battery
-        "body_battery_start": 0,
-        "body_battery_end": 0,
-        "body_battery_high": 0,
-        "body_battery_low": 0,
-        "body_battery_charged": 0,
-        "body_battery_drained": 0,
-        # Stress
-        "avg_stress": 0,
-        "max_stress": 0,
-        "stress_rest_minutes": 0,
-        "stress_low_minutes": 0,
-        "stress_medium_minutes": 0,
-        "stress_high_minutes": 0,
-        # Activity
-        "steps": 0,
-        "distance_meters": 0.0,
-        "active_calories": 0,
-        "total_calories": 0,
-        "floors_climbed": 0,
-        "active_minutes": 0,
-        # Respiration
-        "avg_respiration": 0.0,
-        "lowest_respiration": 0.0,
-        "highest_respiration": 0.0,
-    }
+    day: dict = {"date": date_str}
 
     # --- Sleep ---
     sleep_data = safe_get(client.get_sleep_data, date_str, default={})
@@ -250,12 +210,12 @@ def fetch_day(client: Garmin, date_str: str) -> dict:
         moderate = summary.get("moderateIntensityMinutes", 0) or 0
         vigorous = summary.get("vigorousIntensityMinutes", 0) or 0
         day["active_minutes"] = moderate + (vigorous * 2)
-        # Resting HR from summary if not already set
-        if not day["resting_hr"]:
+        # Resting/min/max HR from summary if the heart-rate fetch didn't set them
+        if not day.get("resting_hr"):
             day["resting_hr"] = summary.get("restingHeartRate", 0) or 0
-        if not day["min_hr"]:
+        if not day.get("min_hr"):
             day["min_hr"] = summary.get("minHeartRate", 0) or 0
-        if not day["max_hr"]:
+        if not day.get("max_hr"):
             day["max_hr"] = summary.get("maxHeartRate", 0) or 0
 
     # --- Respiration ---
@@ -270,24 +230,6 @@ def fetch_day(client: Garmin, date_str: str) -> dict:
 
 # ============= SYNC LOGIC =============
 
-def load_existing_data() -> dict:
-    """Load existing parsed_health_data.json as a date-keyed dict."""
-    if DATA_FILE.exists():
-        with open(DATA_FILE, "r") as f:
-            data_list = json.load(f)
-        return {d["date"]: d for d in data_list}
-    return {}
-
-
-def save_data(data_by_date: dict):
-    """Save data dict back to parsed_health_data.json sorted by date descending."""
-    sorted_dates = sorted(data_by_date.keys(), reverse=True)
-    data_list = [data_by_date[d] for d in sorted_dates]
-    with open(DATA_FILE, "w") as f:
-        json.dump(data_list, f, indent=2)
-    print(f"💾 Saved {len(data_list)} days to {DATA_FILE}")
-
-
 def sync_date_range(
     client: Garmin,
     start: date,
@@ -296,10 +238,12 @@ def sync_date_range(
     delay: float = 1.0,
 ) -> dict:
     """
-    Fetch data for each day in [start, end] and merge into existing data.
-    Returns summary of what was synced.
+    Fetch data for each day in [start, end] and upsert into SQLite.
+    Each day is written in its own transaction, so an interrupted sync
+    keeps everything fetched so far. Returns a summary of what was synced.
     """
-    existing = load_existing_data()
+    db.init_db()
+    existing_dates = db.get_existing_dates()
     total_days = (end - start).days + 1
     synced = 0
     skipped = 0
@@ -312,14 +256,14 @@ def sync_date_range(
     while current <= end:
         date_str = current.strftime("%Y-%m-%d")
 
-        if date_str in existing and not overwrite:
+        if date_str in existing_dates and not overwrite:
             print(f"  ⏭️  {date_str} — already exists, skipping")
             skipped += 1
         else:
             print(f"  📥 {date_str} — fetching...", end=" ", flush=True)
             try:
                 day_data = fetch_day(client, date_str)
-                existing[date_str] = day_data
+                db.upsert_days([day_data])
                 synced += 1
                 print("✅")
             except Exception as e:
@@ -330,12 +274,10 @@ def sync_date_range(
 
         current += timedelta(days=1)
 
-    save_data(existing)
-
     return {
         "synced": synced,
         "skipped": skipped,
-        "total": len(existing),
+        "total": db.count_days(),
         "date_range": {"start": str(start), "end": str(end)},
     }
 
@@ -349,13 +291,14 @@ def sync_latest(client: Garmin, days: int = 7) -> dict:
 
 def sync_full(client: Garmin, start_date: Optional[str] = None) -> dict:
     """Sync all data from start_date to today. Skips already-downloaded days."""
+    db.init_db()
     if start_date:
         start = datetime.strptime(start_date, "%Y-%m-%d").date()
     else:
         # Default: start from earliest date in existing data, or 90 days ago
-        existing = load_existing_data()
-        if existing:
-            earliest = min(existing.keys())
+        status = db.get_status()
+        if status.get("status") == "ok":
+            earliest = status["earliest_date"]
             start = datetime.strptime(earliest, "%Y-%m-%d").date()
             print(f"📅 Earliest existing data: {earliest}")
         else:
@@ -369,32 +312,9 @@ def sync_full(client: Garmin, start_date: Optional[str] = None) -> dict:
 # ============= STATUS =============
 
 def get_sync_status() -> dict:
-    """Return info about the current state of parsed_health_data.json."""
-    if not DATA_FILE.exists():
-        return {"status": "no_data", "message": "No data file found. Run sync first."}
-
-    with open(DATA_FILE, "r") as f:
-        data = json.load(f)
-
-    if not data:
-        return {"status": "empty", "message": "Data file is empty."}
-
-    dates = [d["date"] for d in data]
-    dates.sort()
-
-    # Check how stale the data is
-    latest_date = datetime.strptime(dates[-1], "%Y-%m-%d").date()
-    days_stale = (date.today() - latest_date).days
-
-    return {
-        "status": "ok",
-        "total_days": len(data),
-        "earliest_date": dates[0],
-        "latest_date": dates[-1],
-        "days_stale": days_stale,
-        "needs_sync": days_stale > 1,
-        "file_size_kb": round(DATA_FILE.stat().st_size / 1024, 1),
-    }
+    """Return info about the current state of the wellness database."""
+    db.init_db()
+    return db.get_status()
 
 
 # ============= CLI =============
@@ -446,7 +366,7 @@ def main():
     # Status only — no login needed
     if args.status:
         status = get_sync_status()
-        print(f"\n📊 Data Status:")
+        print("\n📊 Data Status:")
         for k, v in status.items():
             print(f"   {k}: {v}")
         return
@@ -464,7 +384,7 @@ def main():
     else:
         result = sync_latest(client, days=args.latest)
 
-    print(f"\n✅ Sync complete!")
+    print("\n✅ Sync complete!")
     print(f"   Fetched: {result['synced']} days")
     print(f"   Skipped: {result['skipped']} days (already existed)")
     print(f"   Total in DB: {result['total']} days")
