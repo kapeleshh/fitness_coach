@@ -2,15 +2,13 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+import '../config.dart';
 
-/// Centralized API service for fetching real Garmin health data
-/// Includes caching, error handling, and data transformation
+/// Centralized API service for fetching real Garmin health data.
+/// The single data-access layer for all screens.
 class HealthApiService extends ChangeNotifier {
-  static const String _baseUrl = 'http://localhost:8081';
-  static const String _cacheKey = 'health_data_cache';
-  static const String _lastSyncKey = 'last_sync_timestamp';
-  static const Duration _cacheValidity = Duration(hours: 1);
-  
+  static const Duration _requestTimeout = Duration(seconds: 10);
+
   List<Map<String, dynamic>> _healthData = [];
   Map<String, dynamic>? _summary;
   bool _isLoading = false;
@@ -41,64 +39,81 @@ class HealthApiService extends ChangeNotifier {
   List<Map<String, dynamic>> get last30Days => 
       _healthData.take(30).toList();
   
-  /// Initialize the service - load from cache then refresh
+  /// Initialize the service by fetching data from the API.
   Future<void> initialize() async {
-    await _loadFromCache();
     await refresh();
   }
-  
+
   /// Force refresh data from API
   Future<void> refresh() async {
     _isLoading = true;
     _error = null;
     notifyListeners();
-    
+
     try {
       // Fetch summary
       final summaryRes = await http.get(
-        Uri.parse('$_baseUrl/api/summary'),
-      ).timeout(const Duration(seconds: 10));
-      
+        Uri.parse('$apiBaseUrl/api/summary'),
+      ).timeout(_requestTimeout);
+
       if (summaryRes.statusCode == 200) {
         _summary = json.decode(summaryRes.body);
       }
-      
+
       // Fetch all health data
       final dataRes = await http.get(
-        Uri.parse('$_baseUrl/api/health-data'),
-      ).timeout(const Duration(seconds: 10));
-      
+        Uri.parse('$apiBaseUrl/api/health-data'),
+      ).timeout(_requestTimeout);
+
       if (dataRes.statusCode == 200) {
         final List<dynamic> jsonList = json.decode(dataRes.body);
         _healthData = jsonList.cast<Map<String, dynamic>>();
         _lastSync = DateTime.now();
-        
-        // Save to cache
-        await _saveToCache();
       }
-      
+
       _isLoading = false;
     } catch (e) {
-      _error = 'Unable to connect to health data API. Using cached data.';
+      _error = 'Unable to connect to the health data API at $apiBaseUrl. '
+          'Make sure the backend server is running.';
       _isLoading = false;
       debugPrint('API Error: $e');
     }
-    
+
     notifyListeners();
   }
-  
-  /// Load data from local cache (simplified - no shared_preferences)
-  Future<void> _loadFromCache() async {
-    // For web, we skip local cache - data loads fresh from API
-    debugPrint('Cache: Using API data directly');
+
+  /// Fetch the backend analytics endpoints (correlations, anomalies,
+  /// weekly patterns, baselines). Returns a map keyed by endpoint name.
+  /// Throws on connection failure so callers can render an error state.
+  Future<Map<String, Map<String, dynamic>>> fetchAnalytics() async {
+    const endpoints = ['correlations', 'anomalies', 'weekly', 'baselines'];
+    final responses = await Future.wait(endpoints.map(
+      (e) => http
+          .get(Uri.parse('$apiBaseUrl/api/analytics/$e'))
+          .timeout(_requestTimeout),
+    ));
+
+    final result = <String, Map<String, dynamic>>{};
+    for (var i = 0; i < endpoints.length; i++) {
+      final res = responses[i];
+      if (res.statusCode != 200) {
+        // Surface a clear error instead of letting json.decode throw on a
+        // non-JSON error body, so callers can render an error state.
+        throw Exception(
+          'Analytics endpoint /${endpoints[i]} returned ${res.statusCode}',
+        );
+      }
+      result[endpoints[i]] = json.decode(res.body) as Map<String, dynamic>;
+    }
+    return result;
   }
-  
-  /// Save data to local cache (simplified - no shared_preferences)
-  Future<void> _saveToCache() async {
-    // For web, caching is handled by browser
-    debugPrint('Cache: Data saved in memory');
+
+  /// Replace the in-memory data set. Only for tests.
+  @visibleForTesting
+  void setHealthDataForTest(List<Map<String, dynamic>> data) {
+    _healthData = data;
   }
-  
+
   /// Get data for specific date range
   List<Map<String, dynamic>> getDateRange(DateTime start, DateTime end) {
     return _healthData.where((d) {
@@ -381,10 +396,15 @@ class HealthApiService extends ChangeNotifier {
     double correlation = numerator / sqrt(denom1 * denom2);
     
     String strength;
-    if (correlation.abs() > 0.7) strength = 'strong';
-    else if (correlation.abs() > 0.4) strength = 'moderate';
-    else if (correlation.abs() > 0.2) strength = 'weak';
-    else strength = 'none';
+    if (correlation.abs() > 0.7) {
+      strength = 'strong';
+    } else if (correlation.abs() > 0.4) {
+      strength = 'moderate';
+    } else if (correlation.abs() > 0.2) {
+      strength = 'weak';
+    } else {
+      strength = 'none';
+    }
     
     return {
       'correlation': correlation,

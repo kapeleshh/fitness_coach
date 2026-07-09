@@ -120,14 +120,14 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [intensityColor, intensityColor.withOpacity(0.7)],
+          colors: [intensityColor, intensityColor.withValues(alpha: 0.7)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: intensityColor.withOpacity(0.3),
+            color: intensityColor.withValues(alpha: 0.3),
             blurRadius: 15,
             offset: const Offset(0, 8),
           ),
@@ -160,7 +160,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
                 height: 80,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                 ),
                 child: Stack(
                   alignment: Alignment.center,
@@ -171,7 +171,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
                       child: CircularProgressIndicator(
                         value: (_prediction!['predictedBodyBattery'] ?? 50) / 100,
                         strokeWidth: 6,
-                        backgroundColor: Colors.white.withOpacity(0.3),
+                        backgroundColor: Colors.white.withValues(alpha: 0.3),
                         valueColor: const AlwaysStoppedAnimation(Colors.white),
                       ),
                     ),
@@ -189,7 +189,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
                         Text(
                           'Battery',
                           style: TextStyle(
-                            color: Colors.white.withOpacity(0.8),
+                            color: Colors.white.withValues(alpha: 0.8),
                             fontSize: 10,
                           ),
                         ),
@@ -215,7 +215,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
                     Text(
                       'Recommended',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.8),
+                        color: Colors.white.withValues(alpha: 0.8),
                         fontSize: 12,
                       ),
                     ),
@@ -223,7 +223,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.2),
+                        color: Colors.white.withValues(alpha: 0.2),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Text(
@@ -245,7 +245,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.15),
+              color: Colors.white.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Row(
@@ -285,13 +285,13 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
           ),
         ),
         const SizedBox(height: 8),
-        Text(
+        const Text(
           'What\'s influencing tomorrow\'s prediction',
           style: TextStyle(color: AppTheme.textSecondary, fontSize: 14),
         ),
         const SizedBox(height: 16),
         
-        ...factors.map((factor) => _buildFactorCard(factor)).toList(),
+        ...factors.map((factor) => _buildFactorCard(factor)),
         
         // Current day stats
         if (_today != null) ...[
@@ -348,7 +348,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: impactColor.withOpacity(0.3),
+          color: impactColor.withValues(alpha: 0.3),
         ),
       ),
       child: Row(
@@ -357,7 +357,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: impactColor.withOpacity(0.1),
+              color: impactColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(impactIcon, color: impactColor, size: 20),
@@ -387,7 +387,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             decoration: BoxDecoration(
-              color: impactColor.withOpacity(0.1),
+              color: impactColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
@@ -560,7 +560,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
                 borderRadius: BorderRadius.circular(4),
                 child: LinearProgressIndicator(
                   value: (value / max).clamp(0, 1),
-                  backgroundColor: color.withOpacity(0.2),
+                  backgroundColor: color.withValues(alpha: 0.2),
                   valueColor: AlwaysStoppedAnimation(color),
                   minHeight: 6,
                 ),
@@ -627,7 +627,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
           width: 50,
           height: 50,
           decoration: BoxDecoration(
-            color: color.withOpacity(0.1),
+            color: color.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Center(
