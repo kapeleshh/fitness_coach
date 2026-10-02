@@ -1,8 +1,8 @@
 """SQLite storage layer for the fitness coach backend.
 
-Replaces the single parsed_health_data.json file. Two tables for now
-(Phase 1): daily_wellness and user_settings. Activity and plan tables are
-added in later phases, designed against real payloads.
+Replaces the single parsed_health_data.json file. Tables: daily_wellness
+(one row per day), activities (one row per session, from Strava and Garmin;
+normalization and dedup live in activities.py), and user_settings.
 
 Data-integrity policy (the reason this module exists):
 - Every metric column is NULLABLE. NULL means "not measured that day".
@@ -105,6 +105,28 @@ SLEEP_STAGE_FIELDS = {
     "awake_minutes",
 }
 
+ACTIVITY_FIELDS: dict[str, str] = {
+    "id": "TEXT PRIMARY KEY",           # "<source>:<source_id>"
+    "source": "TEXT NOT NULL",          # "strava" | "garmin"
+    "source_id": "TEXT NOT NULL",
+    "start_time_utc": "TEXT NOT NULL",  # ISO 8601, "YYYY-MM-DDTHH:MM:SSZ"
+    "local_date": "TEXT NOT NULL",      # YYYY-MM-DD in the athlete's timezone
+    "sport_type": "TEXT",               # source's own name (e.g. TrailRun)
+    "sport_family": "TEXT",             # shared family (run/ride/swim/...)
+    "name": "TEXT",
+    "duration_s": "REAL",               # elapsed time
+    "moving_time_s": "REAL",
+    "distance_m": "REAL",
+    "elevation_gain_m": "REAL",
+    "avg_hr": "REAL",
+    "max_hr": "REAL",
+    "avg_power": "REAL",
+    "calories": "REAL",
+    "suffer_score": "REAL",             # Strava relative effort
+    "training_load": "REAL",            # Garmin activity training load
+    "duplicate_of": "TEXT REFERENCES activities(id) ON DELETE SET NULL",
+}
+
 _NUMERIC_FIELDS = {
     name for name, sql_type in DAILY_FIELDS.items() if sql_type in ("INTEGER", "REAL")
 }
@@ -161,6 +183,18 @@ def init_db(path: Path | None = None) -> None:
             {columns},
             synced_at TEXT
         )""")
+        activity_columns = ",\n            ".join(
+            f"{name} {sql_type}" for name, sql_type in ACTIVITY_FIELDS.items()
+        )
+        conn.execute(f"""
+        CREATE TABLE IF NOT EXISTS activities (
+            {activity_columns},
+            synced_at TEXT
+        )""")
+        conn.execute(
+            "CREATE INDEX IF NOT EXISTS idx_activities_local_date "
+            "ON activities (local_date)"
+        )
         conn.execute("""
         CREATE TABLE IF NOT EXISTS user_settings (
             key TEXT PRIMARY KEY,
@@ -299,6 +333,103 @@ def get_status(path: Path | None = None) -> dict:
     }
 
 
+# ============= ACTIVITIES =============
+
+def upsert_activities(records: list[dict], path: Path | None = None) -> int:
+    """Insert or update already-normalized activities (activities.normalize_activity)
+    in one transaction. duplicate_of is left untouched on update — it is
+    recomputed by activities.ingest() after every write."""
+    if not records:
+        return 0
+    fields = [f for f in ACTIVITY_FIELDS if f != "duplicate_of"]
+    updates = ", ".join(f"{f} = excluded.{f}" for f in fields if f != "id")
+    sql = (
+        f"INSERT INTO activities ({', '.join(fields)}, synced_at) "
+        f"VALUES ({', '.join('?' for _ in fields)}, ?) "
+        f"ON CONFLICT(id) DO UPDATE SET {updates}, synced_at = excluded.synced_at"
+    )
+    now = datetime.now().isoformat(timespec="seconds")
+    rows = [tuple(r[f] for f in fields) + (now,) for r in records]
+    with connect(path) as conn:
+        conn.executemany(sql, rows)
+    return len(rows)
+
+
+def get_activities(start: str | None = None, end: str | None = None,
+                   include_duplicates: bool = False,
+                   path: Path | None = None) -> list[dict]:
+    """Activities newest first, optionally limited to local_date in [start, end].
+    By default only canonical rows (duplicate_of IS NULL) are returned."""
+    clauses, params = [], []
+    if start:
+        clauses.append("local_date >= ?")
+        params.append(start)
+    if end:
+        clauses.append("local_date <= ?")
+        params.append(end)
+    if not include_duplicates:
+        clauses.append("duplicate_of IS NULL")
+    where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+    with connect(path) as conn:
+        rows = conn.execute(
+            f"SELECT {', '.join(ACTIVITY_FIELDS)} FROM activities {where} "
+            "ORDER BY start_time_utc DESC",
+            params,
+        ).fetchall()
+    return [dict(row) for row in rows]
+
+
+def get_activity(activity_id: str, path: Path | None = None) -> dict | None:
+    with connect(path) as conn:
+        row = conn.execute(
+            f"SELECT {', '.join(ACTIVITY_FIELDS)} FROM activities WHERE id = ?",
+            (activity_id,),
+        ).fetchone()
+    return dict(row) if row else None
+
+
+def set_duplicate_links(links: dict[str, str], path: Path | None = None) -> None:
+    """Replace all duplicate links with `links` ({duplicate_id: canonical_id})."""
+    with connect(path) as conn:
+        conn.execute("UPDATE activities SET duplicate_of = NULL")
+        conn.executemany(
+            "UPDATE activities SET duplicate_of = ? WHERE id = ?",
+            [(canonical, dup) for dup, canonical in links.items()],
+        )
+
+
+def latest_activity_start(source: str, path: Path | None = None) -> str | None:
+    with connect(path) as conn:
+        row = conn.execute(
+            "SELECT MAX(start_time_utc) AS latest FROM activities WHERE source = ?",
+            (source,),
+        ).fetchone()
+    return row["latest"]
+
+
+def activity_summary(path: Path | None = None) -> dict:
+    """Per-source counts and date span, plus how many rows are duplicates."""
+    with connect(path) as conn:
+        rows = conn.execute(
+            "SELECT source, COUNT(*) AS n, MIN(local_date) AS earliest, "
+            "MAX(local_date) AS latest, "
+            "SUM(CASE WHEN duplicate_of IS NOT NULL THEN 1 ELSE 0 END) AS duplicates "
+            "FROM activities GROUP BY source ORDER BY source"
+        ).fetchall()
+    by_source = {
+        row["source"]: {
+            "count": row["n"],
+            "earliest": row["earliest"],
+            "latest": row["latest"],
+            "duplicates": row["duplicates"],
+        }
+        for row in rows
+    }
+    total = sum(s["count"] for s in by_source.values())
+    duplicates = sum(s["duplicates"] for s in by_source.values())
+    return {"total": total, "canonical": total - duplicates, "by_source": by_source}
+
+
 # ============= JSON IMPORT (legacy migration) =============
 
 def import_json(json_path: Path, path: Path | None = None) -> int:
@@ -372,3 +503,4 @@ if __name__ == "__main__":
         print(f"Imported {n} days into {db_path()}")
     if args.coverage or not args.import_json:
         print(json.dumps(coverage_report(), indent=2))
+        print(json.dumps({"activities": activity_summary()}, indent=2))

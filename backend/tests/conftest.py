@@ -11,6 +11,7 @@ def temp_db(tmp_path, monkeypatch):
     monkeypatch.setenv("FITNESS_COACH_DB", str(db_file))
     # Never let tests start the background sync scheduler.
     monkeypatch.setenv("GARMIN_AUTO_SYNC", "0")
+    monkeypatch.setenv("STRAVA_AUTO_SYNC", "0")
     # Never let the server's empty-DB migration ingest the developer's real
     # parsed_health_data.json into a test database.
     monkeypatch.setenv("FITNESS_COACH_IMPORT_LEGACY", "0")
