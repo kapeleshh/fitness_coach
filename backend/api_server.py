@@ -23,6 +23,7 @@ import coach
 import db
 import readiness_engine
 import strava_sync
+import training_load_engine
 from analytics_engine import (
     analyze_trends,
     analyze_weekly_patterns,
@@ -62,6 +63,8 @@ ENDPOINT_LIST = [
     "GET  /api/readiness",
     "GET  /api/readiness/history",
     "GET  /api/readiness/YYYY-MM-DD",
+    "GET  /api/training-load",
+    "GET  /api/training-load/history",
     "GET  /api/activities",
     "GET  /api/activities/SOURCE:ID",
     "GET  /api/sync/status",
@@ -307,9 +310,16 @@ def analytics_trends():
 
 # ========== READINESS ENDPOINTS ==========
 
+def _with_training_load(readiness: dict) -> dict:
+    """Attach the training-load state for the readiness date and append the
+    fused load note to the briefing (readiness scoring stays wellness-only)."""
+    state = training_load_engine.state_on(readiness["date"], training_load_engine.compute())
+    return training_load_engine.annotate_readiness(readiness, state)
+
+
 @app.get("/api/readiness")
 def readiness_today():
-    return readiness_engine.readiness_today()
+    return _with_training_load(readiness_engine.readiness_today())
 
 
 @app.get("/api/readiness/history")
@@ -323,7 +333,19 @@ def readiness_for_date(date_str: str):
         datetime.strptime(date_str, "%Y-%m-%d")
     except ValueError:
         return _error("Date must be YYYY-MM-DD", status=400)
-    return readiness_engine.score_date(db.get_all_days(), date_str)
+    return _with_training_load(readiness_engine.score_date(db.get_all_days(), date_str))
+
+
+# ========== TRAINING LOAD ENDPOINTS ==========
+
+@app.get("/api/training-load")
+def training_load_today():
+    return training_load_engine.training_load_today()
+
+
+@app.get("/api/training-load/history")
+def training_load_history(days: int = 90):
+    return training_load_engine.training_load_history(days=days)
 
 
 # ========== ACTIVITY ENDPOINTS ==========

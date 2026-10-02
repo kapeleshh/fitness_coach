@@ -9,9 +9,15 @@ Transport is an OpenAI-compatible /v1/chat/completions endpoint, so the model
 host is swappable by config (Ollama on a Mac, mlx-lm, LM Studio, llama.cpp):
 set LLM_BASE_URL / LLM_MODEL / LLM_API_KEY. Nothing here is host-specific.
 
-Grounding today is the recent wellness summary that already lives in SQLite.
-When the readiness and training-load engines land, add their numbers to
-build_context() — the transport, endpoint, and client stay unchanged.
+Grounding is assembled in build_context(): today's readiness verdict, the
+recent wellness summary, and training load (fitness/fatigue/form and recent
+sessions) — all deterministic numbers the model only rephrases.
+
+Strava data never reaches the model. Strava's API Policy (effective
+2026-06-01) bars using Strava Data — including anything derived from it — in
+the operation or grounding of an AI application, so the coach's training
+load is computed from Garmin-recorded activities alone (AI_EXCLUDED_SOURCES).
+The deterministic /api/training-load endpoints still use every source.
 """
 
 import json
@@ -25,6 +31,18 @@ import db
 DEFAULT_BASE_URL = "http://localhost:11434/v1"
 DEFAULT_MODEL = "llama3.1:8b"
 _TIMEOUT = httpx.Timeout(60.0, connect=5.0)
+
+# Activity sources whose rows, and anything derived from them, must stay out
+# of the model's context (see the module docstring).
+AI_EXCLUDED_SOURCES = ("strava",)
+
+_METHOD_LABEL = {
+    "garmin_load": "Garmin training load",
+    "trimp": "heart-rate TRIMP",
+    "relative_effort": "relative effort",
+    "duration_estimate": "estimated from duration",
+    "none": "no load data",
+}
 
 SYSTEM_PROMPT = (
     "You are a personal fitness coach. You are given the athlete's recent "
@@ -52,23 +70,25 @@ def llm_config() -> dict:
 
 
 def build_context(days: int = 7) -> str:
-    """Assemble the grounding block from the most recent wellness records.
+    """Assemble the grounding block from the most recent wellness records
+    and training load.
 
     Uses NULL-aware records (missing metrics are omitted, not shown as 0) so
-    the model never sees a fabricated zero. Readiness score and CTL/ATL/TSB
-    will be appended here once those engines exist.
+    the model never sees a fabricated zero.
     """
     records = db.get_all_days()[:days]
     if not records:
-        return "No wellness data has been synced yet."
+        return "\n".join(["No wellness data has been synced yet.", *_training_load_lines(None)])
 
     # Today's readiness verdict (deterministic) leads the context so the model
     # grounds on the computed score/band and never recomputes it.
     lines: list[str] = []
+    readiness = None
     try:
         import readiness_engine
         r = readiness_engine.readiness_today()
         if r.get("score") is not None:
+            readiness = r
             lines.append(
                 f"Today's readiness: {r['score']}/100 ({r['band']}, "
                 f"{r['confidence']} confidence). {r['briefing']}"
@@ -90,7 +110,46 @@ def build_context(days: int = 7) -> str:
             f"{label} {r[key]}" for key, label in metrics if r.get(key) is not None
         ]
         lines.append(f"- {r['date']}: " + (", ".join(parts) if parts else "no data"))
+    lines.extend(_training_load_lines(readiness))
     return "\n".join(lines)
+
+
+def _training_load_lines(readiness: dict | None) -> list[str]:
+    """Training-load section, Garmin-recorded activities only. Activity names
+    are omitted: they are free text the athlete (or anyone) can edit."""
+    lines = [(
+        "Training load (computed from Garmin-recorded activities only; "
+        "activities recorded only on Strava are not visible to you):"
+    )]
+    try:
+        import training_load_engine as tle
+        data = tle.compute(exclude_sources=AI_EXCLUDED_SOURCES)
+    except Exception:  # noqa: BLE001 — best-effort context, like readiness above
+        return [*lines, "- unavailable"]
+    if not data["series"]:
+        return [*lines, "- no Garmin-recorded activities yet"]
+
+    state = None
+    if readiness is not None:
+        state = tle.state_on(readiness["date"], data)
+    if state is None:
+        state = tle.describe(data["series"][-1], data["sessions"])
+    note = (tle.readiness_note(readiness["band"], state)
+            if readiness is not None and state["date"] == readiness["date"]
+            else state["summary"])
+    lines.append(f"- as of {state['date']}: {note} Confidence: {state['confidence']}.")
+    week = state["last_7_days"]
+    lines.append(
+        f"- last 7 days: {week['sessions']} sessions, {week['minutes']} min, "
+        f"total load {week['load']:.0f}"
+    )
+    for s in state["recent_sessions"]:
+        minutes = f"{s['minutes']:.0f} min" if s["minutes"] else "duration unknown"
+        lines.append(
+            f"- {s['local_date']}: {s['sport_family']}, {minutes}, load {s['load']:.0f} "
+            f"({_METHOD_LABEL.get(s['method'], s['method'])})"
+        )
+    return lines
 
 
 async def stream_chat(
