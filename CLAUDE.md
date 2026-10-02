@@ -23,11 +23,16 @@ python garmin_sync.py --full   # sync all history; --start/--end for a range
 python garmin_parser.py        # parse a manual Garmin export in data/ → parsed_health_data.json (legacy; auto-imported into SQLite on server start when the DB is empty)
 python db.py --coverage        # field-coverage audit of the wellness data
 python db.py --import-json parsed_health_data.json   # manual legacy-JSON import
-pytest                         # run tests (golden contract + db + behavior)
+pytest                         # run tests (golden contract + db + readiness + coach + behavior)
+pytest tests/test_readiness.py -k <name>   # single file / single test
 ruff check .                   # lint
 ```
 
+Prefix with `uv run` if the venv isn't activated.
+
 Golden contract files in `backend/tests/goldens/` were captured from the original stdlib server on a synthetic dataset — they pin the API contract across refactors. Don't regenerate them from the FastAPI implementation.
+
+Test isolation (`tests/conftest.py`): use the `temp_db` (empty) or `populated_db` (deterministic 90-day synthetic dataset) fixtures. They work by setting env vars the backend honors — `FITNESS_COACH_DB` (SQLite path override), `GARMIN_AUTO_SYNC=0` (no scheduler), and `FITNESS_COACH_IMPORT_LEGACY=0` (stops the empty-DB startup import from pulling a developer's real `parsed_health_data.json` into the test DB). Any new test touching the DB or the app must go through these fixtures.
 
 ### Mobile app (run from `mobile_app/`)
 
@@ -59,7 +64,7 @@ The daily record schema is defined in the `DailyHealthData` dataclass in `backen
 - **`analytics_engine.py` is pure stdlib** — correlations, anomaly detection, trends etc. are hand-rolled (Pearson via `math`). It still consumes legacy zero-filled records (missing = 0); its statistical cleanup is a backlog item. Don't add heavy deps casually.
 - **New endpoints** go in `api_server.py` (FastAPI routes) and must be added to `ENDPOINT_LIST` (the 404 body). The `unknown_path` golden treats `ENDPOINT_LIST` as a superset check, so adding an endpoint doesn't break the contract test.
 - **Readiness engine** (`readiness_engine.py`, `GET /api/readiness`, `/api/readiness/history`, `/api/readiness/{date}`): pure-stdlib, NULL-aware daily readiness (0-100, green/amber/red) from wellness only. Two-axis composite — autonomic (ln-HRV 7-day vs 60-day baseline + SWC deadband + CV penalty, morning body battery, resting-HR) 0.65 and sleep 0.35 — with Garmin `hrv_status` cold-start fallback, illness/severe-HRV overrides, and a deterministic templated `briefing`. Reads `db.get_all_days(legacy_zero_fill=False)`; baselines are point-in-time (no lookahead). It intentionally does **not** reuse `analytics_engine.py` (that module is legacy zero-fill). Constants/methodology are literature-grounded (Plews/Buchheit) — retune constants at the top of the module, not scattered.
-- **LLM coach** (`coach.py`, `POST /api/coach/chat`): streams a reply from an OpenAI-compatible endpoint (`LLM_BASE_URL`/`LLM_MODEL`/`LLM_API_KEY`, default local Ollama) — host-swappable (Ollama/mlx-lm/LM Studio/llama.cpp). Grounding is assembled **server-side** in `coach.build_context()` from NULL-aware wellness records; the model must never invent numbers. Readiness/training-load numbers get added to that context when those engines land. Clients send only `{"question": ...}`.
+- **LLM coach** (`coach.py`, `POST /api/coach/chat`): streams a reply from an OpenAI-compatible endpoint (`LLM_BASE_URL`/`LLM_MODEL`/`LLM_API_KEY`, default local Ollama) — host-swappable (Ollama/mlx-lm/LM Studio/llama.cpp). Grounding is assembled **server-side** in `coach.build_context()` from NULL-aware wellness records; the model must never invent numbers. Readiness/training-load numbers get added to that context when those engines land. Clients send only `{"question": ...}`. LLM config resolves env var → DB settings overrides (`db.get_all_settings()`, keys `llm_base_url`/`llm_model`/`llm_api_key`) → default. The Flutter app doesn't call the readiness or coach endpoints yet; it only uses `/api/summary`, `/api/health-data`, and `/api/analytics/*`.
 
 ## Privacy Constraints
 
