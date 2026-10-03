@@ -1,287 +1,89 @@
-# 🏃‍♂️ Personal Fitness Coach - AI-Powered Wellness Platform
+# Personal Fitness Coach
 
-> Transform your Garmin data into actionable health insights using AI
+Turns your Garmin wellness data and your Garmin and Strava workout history into a daily readiness score, a training-load picture and a coach you can ask questions. It all runs locally on your own data.
 
-## 📊 Current Project Status
+## What it does
 
-### ✅ Phase 1: COMPLETE - Foundation & Data Infrastructure
+- **Sync**: Garmin Connect wellness (sleep, HRV, resting HR, body battery, stress, steps) and activities, refreshed every 6 hours. Strava history comes from your bulk export, with optional ongoing sync through the Strava API. Activities Garmin uploads to Strava are recognised as duplicates.
+- **Readiness**: a daily 0–100 score (green, amber or red) built from HRV against your own baseline, resting heart rate, body battery and sleep.
+- **Training load**: fitness, fatigue and form (CTL / ATL / TSB) from every session, with the method behind each session's number recorded.
+- **Coach**: ask in plain language, and a language model answers using only the numbers the backend computed. Strava data is never sent to the model, because Strava's API Policy forbids it.
+- **App**: a Flutter app (web for now) with Today, Coach, My Data, Insights and Analyze tabs.
 
-| Component | Status | Description |
-|-----------|--------|-------------|
-| Garmin Data Export | ✅ Done | 86 days of personal health data |
-| Data Parser | ✅ Done | `backend/garmin_parser.py` extracts all metrics |
-| API Server | ✅ Done | `backend/api_server.py` serves data at port 8081 |
-| Parsed Data | ✅ Done | `backend/parsed_health_data.json` - unified format |
+Two parts, talking only over HTTP:
 
-**Data Available:**
-- Sleep: Score, deep/light/REM stages, sleep stress, insights
-- Body Battery: Start, end, high, low, charged/drained values
-- HRV: Daily average with baseline status
-- Stress: Average, max, duration by category (rest/low/medium/high)
-- Activity: Steps, calories, distance, active minutes
-- Heart Rate: Resting, min, max
-- Respiration: Average, low, high rates
+- `backend/`: Python 3.12+, FastAPI on port 8081 and SQLite (`backend/fitness.db`). It holds the sync jobs, the readiness and training-load engines, and the coach.
+- `mobile_app/`: the Flutter app.
 
-### ✅ Phase 2: COMPLETE - Mobile App UI
+## Quick start
 
-| Component | Status | Description |
-|-----------|--------|-------------|
-| Flutter Project | ✅ Done | `mobile_app/` with full structure |
-| Real Data Dashboard | ✅ Done | Shows YOUR actual Garmin data |
-| Insights Feed | ✅ Done | AI insight cards (mock data) |
-| Pattern Explorer | ✅ Done | Correlation visualization |
-| Predictions Center | ✅ Done | Workout predictions UI |
-| AI Coach Chat | ✅ Done | Chat interface (mock responses) |
-| Theme System | ✅ Done | Material 3 with Garmin-inspired colors |
-
-**Currently Running:**
-- App: http://localhost:8080
-- API: http://localhost:8081
-
----
-
-## 🗺️ Project Roadmap
-
-### Phase 3: Real Data Integration (Next Up)
-**Priority: HIGH | Effort: 2-3 days**
-
-```
-[ ] Replace mock data service with real API calls across all screens
-[ ] Add data caching with local storage
-[ ] Implement pull-to-refresh with API sync
-[ ] Add date range filtering for historical data
-[ ] Create data export functionality (CSV/PDF)
-```
-
-### Phase 4: AI Pattern Analysis Engine
-**Priority: HIGH | Effort: 1-2 weeks**
-
-```
-[ ] Build correlation analysis engine
-    - Sleep score ↔ Next day HRV
-    - Stress ↔ Sleep quality
-    - Body Battery ↔ Workout performance
-    - Steps ↔ Sleep depth
-    
-[ ] Implement anomaly detection
-    - Unusual HRV drops
-    - Sleep pattern changes
-    - Stress spikes
-    
-[ ] Create trend analysis
-    - 7-day, 30-day, 90-day trends
-    - Seasonal patterns
-    - Week vs weekend comparisons
-```
-
-### Phase 5: Prediction Models
-**Priority: MEDIUM | Effort: 2 weeks**
-
-```
-[ ] Tomorrow's Body Battery prediction
-    - Based on sleep, stress, activity patterns
-    
-[ ] Optimal workout timing prediction
-    - When you'll have peak energy
-    
-[ ] Sleep quality prediction
-    - Based on day's stress/activity
-    
-[ ] Recovery time estimation
-    - After workouts or high-stress days
-```
-
-### Phase 6: OpenAI/LLM Integration
-**Priority: HIGH | Effort: 1 week**
-
-```
-[ ] AI Coach powered by GPT-4
-    - Natural language health queries
-    - Personalized recommendations
-    - Context-aware responses using YOUR data
-    
-[ ] Daily health briefings
-    - AI-generated morning summary
-    - Evening recovery suggestions
-    
-[ ] Weekly health reports
-    - AI analysis of patterns
-    - Actionable improvement tips
-```
-
-### Phase 7: Experiments & A/B Testing
-**Priority: MEDIUM | Effort: 1-2 weeks**
-
-```
-[ ] Self-experimentation framework
-    - "What if I go to bed 30min earlier?"
-    - "Does meditation improve my HRV?"
-    - "Do morning workouts vs evening affect sleep?"
-    
-[ ] Experiment tracking
-    - Control vs experiment periods
-    - Statistical significance calculation
-    
-[ ] Results visualization
-    - Before/after comparisons
-    - Confidence intervals
-```
-
-### Phase 8: Notifications & Automation
-**Priority: MEDIUM | Effort: 1 week**
-
-```
-[ ] Smart notifications
-    - "Body Battery is low, consider resting today"
-    - "Great sleep! Good day for intense workout"
-    - "Stress has been high, try breathing exercise"
-    
-[ ] Bedtime reminders
-    - Based on optimal sleep patterns
-    
-[ ] Workout suggestions
-    - Based on recovery status
-```
-
-### Phase 9: Garmin Live Sync (Advanced)
-**Priority: LOW | Effort: 2-3 weeks**
-
-```
-[ ] Garmin Connect API integration
-    - OAuth authentication
-    - Real-time data sync (vs manual export)
-    - Webhook notifications
-    
-[ ] Background sync
-    - Automatic daily updates
-    - Last sync status
-```
-
-### Phase 10: Deployment & Mobile
-**Priority: MEDIUM | Effort: 1-2 weeks**
-
-```
-[ ] Cloud deployment
-    - Backend on Railway/Render/AWS
-    - Database for historical data
-    
-[ ] Mobile app builds
-    - iOS App Store deployment
-    - Android Play Store deployment
-    - PWA for instant install
-```
-
----
-
-## 🏗️ Tech Stack
-
-### Current
-- **Frontend:** Flutter 3.41 (Web)
-- **Backend:** Python (stdlib http.server)
-- **Data:** JSON files
-- **State:** Provider pattern
-
-### Planned Additions
-- **Backend:** FastAPI + PostgreSQL
-- **AI:** OpenAI GPT-4 / Claude
-- **Analytics:** Pandas + SciPy
-- **ML:** scikit-learn for predictions
-- **Hosting:** Railway / Vercel
-
----
-
-## 📁 Project Structure
-
-```
-fitness_coach/
-├── data/                          # Garmin export data
-│   └── [garmin-uuid]/
-│       └── DI_CONNECT/
-│           ├── DI-Connect-Wellness/    # Sleep, HRV, stress
-│           ├── DI-Connect-Aggregator/  # Body battery, steps
-│           └── DI-Connect-Fitness/     # Activities
-│
-├── backend/
-│   ├── garmin_parser.py          # Parses Garmin exports
-│   ├── api_server.py             # HTTP API server
-│   └── parsed_health_data.json   # 86 days of parsed data
-│
-└── mobile_app/
-    └── lib/
-        ├── main.dart
-        ├── app.dart
-        ├── theme/app_theme.dart
-        ├── models/
-        │   ├── health_data.dart
-        │   ├── insight.dart
-        │   └── prediction.dart
-        ├── services/
-        │   ├── mock_data_service.dart
-        │   └── insight_service.dart
-        ├── screens/
-        │   ├── real_data_dashboard.dart   # YOUR DATA
-        │   ├── insights_feed_screen.dart
-        │   ├── correlation_explorer_screen.dart
-        │   ├── predictions_center_screen.dart
-        │   └── ask_coach_screen.dart
-        └── widgets/
-            ├── insight_card.dart
-            ├── health_score_card.dart
-            └── prediction_card.dart
-```
-
----
-
-## 🚀 Quick Start
+### 1. Backend
 
 ```bash
-# 1. Start the API server (serves your Garmin data)
-cd fitness_coach
-python3 backend/api_server.py
-# API now at http://localhost:8081
-
-# 2. Serve the web app
-cd mobile_app/build/web
-python3 -m http.server 8080
-# App now at http://localhost:8080
-
-# 3. Open http://localhost:8080 in your browser
+cd backend
+uv sync
+cp .env.example .env                    # add GARMIN_EMAIL and GARMIN_PASSWORD
+uv run python garmin_sync.py --full     # first sync; later runs fetch the last 7 days
+uv run python api_server.py             # API on http://localhost:8081
 ```
 
-### Re-parse Garmin data (after new export)
+While it runs, the server re-syncs every 6 hours (`GARMIN_SYNC_INTERVAL_HOURS`; `GARMIN_AUTO_SYNC=0` turns it off). Without Garmin credentials you can export your data from Garmin Connect into `data/` and run `uv run python garmin_parser.py`. The server imports the result the first time it starts.
+
+### 2. Strava history (optional)
+
+1. Request your archive in Strava (Settings → My Account → Download or Delete Your Account) and put the zip in `data/`.
+2. `uv run python strava_import.py data/<export>.zip --tz <your IANA timezone>`
+3. For ongoing sync, create an API application at <https://www.strava.com/settings/api> with callback domain `localhost`. Put `STRAVA_CLIENT_ID` and `STRAVA_CLIENT_SECRET` in `.env`, then run `uv run python strava_sync.py --auth` once.
+
+### 3. Coach (optional)
+
+Install [Ollama](https://ollama.com) and run `ollama pull llama3.1:8b`. Any OpenAI-compatible server works too: set `LLM_BASE_URL`, `LLM_MODEL` and `LLM_API_KEY` in `.env`. Without a model the Coach tab shows an error, and everything else still works.
+
+### 4. App
+
 ```bash
-python3 backend/garmin_parser.py
+cd mobile_app
+flutter run -d chrome
+# Backend on another machine:
+#   flutter run -d chrome --dart-define=API_BASE_URL=http://192.168.1.10:8081
 ```
 
----
+## API
 
-## 📈 Your Health Data Summary
+| Endpoint | Returns |
+|---|---|
+| `GET /api/readiness`, `/api/readiness/{date}`, `/api/readiness/history` | Readiness score, band and briefing, including the training-load note |
+| `GET /api/training-load`, `/api/training-load/history` | Fitness, fatigue, form and recent sessions |
+| `GET /api/activities`, `/api/activities/{source:id}` | Activities from Garmin and Strava, duplicates hidden |
+| `POST /api/coach/chat` | A streamed coach reply to `{"question": "..."}` |
+| `GET /api/health-data`, `/api/summary`, `/api/analytics/*` | Daily wellness records and the older analytics |
+| `GET /api/sync/status`, `POST /api/sync/{latest,full,range,strava}` | Sync state and manual sync triggers |
 
-Based on 86 days of data (Nov 22, 2025 - Feb 15, 2026):
+An unknown `GET` path returns the full endpoint list.
 
-| Metric | Your Average | Status |
-|--------|-------------|--------|
-| Sleep Score | 69.4 | Good |
-| HRV | 58.9 ms | Healthy |
-| Stress | 34.2 | Moderate |
-| Steps | 9,231/day | Active |
+## Privacy
 
----
+Your data stays on your machine. `data/`, `backend/fitness.db`, `backend/parsed_health_data.json` and `.env` are gitignored; Strava's OAuth tokens are stored in `fitness.db`. The coach's language model runs locally by default, and nothing from Strava is included in what it sees.
 
-## 🎯 Recommended Next Steps
+## Development
 
-1. **Immediate:** Explore your data at http://localhost:8080
-2. **This Week:** Integrate real data into all screens (Phase 3)
-3. **Next Week:** Build AI pattern analysis engine (Phase 4)
-4. **Month 1:** Add OpenAI integration for smart coaching (Phase 6)
+```bash
+cd backend && uv run pytest && uv run ruff check .
+cd mobile_app && flutter analyze && flutter test
+```
 
----
+Tests use synthetic data only (`backend/tests/synthetic.py`); no real health data belongs in code, tests or docs.
 
-## 📄 License
+## Roadmap
 
-Personal project - Not for distribution
+Done: Garmin and Strava ingest with dedup, readiness, training load, the coach, and the Today and Coach screens.
 
-## 🙏 Acknowledgments
+Next:
 
-- Garmin for the comprehensive health data ecosystem
-- Flutter team for cross-platform framework
+- **Backend as the single source of truth**: make `analytics_engine.py` handle missing values properly, and move the app's client-side insights, health score and predictions into the backend.
+- **Proactive coaching**: a morning briefing after each sync, a weekly report, and notifications.
+- **Later**: self-experiments (an intervention compared against a baseline, with effect sizes), backtested forecasts, and phone builds or a PWA.
+
+## License
+
+Personal project, not for distribution.
