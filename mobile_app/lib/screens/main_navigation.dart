@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
-import 'real_data_dashboard.dart';
+import 'analyze_screen.dart';
+import 'coach_screen.dart';
 import 'insights_feed_screen.dart';
-import 'correlation_explorer_screen.dart';
-import 'predictions_center_screen.dart';
-import 'analytics_deep_dive_screen.dart';
+import 'real_data_dashboard.dart';
+import 'today_screen.dart';
 
 /// Main navigation shell with bottom navigation bar
 class MainNavigation extends StatefulWidget {
@@ -18,11 +18,19 @@ class _MainNavigationState extends State<MainNavigation> {
   int _currentIndex = 0;
 
   final List<Widget> _screens = const [
-    RealDataDashboard(),       // Your real Garmin data!
+    TodayScreen(),           // readiness + training load
+    CoachScreen(),
+    RealDataDashboard(),     // raw Garmin wellness data
     InsightsFeedScreen(),
-    CorrelationExplorerScreen(),
-    PredictionsCenterScreen(),
-    AnalyticsDeepDiveScreen(),   // AI Analytics Lab
+    AnalyzeScreen(),         // Patterns, Predictions, AI Lab
+  ];
+
+  static const _tabs = [
+    (icon: Icons.wb_sunny_rounded, label: 'Today'),
+    (icon: Icons.forum_rounded, label: 'Coach'),
+    (icon: Icons.analytics_rounded, label: 'My Data'),
+    (icon: Icons.auto_awesome_rounded, label: 'Insights'),
+    (icon: Icons.science_rounded, label: 'Analyze'),
   ];
 
   @override
@@ -49,36 +57,13 @@ class _MainNavigationState extends State<MainNavigation> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _NavItem(
-                  icon: Icons.analytics_rounded,
-                  label: 'My Data',
-                  isSelected: _currentIndex == 0,
-                  onTap: () => setState(() => _currentIndex = 0),
-                ),
-                _NavItem(
-                  icon: Icons.auto_awesome_rounded,
-                  label: 'Insights',
-                  isSelected: _currentIndex == 1,
-                  onTap: () => setState(() => _currentIndex = 1),
-                ),
-                _NavItem(
-                  icon: Icons.hub_rounded,
-                  label: 'Patterns',
-                  isSelected: _currentIndex == 2,
-                  onTap: () => setState(() => _currentIndex = 2),
-                ),
-                _NavItem(
-                  icon: Icons.auto_graph_rounded,
-                  label: 'Predict',
-                  isSelected: _currentIndex == 3,
-                  onTap: () => setState(() => _currentIndex = 3),
-                ),
-                _NavItem(
-                  icon: Icons.science_rounded,
-                  label: 'AI Lab',
-                  isSelected: _currentIndex == 4,
-                  onTap: () => setState(() => _currentIndex = 4),
-                ),
+                for (var i = 0; i < _tabs.length; i++)
+                  _NavItem(
+                    icon: _tabs[i].icon,
+                    label: _tabs[i].label,
+                    isSelected: _currentIndex == i,
+                    onTap: () => setState(() => _currentIndex = i),
+                  ),
               ],
             ),
           ),
