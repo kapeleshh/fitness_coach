@@ -1,7 +1,8 @@
 """
 Garmin Connect Live Data Sync
-Fetches health data directly from Garmin Connect API using python-garminconnect
-and upserts it into the SQLite database (see db.py).
+Fetches daily health data and activities directly from Garmin Connect API
+using python-garminconnect and upserts them into the SQLite database (see
+db.py; activities go through activities.ingest for cross-source dedup).
 
 Usage:
     # Sync last 7 days
@@ -24,22 +25,13 @@ import sys
 import time
 import argparse
 import logging
-from datetime import date, datetime, timedelta
+from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from typing import Optional
 
+import activities
 import db
-
-# Load .env file if present
-def load_env():
-    env_path = Path(__file__).parent / ".env"
-    if env_path.exists():
-        with open(env_path) as f:
-            for line in f:
-                line = line.strip()
-                if line and not line.startswith("#") and "=" in line:
-                    key, _, value = line.partition("=")
-                    os.environ.setdefault(key.strip(), value.strip())
+from env import load_env
 
 load_env()
 
@@ -228,6 +220,40 @@ def fetch_day(client: Garmin, date_str: str) -> dict:
     return day
 
 
+def from_garmin_activity(item: dict) -> dict:
+    """Map a Garmin Connect activity summary to a raw activity dict."""
+    start = datetime.strptime(item["startTimeGMT"], "%Y-%m-%d %H:%M:%S").replace(tzinfo=UTC)
+    local = item.get("startTimeLocal") or item["startTimeGMT"]
+    return {
+        "source": "garmin",
+        "source_id": item["activityId"],
+        "start_time_utc": activities.to_utc_iso(start),
+        "local_date": local[:10],
+        "sport_type": (item.get("activityType") or {}).get("typeKey"),
+        "name": item.get("activityName"),
+        "duration_s": item.get("elapsedDuration") or item.get("duration"),
+        "moving_time_s": item.get("movingDuration"),
+        "distance_m": item.get("distance"),
+        "elevation_gain_m": item.get("elevationGain"),
+        "avg_hr": item.get("averageHR"),
+        "max_hr": item.get("maxHR"),
+        "avg_power": item.get("avgPower"),
+        "calories": item.get("calories"),
+        "training_load": item.get("activityTrainingLoad"),
+    }
+
+
+def sync_activities(client: Garmin, start: date, end: date) -> dict:
+    """Fetch Garmin activities in [start, end] and ingest them (with dedup)."""
+    items = safe_get(
+        client.get_activities_by_date, start.isoformat(), end.isoformat(), default=[]
+    )
+    records = [from_garmin_activity(i) for i in items if i.get("startTimeGMT")]
+    result = activities.ingest(records)
+    print(f"  🏃 {result['written']} activities ({result['duplicates']} duplicates linked)")
+    return result
+
+
 # ============= SYNC LOGIC =============
 
 def sync_date_range(
@@ -274,10 +300,15 @@ def sync_date_range(
 
         current += timedelta(days=1)
 
+    # One paginated call for the whole range; activity upserts are idempotent,
+    # so this runs even when every wellness day was skipped.
+    activity_result = sync_activities(client, start, end)
+
     return {
         "synced": synced,
         "skipped": skipped,
         "total": db.count_days(),
+        "activities": activity_result["written"],
         "date_range": {"start": str(start), "end": str(end)},
     }
 
@@ -388,6 +419,7 @@ def main():
     print(f"   Fetched: {result['synced']} days")
     print(f"   Skipped: {result['skipped']} days (already existed)")
     print(f"   Total in DB: {result['total']} days")
+    print(f"   Activities: {result['activities']} fetched")
 
 
 if __name__ == "__main__":

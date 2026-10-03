@@ -78,3 +78,68 @@ def generate_days(n: int = FIXTURE_DAYS, end: date = FIXTURE_END_DATE) -> list[d
             "highest_respiration": round(rng.uniform(17.0, 22.0), 1),
         })
     return records
+
+
+# Garmin-era sessions in the last GARMIN_ACTIVITY_DAYS; Strava-only history
+# before that (the pre-Garmin era a bulk export backfills).
+GARMIN_ACTIVITY_DAYS = 60
+PRE_GARMIN_STRAVA_ACTIVITIES = 30
+
+
+def generate_activities(end: date = FIXTURE_END_DATE) -> dict:
+    """Synthetic raw activities (pre-normalization), deterministic.
+
+    Every Garmin activity has a Strava twin (auto-upload: start a few
+    seconds later, duration within 2%) so dedup has known answers. Returns
+    {"garmin": [...], "strava": [...], "expected_duplicates": {strava_id:
+    garmin_id}} using the "<source>:<source_id>" activity ids.
+    """
+    rng = random.Random(7)
+    garmin, strava, expected = [], [], {}
+    sports = [("running", "Run"), ("road_biking", "Ride"), ("lap_swimming", "Swim")]
+
+    for i in range(0, GARMIN_ACTIVITY_DAYS, 2):
+        day = end - timedelta(days=i)
+        hour = rng.randint(6, 18)
+        duration = rng.randint(1800, 5400)
+        garmin_type, strava_type = sports[i // 2 % len(sports)]
+        g_id, s_id = 900000 + i, 500000 + i
+        garmin.append({
+            "source": "garmin",
+            "source_id": g_id,
+            "start_time_utc": f"{day.isoformat()}T{hour:02d}:00:00Z",
+            "local_date": day.isoformat(),
+            "sport_type": garmin_type,
+            "name": f"Synthetic {strava_type}",
+            "duration_s": duration,
+            "distance_m": rng.randint(3000, 40000),
+            "avg_hr": rng.randint(120, 165),
+            "max_hr": rng.randint(166, 188),
+            "training_load": rng.randint(40, 220),
+        })
+        strava.append({
+            "source": "strava",
+            "source_id": s_id,
+            "start_time_utc": f"{day.isoformat()}T{hour:02d}:00:{rng.randint(5, 50):02d}Z",
+            "local_date": day.isoformat(),
+            "sport_type": strava_type,
+            "name": f"Synthetic {strava_type}",
+            "duration_s": round(duration * rng.uniform(0.98, 1.02)),
+            "suffer_score": rng.randint(20, 150),
+        })
+        expected[f"strava:{s_id}"] = f"garmin:{g_id}"
+
+    for j in range(PRE_GARMIN_STRAVA_ACTIVITIES):
+        day = end - timedelta(days=GARMIN_ACTIVITY_DAYS + 10 + j * 3)
+        strava.append({
+            "source": "strava",
+            "source_id": 400000 + j,
+            "start_time_utc": f"{day.isoformat()}T07:30:00Z",
+            "local_date": day.isoformat(),
+            "sport_type": "Run",
+            "name": "Synthetic early run",
+            "duration_s": rng.randint(1500, 4000),
+            "suffer_score": rng.randint(15, 120),
+        })
+
+    return {"garmin": garmin, "strava": strava, "expected_duplicates": expected}

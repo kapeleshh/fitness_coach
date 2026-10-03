@@ -4,8 +4,8 @@ Same endpoint contract as the original stdlib http.server implementation
 (verified by golden contract tests in tests/test_contract.py), now backed
 by SQLite (db.py) instead of parsed_health_data.json.
 
-Also runs a background scheduler that keeps Garmin wellness data fresh
-when credentials are configured.
+Also runs a background scheduler that keeps Garmin wellness/activities and
+Strava activities fresh when the respective credentials are configured.
 """
 
 import os
@@ -22,6 +22,7 @@ from fastapi.responses import JSONResponse, StreamingResponse
 import coach
 import db
 import readiness_engine
+import strava_sync
 from analytics_engine import (
     analyze_trends,
     analyze_weekly_patterns,
@@ -61,10 +62,13 @@ ENDPOINT_LIST = [
     "GET  /api/readiness",
     "GET  /api/readiness/history",
     "GET  /api/readiness/YYYY-MM-DD",
+    "GET  /api/activities",
+    "GET  /api/activities/SOURCE:ID",
     "GET  /api/sync/status",
     "POST /api/sync/latest",
     "POST /api/sync/full",
     "POST /api/sync/range",
+    "POST /api/sync/strava",
     "POST /api/coach/chat",
 ]
 
@@ -105,9 +109,29 @@ def _start_sync(job) -> bool:
     return True
 
 
-def _scheduled_sync():
-    """Periodic freshness sync — skipped silently if one is already running."""
-    _start_sync(lambda: sync_latest(get_garmin_client(), days=3))
+def _scheduled_sync(garmin: bool, strava: bool):
+    """Periodic freshness sync — skipped silently if one is already running.
+    Sources run sequentially in the one sync slot (one SQLite writer), and a
+    failure in one never blocks the other."""
+    def job():
+        results, errors = {}, []
+        for name, enabled, run in (
+            ("garmin", garmin, lambda: sync_latest(get_garmin_client(), days=3)),
+            ("strava", strava, strava_sync.sync),
+        ):
+            if not enabled:
+                continue
+            try:
+                results[name] = run()
+            except (Exception, SystemExit) as e:  # noqa: BLE001 — isolate sources
+                # repr, not str: get_garmin_client()'s SystemExit(1) would
+                # otherwise read as just "1".
+                errors.append(f"{name}: {e!r}")
+        if errors:
+            raise RuntimeError("; ".join(errors))
+        return results
+
+    _start_sync(job)
 
 
 def _credentials_configured() -> bool:
@@ -133,15 +157,25 @@ async def lifespan(app: FastAPI):
         print(f"📦 Imported {imported} days from {LEGACY_JSON.name} into SQLite")
 
     scheduler = None
-    if SYNC_AVAILABLE and _credentials_configured() and os.getenv(
-        "GARMIN_AUTO_SYNC", "1"
-    ) != "0":
+    garmin_auto = (
+        SYNC_AVAILABLE
+        and _credentials_configured()
+        and os.getenv("GARMIN_AUTO_SYNC", "1") != "0"
+    )
+    strava_auto = (
+        strava_sync.is_configured() and os.getenv("STRAVA_AUTO_SYNC", "1") != "0"
+    )
+    if garmin_auto or strava_auto:
         from apscheduler.schedulers.background import BackgroundScheduler
         interval_hours = float(os.getenv("GARMIN_SYNC_INTERVAL_HOURS", "6"))
         scheduler = BackgroundScheduler()
-        scheduler.add_job(_scheduled_sync, "interval", hours=interval_hours)
+        scheduler.add_job(
+            _scheduled_sync, "interval", hours=interval_hours,
+            kwargs={"garmin": garmin_auto, "strava": strava_auto},
+        )
         scheduler.start()
-        print(f"⏰ Auto-sync every {interval_hours}h enabled")
+        sources = ", ".join(n for n, on in (("Garmin", garmin_auto), ("Strava", strava_auto)) if on)
+        print(f"⏰ Auto-sync every {interval_hours}h enabled ({sources})")
 
     yield
 
@@ -292,6 +326,39 @@ def readiness_for_date(date_str: str):
     return readiness_engine.score_date(db.get_all_days(), date_str)
 
 
+# ========== ACTIVITY ENDPOINTS ==========
+
+def _valid_date(value: str | None) -> bool:
+    if value is None:
+        return True
+    try:
+        datetime.strptime(value, "%Y-%m-%d")
+        return True
+    except ValueError:
+        return False
+
+
+@app.get("/api/activities")
+def list_activities(
+    start: str | None = None,
+    end: str | None = None,
+    include_duplicates: bool = False,
+):
+    """Activities newest first, filtered by local date. Cross-source
+    duplicates (Garmin auto-uploaded to Strava) are hidden unless asked for."""
+    if not (_valid_date(start) and _valid_date(end)):
+        return _error("start/end must be YYYY-MM-DD", status=400)
+    return db.get_activities(start=start, end=end, include_duplicates=include_duplicates)
+
+
+@app.get("/api/activities/{activity_id}")
+def get_activity(activity_id: str):
+    activity = db.get_activity(activity_id)
+    if activity is None:
+        return _error("Activity not found", status=404)
+    return activity
+
+
 # ========== SYNC ENDPOINTS ==========
 
 @app.get("/api/sync/status")
@@ -305,6 +372,8 @@ def sync_status():
     status["last_sync_result"] = _sync_state["last_result"]
     status["last_sync_error"] = _sync_state["last_error"]
     status["last_sync_run_at"] = _sync_state["last_run_at"]
+    status["strava_configured"] = strava_sync.is_configured()
+    status["activities"] = db.activity_summary()
     return status
 
 
@@ -378,6 +447,22 @@ async def sync_range_endpoint(request: Request):
     )
 
 
+@app.post("/api/sync/strava")
+async def sync_strava_endpoint():
+    if not strava_sync.is_configured():
+        return _error(
+            "Strava not configured. Set STRAVA_CLIENT_ID/STRAVA_CLIENT_SECRET in "
+            "backend/.env and run: python strava_sync.py --auth",
+            status=503,
+        )
+    if not _start_sync(strava_sync.sync):
+        return _error("Sync already running", status=409)
+    return JSONResponse(
+        status_code=202,
+        content={"message": "Strava sync started", "status_url": "/api/sync/status"},
+    )
+
+
 # ========== COACH ENDPOINT ==========
 
 @app.post("/api/coach/chat")
@@ -421,6 +506,8 @@ def run_server(port: int = 8081):
         print(f"   {line}")
     sync_txt = "✅ available" if SYNC_AVAILABLE else "❌ unavailable (run: cd backend && uv sync)"
     print(f"\n   Garmin sync: {sync_txt}")
+    strava_txt = "✅ configured" if strava_sync.is_configured() else "➖ not configured"
+    print(f"   Strava sync: {strava_txt}")
     print("\n⏹️  Press Ctrl+C to stop")
     uvicorn.run(app, host="0.0.0.0", port=port, log_level="warning")
 
