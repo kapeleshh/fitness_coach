@@ -56,6 +56,7 @@ flutter run -d chrome
 | `GET /api/training-load`, `/api/training-load/history` | Fitness, fatigue, form and recent sessions |
 | `GET /api/activities`, `/api/activities/{source:id}` | Activities from Garmin and Strava, duplicates hidden |
 | `POST /api/coach/chat` | A streamed coach reply to `{"question": "..."}` |
+| `GET /api/insights`, `/api/correlations`, `/api/correlations/pair`, `/api/outlook` | Insights, correlations and tomorrow's body-battery outlook with its measured error |
 | `GET /api/health-data`, `/api/summary`, `/api/analytics/*` | Daily wellness records and the older analytics |
 | `GET /api/sync/status`, `POST /api/sync/{latest,full,range,strava}` | Sync state and manual sync triggers |
 
@@ -76,11 +77,10 @@ Tests use synthetic data only (`backend/tests/synthetic.py`); no real health dat
 
 ## Roadmap
 
-Done: Garmin and Strava ingest with dedup, readiness, training load, the coach, and the Today and Coach screens.
+Done: Garmin and Strava ingest with dedup, readiness, training load, the coach, the Today and Coach screens, and every number in the app computed by the backend.
 
 Next:
 
-- **Backend as the single source of truth**: make `analytics_engine.py` handle missing values properly, and move the app's client-side insights, health score and predictions into the backend.
 - **Proactive coaching**: a morning briefing after each sync, a weekly report, and notifications.
 - **Later**: self-experiments (an intervention compared against a baseline, with effect sizes), backtested forecasts, and phone builds or a PWA.
 
