@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import '../config.dart';
 import '../theme/app_theme.dart';
 import '../services/health_api_service.dart';
 
-/// Pattern Explorer showing real correlations discovered in YOUR Garmin data
+/// Pattern Explorer: correlations computed by the backend (/api/correlations
+/// and /api/correlations/pair) over the days where both metrics were measured.
 class CorrelationExplorerScreen extends StatefulWidget {
-  const CorrelationExplorerScreen({super.key});
+  const CorrelationExplorerScreen({super.key, this.service});
+
+  /// Defaults to the app-wide [healthApiService]; injectable for tests.
+  final HealthApiService? service;
 
   @override
   State<CorrelationExplorerScreen> createState() => _CorrelationExplorerScreenState();
@@ -12,10 +17,20 @@ class CorrelationExplorerScreen extends StatefulWidget {
 
 class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
   List<Map<String, dynamic>> _correlations = [];
+  int _days = 0;
+  String? _error;
   bool _isLoading = true;
   String _selectedMetric1 = 'sleep_score';
   String _selectedMetric2 = 'body_battery_start';
   Map<String, dynamic>? _customCorrelation;
+  String? _customError;
+  bool _customLoading = false;
+
+  HealthApiService get _service => widget.service ?? healthApiService;
+
+  static String _describe(Object e) => e is ApiException
+      ? e.message
+      : "Couldn't reach the API at $apiBaseUrl. Make sure the backend server is running.";
 
   final Map<String, String> _metricLabels = {
     'sleep_score': 'Sleep Score',
@@ -37,21 +52,46 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
 
   Future<void> _loadData() async {
     setState(() => _isLoading = true);
-    
-    await healthApiService.initialize();
-    
+    // Raw recent days for the 7-day chart; refresh() handles its own errors.
+    final rawDays = _service.refresh();
+    List<Map<String, dynamic>> found = [];
+    var days = 0;
+    String? error;
+    try {
+      final res = await _service.fetchCorrelations();
+      found = ((res['correlations'] as List?) ?? const []).cast<Map<String, dynamic>>();
+      days = (res['days'] as num?)?.toInt() ?? 0;
+    } catch (e) {
+      debugPrint('Correlations fetch failed: $e');
+      error = _describe(e);
+    }
+    await rawDays;
+    if (!mounted) return;
     setState(() {
-      _correlations = healthApiService.discoverCorrelations();
+      _correlations = found;
+      _days = days;
+      _error = error;
       _isLoading = false;
     });
   }
 
-  void _calculateCustomCorrelation() {
+  Future<void> _calculateCustomCorrelation() async {
     setState(() {
-      _customCorrelation = healthApiService.calculateCorrelation(
-        _selectedMetric1,
-        _selectedMetric2,
-      );
+      _customLoading = true;
+      _customError = null;
+    });
+    Map<String, dynamic>? result;
+    String? error;
+    try {
+      result = await _service.fetchCorrelationPair(_selectedMetric1, _selectedMetric2);
+    } catch (e) {
+      error = _describe(e);
+    }
+    if (!mounted) return;
+    setState(() {
+      _customCorrelation = result;
+      _customError = error;
+      _customLoading = false;
     });
   }
 
@@ -98,7 +138,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
                                   ),
                                 ),
                                 Text(
-                                  'Based on ${healthApiService.totalDays} days of data',
+                                  'Based on $_days days of data',
                                   style: TextStyle(
                                     color: Colors.white.withValues(alpha: 0.8),
                                     fontSize: 14,
@@ -132,7 +172,24 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
                     ),
                     const SizedBox(height: 16),
                     
-                    if (_correlations.isEmpty)
+                    if (_error != null)
+                      Container(
+                        padding: const EdgeInsets.all(24),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Column(
+                          children: [
+                            const Icon(Icons.cloud_off, size: 48, color: AppTheme.textTertiary),
+                            const SizedBox(height: 12),
+                            Text(_error!,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(color: AppTheme.textSecondary)),
+                          ],
+                        ),
+                      )
+                    else if (_correlations.isEmpty)
                       Container(
                         padding: const EdgeInsets.all(24),
                         decoration: BoxDecoration(
@@ -204,7 +261,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
                           SizedBox(
                             width: double.infinity,
                             child: ElevatedButton(
-                              onPressed: _calculateCustomCorrelation,
+                              onPressed: _customLoading ? null : _calculateCustomCorrelation,
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: AppTheme.primaryColor,
                                 padding: const EdgeInsets.symmetric(vertical: 14),
@@ -223,7 +280,11 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
                           ),
                           
                           // Result
-                          if (_customCorrelation != null) ...[
+                          if (_customError != null) ...[
+                            const SizedBox(height: 16),
+                            Text(_customError!,
+                                style: const TextStyle(color: AppTheme.errorColor)),
+                          ] else if (_customCorrelation != null) ...[
                             const SizedBox(height: 16),
                             _buildCustomCorrelationResult(),
                           ],
@@ -282,7 +343,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
 
   Widget _buildCorrelationCard(Map<String, dynamic> correlation) {
     final strength = correlation['strength'] as String;
-    final corr = correlation['correlation'] as double;
+    final corr = (correlation['correlation'] as num).toDouble();
     final isPositive = corr > 0;
     
     Color strengthColor;
@@ -399,7 +460,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
                       ),
                     ),
                     Text(
-                      '${correlation['sampleSize']}',
+                      '${correlation['sample_size']}',
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
@@ -428,7 +489,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
   String _getCorrelationExplanation(Map<String, dynamic> correlation) {
     final m1 = _metricLabels[correlation['metric1']] ?? correlation['metric1'];
     final m2 = _metricLabels[correlation['metric2']] ?? correlation['metric2'];
-    final corr = correlation['correlation'] as double;
+    final corr = (correlation['correlation'] as num).toDouble();
     final strength = correlation['strength'] as String;
     
     if (corr > 0) {
@@ -441,9 +502,9 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
   }
 
   Widget _buildCustomCorrelationResult() {
-    final corr = _customCorrelation!['correlation'] as double;
     final strength = _customCorrelation!['strength'] as String;
-    
+
+    // Check before reading the coefficient: it's null when there's too little data.
     if (strength == 'insufficient_data') {
       return Container(
         padding: const EdgeInsets.all(12),
@@ -455,11 +516,12 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
           children: [
             Icon(Icons.info, color: Colors.orange),
             SizedBox(width: 8),
-            Text('Not enough data to calculate correlation'),
+            Expanded(child: Text('Not enough days with both metrics to calculate a correlation')),
           ],
         ),
       );
     }
+    final corr = (_customCorrelation!['correlation'] as num).toDouble();
     
     Color strengthColor;
     switch (strength) {
@@ -522,7 +584,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
           ),
           const SizedBox(height: 8),
           Text(
-            'Based on ${_customCorrelation!['sampleSize']} data points',
+            'Based on ${_customCorrelation!['sample_size']} days with both metrics',
             style: const TextStyle(
               color: AppTheme.textSecondary,
               fontSize: 12,
@@ -534,7 +596,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
   }
 
   Widget _buildRecentTrendsChart() {
-    final week = healthApiService.last7Days;
+    final week = _service.last7Days;
     if (week.isEmpty) return const SizedBox();
     
     return Column(
@@ -571,6 +633,9 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
     );
   }
 
+  static double? _recorded(Object? raw) =>
+      raw is num && raw != 0 ? raw.toDouble() : null;
+
   Widget _buildTrendRow(String label, List<Map<String, dynamic>> data, 
                          String field, Color color, double maxValue) {
     return Row(
@@ -589,8 +654,10 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: data.reversed.take(7).map((day) {
-              final value = (day[field] ?? 0).toDouble();
-              final height = (value / maxValue * 40).clamp(4.0, 40.0);
+              // Raw days come in the legacy 0-filled shape, and 0 is impossible
+              // for these metrics, so 0 means "not recorded".
+              final value = _recorded(day[field]);
+              final height = value == null ? 4.0 : (value / maxValue * 40).clamp(4.0, 40.0);
               final dateStr = day['date']?.toString().substring(8, 10) ?? '';
               
               return Column(
@@ -603,7 +670,9 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
                       width: 20,
                       height: height,
                       decoration: BoxDecoration(
-                        color: color.withValues(alpha: 0.7),
+                        color: value == null
+                            ? AppTheme.textTertiary.withValues(alpha: 0.3)
+                            : color.withValues(alpha: 0.7),
                         borderRadius: BorderRadius.circular(4),
                       ),
                     ),
@@ -624,7 +693,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
         SizedBox(
           width: 40,
           child: Text(
-            '${data.first[field]?.round() ?? 0}',
+            _recorded(data.first[field])?.round().toString() ?? '—',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: color,
