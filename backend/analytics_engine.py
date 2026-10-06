@@ -2,25 +2,66 @@
 AI Pattern Analysis Engine
 Pure-stdlib statistics over Garmin health data (correlations, anomalies,
 weekly patterns, baselines, trends).
+
+NULL-aware: records come from db.get_all_days() as stored, so a missing
+metric is None and is skipped, while a real zero (0 active minutes, 0 high-
+stress minutes) is a value like any other. Lagged pairs and "recent" windows
+use calendar days, so a day with no record never shifts the pairing.
 """
 
 import json
 import math
-from datetime import datetime
-from typing import Dict, List, Optional
 from collections import defaultdict
+from datetime import datetime, timedelta
+from typing import Dict, List, Optional
 
 
 def load_data() -> List[Dict]:
-    """Load daily wellness records (newest first) from SQLite.
-
-    Returned in the legacy zero-filled shape this module's statistics
-    currently expect (missing values as 0 — a known limitation slated for
-    the analytics-rework backlog; the DB itself stores NULLs correctly).
-    """
+    """Load daily wellness records (newest first) from SQLite, missing
+    metrics as None."""
     import db
     db.init_db()
-    return db.get_all_days(legacy_zero_fill=True)
+    return db.get_all_days()
+
+
+def _shift(date_str, days: int) -> Optional[str]:
+    """The date `days` calendar days after `date_str`, or None if unparseable."""
+    try:
+        return (datetime.fromisoformat(date_str) + timedelta(days=days)).date().isoformat()
+    except (TypeError, ValueError):
+        return None
+
+
+def _window(data: List[Dict], start: int, end: int) -> List[Dict]:
+    """Records from `start` up to (not including) `end` calendar days before
+    the most recent record, newest first."""
+    dated = []
+    for d in data:
+        try:
+            dated.append((datetime.fromisoformat(d['date']).date(), d))
+        except (KeyError, TypeError, ValueError):
+            continue
+    if not dated:
+        return []
+    latest = max(day for day, _ in dated)
+    return [d for day, d in dated if start <= (latest - day).days < end]
+
+
+def lagged_pairs(data: List[Dict], m1: str, m2: str, lag: int):
+    """(xs, ys): m1 on day d against m2 on day d + `lag` calendar days, for
+    every d where both are present. Iterates in record order (newest first)."""
+    by_date = {d.get('date'): d for d in data}
+    xs, ys = [], []
+    for day in data:
+        partner = by_date.get(_shift(day.get('date'), lag))
+        if partner is None:
+            continue
+        v1, v2 = day.get(m1), partner.get(m2)
+        if v1 is None or v2 is None:
+            continue
+        xs.append(float(v1))
+        ys.append(float(v2))
+    return xs, ys
 
 
 # ============= CORRELATION MATRIX =============
@@ -37,29 +78,23 @@ def calculate_correlation_matrix(data: List[Dict]) -> Dict:
         'total_calories', 'active_minutes'
     ]
     
-    # Extract values for each metric
-    values = {m: [] for m in metrics}
-    for day in data:
-        for m in metrics:
-            val = day.get(m, 0)
-            if val is None:
-                val = 0
-            values[m].append(float(val))
-    
-    # Calculate correlation matrix
+    # Values per metric, aligned by day (None where missing)
+    values = {m: [day.get(m) for day in data] for m in metrics}
+
+    # Calculate correlation matrix (None where a pair has too little data)
     matrix = {}
     for m1 in metrics:
         matrix[m1] = {}
         for m2 in metrics:
             corr = pearson_correlation(values[m1], values[m2])
-            matrix[m1][m2] = round(corr, 3) if not math.isnan(corr) else 0
+            matrix[m1][m2] = round(corr, 3) if corr is not None else None
     
     # Find strongest correlations
     strong_correlations = []
     for i, m1 in enumerate(metrics):
         for m2 in metrics[i+1:]:
             corr = matrix[m1][m2]
-            if abs(corr) > 0.3:  # Significant correlation
+            if corr is not None and abs(corr) > 0.3:  # Significant correlation
                 strong_correlations.append({
                     'metric1': m1,
                     'metric2': m2,
@@ -78,16 +113,13 @@ def calculate_correlation_matrix(data: List[Dict]) -> Dict:
     }
 
 
-def pearson_correlation(x: List[float], y: List[float]) -> float:
-    """Calculate Pearson correlation coefficient"""
-    n = len(x)
-    if n < 3:
-        return 0.0
-    
-    # Filter out zeros/missing
-    pairs = [(a, b) for a, b in zip(x, y) if a > 0 and b > 0]
+def pearson_correlation(x: List[Optional[float]], y: List[Optional[float]]) -> Optional[float]:
+    """Pearson r over the positions where both values are present. None when
+    fewer than 3 such pairs or either side is constant — "can't tell", which
+    must not read as "no relationship" (0)."""
+    pairs = [(float(a), float(b)) for a, b in zip(x, y) if a is not None and b is not None]
     if len(pairs) < 3:
-        return 0.0
+        return None
     
     x_vals = [p[0] for p in pairs]
     y_vals = [p[1] for p in pairs]
@@ -101,7 +133,7 @@ def pearson_correlation(x: List[float], y: List[float]) -> float:
     denom_y = math.sqrt(sum((v - mean_y) ** 2 for v in y_vals))
     
     if denom_x * denom_y == 0:
-        return 0.0
+        return None
     
     return numerator / (denom_x * denom_y)
 
@@ -146,21 +178,10 @@ def calculate_lagged_correlations(data: List[Dict]) -> Dict:
 
 
 def calculate_single_lagged_correlation(data: List[Dict], m1: str, m2: str, lag: int) -> Optional[float]:
-    """Calculate correlation between m1 and m2 with specified day lag"""
-    values1 = []
-    values2 = []
-    
-    for i in range(lag, len(data)):
-        v1 = data[i].get(m1, 0)
-        v2 = data[i - lag].get(m2, 0)
-        
-        if v1 and v2 and v1 > 0 and v2 > 0:
-            values1.append(float(v1))
-            values2.append(float(v2))
-    
+    """Correlation between m1 on day d and m2 on day d + lag (calendar days)."""
+    values1, values2 = lagged_pairs(data, m1, m2, lag)
     if len(values1) < 5:
         return None
-    
     return pearson_correlation(values1, values2)
 
 
@@ -217,7 +238,7 @@ def detect_anomalies(data: List[Dict]) -> Dict:
     anomalies = []
     
     for metric, name, concern_direction in metrics_to_check:
-        values = [float(d.get(metric, 0)) for d in data if d.get(metric, 0) > 0]
+        values = [float(d[metric]) for d in data if d.get(metric) is not None]
         if len(values) < 7:
             continue
         
@@ -231,8 +252,8 @@ def detect_anomalies(data: List[Dict]) -> Dict:
         
         # Find anomalies (Z-score > 2 or < -2)
         for day in data:
-            val = day.get(metric, 0)
-            if not val or val <= 0:
+            val = day.get(metric)
+            if val is None:
                 continue
             
             z_score = (val - mean) / std
@@ -315,8 +336,8 @@ def analyze_weekly_patterns(data: List[Dict]) -> Dict:
             dow = date.weekday()
 
             for m in metrics:
-                val = day.get(m, 0)
-                if val and val > 0:
+                val = day.get(m)
+                if val is not None:
                     by_day[dow][m].append(float(val))
         except (ValueError, KeyError):
             continue
@@ -407,7 +428,7 @@ def calculate_personal_baselines(data: List[Dict]) -> Dict:
     baselines = {}
     
     for metric, info in metrics.items():
-        values = [float(d.get(metric, 0)) for d in data if d.get(metric, 0) > 0]
+        values = [float(d[metric]) for d in data if d.get(metric) is not None]
         
         if len(values) < 7:
             continue
@@ -425,8 +446,8 @@ def calculate_personal_baselines(data: List[Dict]) -> Dict:
         p75 = values[int(n * 0.75)]
         p90 = values[int(n * 0.9)]
         
-        # Current (most recent 7 days average)
-        recent = [float(d.get(metric, 0)) for d in data[:7] if d.get(metric, 0) > 0]
+        # Current (most recent 7 calendar days average)
+        recent = [float(d[metric]) for d in _window(data, 0, 7) if d.get(metric) is not None]
         current_avg = sum(recent) / len(recent) if recent else mean
         
         # Status
@@ -489,8 +510,10 @@ def analyze_trends(data: List[Dict], window_days: int = 7) -> Dict:
     trends = {}
     
     for metric in metrics:
-        recent = [float(d.get(metric, 0)) for d in data[:window_days] if d.get(metric, 0) > 0]
-        previous = [float(d.get(metric, 0)) for d in data[window_days:window_days*2] if d.get(metric, 0) > 0]
+        recent = [float(d[metric]) for d in _window(data, 0, window_days)
+                  if d.get(metric) is not None]
+        previous = [float(d[metric]) for d in _window(data, window_days, window_days * 2)
+                    if d.get(metric) is not None]
         
         if not recent or not previous:
             continue
