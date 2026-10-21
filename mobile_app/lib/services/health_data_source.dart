@@ -27,6 +27,13 @@ abstract class HealthDataSource extends ChangeNotifier {
   /// Why the last [refresh] failed, or null.
   String? get error;
 
+  /// Whether [askCoach] can answer. The on-device source can't until the AI
+  /// tiers arrive, so the Coach tab is hidden for it.
+  bool get hasCoach => true;
+
+  /// Whether [fetchAnalytics] (AI Lab's legacy analytics) is available.
+  bool get hasAnalytics => true;
+
   int get totalDays => healthData.length;
 
   List<Map<String, dynamic>> get last7Days => healthData.take(7).toList();

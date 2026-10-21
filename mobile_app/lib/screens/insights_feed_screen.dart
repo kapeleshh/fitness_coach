@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../config.dart';
 import '../theme/app_theme.dart';
-import '../services/health_api_service.dart';
+import '../services/app_data_source.dart';
 
 /// Insights Feed: readiness, rule-based insights and weekly averages, all
 /// computed by the backend (/api/insights) — missing metrics arrive as null.
 class InsightsFeedScreen extends StatefulWidget {
   const InsightsFeedScreen({super.key, this.service});
 
-  /// Defaults to the app-wide [healthApiService]; injectable for tests.
+  /// Defaults to the app-wide [dataSource]; injectable for tests.
   final HealthDataSource? service;
 
   @override
@@ -37,7 +37,7 @@ class _InsightsFeedScreenState extends State<InsightsFeedScreen> {
     Map<String, dynamic>? data;
     String? error;
     try {
-      data = await (widget.service ?? healthApiService).fetchInsights();
+      data = await (widget.service ?? dataSource).fetchInsights();
     } on ApiException catch (e) {
       error = e.message;
     } catch (e) {

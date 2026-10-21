@@ -248,6 +248,3 @@ class HealthApiService extends HealthDataSource {
     return lines.join('\n');
   }
 }
-
-// Singleton instance. Typed as the interface so screens depend only on it.
-final HealthDataSource healthApiService = HealthApiService();

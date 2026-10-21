@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../config.dart';
 import '../theme/app_theme.dart';
-import '../services/health_api_service.dart';
+import '../services/app_data_source.dart';
 
 /// Predictions Center: tomorrow's body battery from the backend
 /// (/api/outlook), shown with the heuristic's measured error, plus this
@@ -9,7 +9,7 @@ import '../services/health_api_service.dart';
 class PredictionsCenterScreen extends StatefulWidget {
   const PredictionsCenterScreen({super.key, this.service});
 
-  /// Defaults to the app-wide [healthApiService]; injectable for tests.
+  /// Defaults to the app-wide [dataSource]; injectable for tests.
   final HealthDataSource? service;
 
   @override
@@ -38,7 +38,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
     Map<String, dynamic>? outlook;
     String? error;
     try {
-      outlook = await (widget.service ?? healthApiService).fetchOutlook();
+      outlook = await (widget.service ?? dataSource).fetchOutlook();
     } on ApiException catch (e) {
       error = e.message;
     } catch (e) {

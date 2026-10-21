@@ -8,11 +8,15 @@ import 'package:http/testing.dart';
 import 'package:fitness_coach/screens/main_navigation.dart';
 import 'package:fitness_coach/services/health_api_service.dart';
 
+/// The self-hosted backend, unreachable: screens fail fast to their error
+/// states, which is all the navigation tests need.
+HealthApiService _offlineBackend() =>
+    HealthApiService(client: MockClient((_) async => http.Response('', 503)));
+
 void main() {
-  testWidgets('main navigation renders all five tabs', (tester) async {
-    await tester.pumpWidget(const MaterialApp(home: MainNavigation()));
-    // Give the screens' initState fetches time to fail fast against the
-    // test environment's stubbed HTTP client.
+  testWidgets('with the backend, main navigation renders all five tabs', (tester) async {
+    await tester.pumpWidget(MaterialApp(home: MainNavigation(service: _offlineBackend())));
+    // Give the screens' initState fetches time to fail fast.
     await tester.pump(const Duration(seconds: 1));
 
     expect(find.text('Today'), findsOneWidget);
@@ -23,7 +27,7 @@ void main() {
   });
 
   testWidgets('Analyze opens the analysis screens as pages', (tester) async {
-    await tester.pumpWidget(const MaterialApp(home: MainNavigation()));
+    await tester.pumpWidget(MaterialApp(home: MainNavigation(service: _offlineBackend())));
     await tester.pump(const Duration(seconds: 1));
 
     await tester.tap(find.text('Analyze'));
