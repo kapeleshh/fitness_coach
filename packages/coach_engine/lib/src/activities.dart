@@ -32,19 +32,37 @@ const sourcePriority = {
   'strava_export': 5,
 };
 
-/// The activity columns, in the order of `db.ACTIVITY_FIELDS`.
-const activityFields = [
-  'id', 'source', 'source_id', 'start_time_utc', 'local_date', 'sport_type',
-  'sport_family', 'name', 'duration_s', 'moving_time_s', 'distance_m',
-  'elevation_gain_m', 'avg_hr', 'max_hr', 'avg_power', 'calories',
-  'suffer_score', 'training_load', 'duplicate_of',
-];
+/// The activity columns and their SQLite types, as `db.ACTIVITY_FIELDS`.
+const activityColumns = {
+  'id': 'TEXT PRIMARY KEY', // "<source>:<source_id>"
+  'source': 'TEXT NOT NULL',
+  'source_id': 'TEXT NOT NULL',
+  'start_time_utc': 'TEXT NOT NULL', // "YYYY-MM-DDTHH:MM:SSZ"
+  'local_date': 'TEXT NOT NULL', // YYYY-MM-DD in the athlete's time zone
+  'sport_type': 'TEXT', // the source's own name (e.g. TrailRun)
+  'sport_family': 'TEXT', // shared family (run/ride/swim/...)
+  'name': 'TEXT',
+  'duration_s': 'REAL', // elapsed time
+  'moving_time_s': 'REAL',
+  'distance_m': 'REAL',
+  'elevation_gain_m': 'REAL',
+  'avg_hr': 'REAL',
+  'max_hr': 'REAL',
+  'avg_power': 'REAL',
+  'calories': 'REAL',
+  'suffer_score': 'REAL', // Strava Relative Effort
+  'training_load': 'REAL', // Garmin activity training load
+  'duplicate_of': 'TEXT REFERENCES activities(id) ON DELETE SET NULL',
+};
+
+/// The activity columns, in order.
+final List<String> activityFields = activityColumns.keys.toList();
 
 /// Columns stored as SQLite REAL: a number written there reads back as a
 /// float, even when it was an int.
-const realActivityFields = {
-  'duration_s', 'moving_time_s', 'distance_m', 'elevation_gain_m', 'avg_hr',
-  'max_hr', 'avg_power', 'calories', 'suffer_score', 'training_load',
+final Set<String> realActivityFields = {
+  for (final MapEntry(:key, :value) in activityColumns.entries)
+    if (value == 'REAL') key,
 };
 
 const zeroIsMissing = {

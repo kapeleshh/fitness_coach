@@ -9,7 +9,9 @@ void main() {
   final activities = (loadFixture('activities') as List).cast<Json>();
   final api = loadFixture('api') as Json;
 
-  final builders = <String, Json Function()>{
+  final builders = <String, Object? Function()>{
+    '/api/summary': () => summaryBody(wellness),
+    '/api/health-data': () => healthDataBody(wellness),
     '/api/readiness': () => readinessBody(wellness, activities),
     '/api/readiness/history?days=14': () => readinessHistoryBody(wellness, days: 14),
     '/api/training-load': () => trainingLoadBody(wellness, activities),
@@ -22,11 +24,12 @@ void main() {
     '/api/outlook': () => outlookBody(wellness),
   };
 
-  // Built by the data store, which owns the legacy 0-filled record shape.
-  const builtElsewhere = {'/api/summary', '/api/health-data'};
+  test('every request the app makes has a builder', () {
+    expect(builders.keys.toSet(), api.keys.toSet());
+  });
 
-  test('every request the app makes has a builder or a known owner', () {
-    expect({...builders.keys, ...builtElsewhere}, api.keys.toSet());
+  test('summary of no data is the error body', () {
+    expect(summaryBody([]), {'error': 'No data available'});
   });
 
   for (final MapEntry(key: path, value: build) in builders.entries) {

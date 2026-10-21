@@ -11,7 +11,7 @@ import 'civil_date.dart';
 import 'json.dart';
 import 'py.dart';
 import 'stats.dart';
-import 'wellness_fields.dart';
+import 'wellness.dart';
 
 const weekDays = 7;
 const minDaysPerWeek = 3; // values needed in each week to compare them
