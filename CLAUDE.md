@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Personal fitness coach that turns Garmin health data (sleep, HRV, stress, body battery, activity) plus workout history from Strava and Garmin into insights. Two independent parts:
 
 - `backend/` — Python 3.12+ (FastAPI + uvicorn, APScheduler, SQLite via stdlib `sqlite3`, optional `garminconnect`), managed with `uv`
-- `mobile_app/` — Flutter app (Material 3), currently targeting web; all screens read from the `healthApiService` singleton (no Provider)
+- `mobile_app/` — Flutter app (Material 3), currently targeting web only (`web/` is the only platform folder checked in; there is no `android/` or `ios/` yet); all screens read from the `healthApiService` singleton (no Provider)
 
 They communicate only over HTTP. The API base URL lives in `mobile_app/lib/config.dart` (default `http://localhost:8081`), overridable at build/run time with `--dart-define=API_BASE_URL=...`.
 
@@ -18,9 +18,9 @@ They communicate only over HTTP. The API base URL lives in `mobile_app/lib/confi
 ```bash
 uv sync                        # install deps (fastapi, uvicorn, apscheduler, garminconnect, ...)
 python api_server.py           # start FastAPI on port 8081 (uvicorn)
-python garmin_sync.py          # live-sync last 7 days from Garmin Connect into SQLite (needs backend/.env)
-python garmin_sync.py --full   # sync all history; --start/--end for a range (wellness + activities)
-python strava_import.py data/<export>.zip --tz Asia/Tokyo   # backfill activity history from a Strava bulk export
+python garmin_sync.py          # live-sync last 7 days from Garmin Connect into SQLite (needs backend/.env); --latest N for N days
+python garmin_sync.py --full   # sync all history; --start/--end [--overwrite] for a range (wellness + activities); --status needs no login
+python strava_import.py data/<export>.zip --tz Asia/Tokyo   # backfill from a Strava bulk export (zip, extracted folder, or activities.csv)
 python strava_sync.py --auth   # one-time Strava OAuth (needs STRAVA_CLIENT_ID/SECRET in backend/.env)
 python strava_sync.py          # incremental Strava activity sync; --status for counts
 python garmin_parser.py        # parse a manual Garmin export in data/ → parsed_health_data.json (legacy; auto-imported into SQLite on server start when the DB is empty)
@@ -31,7 +31,7 @@ pytest tests/test_readiness.py -k <name>   # single file / single test
 ruff check .                   # lint
 ```
 
-Prefix with `uv run` if the venv isn't activated.
+Prefix with `uv run` if the venv isn't activated. `uv.lock` is gitignored and ruff is unpinned (`ruff>=0.4.0`), so a fresh `uv sync` can pull a ruff whose defaults flag pre-existing errors on main; judge lint by "no new errors in touched files". `backend/.env` is loaded by `env.load_env()` (no python-dotenv), called at import time by `garmin_sync.py` and `strava_sync.py`, which is also how the server picks it up; variables already in the environment win.
 
 Golden contract files in `backend/tests/goldens/` were captured from the original stdlib server on a synthetic dataset — they pin the API contract across refactors. Don't regenerate them from the FastAPI implementation.
 
@@ -65,7 +65,7 @@ The daily record schema is defined in the `DailyHealthData` dataclass in `backen
 
 - **Single data layer**: all screens read from the `healthApiService` singleton (`lib/services/health_api_service.dart`) — no Provider, no mock services (dead mock/typed-model code was deleted; see git history if needed). The API base URL lives in `lib/config.dart` and is overridable with `--dart-define=API_BASE_URL=...`. The service takes an injectable `http.Client` (tests use `package:http/testing` `MockClient`), and newer screens take an optional `service` parameter defaulting to the singleton. `fetchReadiness`/`fetchReadinessHistory`/`fetchTrainingLoad` throw `ApiException` carrying the server's `error` message; `askCoach` streams the reply text (works on web: `package:http` 1.6 uses `fetch` streams). JSON is decoded from bytes as UTF-8 because FastAPI sends no charset and briefings contain non-ASCII punctuation. No statistics are computed in Dart: Insights, Patterns and Predictions render what `/api/insights`, `/api/correlations` and `/api/outlook` return, and show missing values as "—", never 0.
 - **Navigation**: bottom bar is Today | Coach | My Data | Insights | Analyze. Analyze is a hub that pushes Patterns, Predictions and AI Lab as full pages; keep the bar at five tabs.
-- **Tests**: `test/widget_test.dart` holds the navigation smoke tests plus `HealthApiService` unit tests; `test/today_screen_test.dart` and `test/coach_screen_test.dart` drive those screens through a `MockClient`. The package's SDK lower bound (3.0) pins the Dart language version, so 3.7+ features such as `_` wildcard parameters don't compile. Keep `flutter analyze` and `flutter test` green.
+- **Tests**: `test/widget_test.dart` holds the navigation smoke tests plus `HealthApiService` unit tests; `test/today_screen_test.dart`, `test/coach_screen_test.dart` and `test/analysis_screens_test.dart` (Insights, Patterns, Predictions) drive those screens through a `MockClient`. The package's SDK lower bound (3.0) pins the Dart language version, so 3.7+ features such as `_` wildcard parameters don't compile. Keep `flutter analyze` and `flutter test` green.
 - **`analytics_engine.py` is pure stdlib** — correlations, anomaly detection, trends etc. are hand-rolled (Pearson via `math`). It is NULL-aware: it reads `db.get_all_days()` as stored, skips `None`, and keeps real zeros (0 active minutes counts). `lagged_pairs()` pairs metric A on day d with metric B on day d + lag by calendar date, and "recent" windows are calendar days, so a day with no record never shifts a pairing. `pearson_correlation()` returns `None` (not 0) when there are under 3 pairs or a side is constant. The `/api/analytics/*` goldens use complete consecutive data, so they're unchanged by this. Don't add heavy deps casually.
 - **Insights engine** (`insights_engine.py`; `GET /api/insights`, `/api/correlations`, `/api/correlations/pair?x=&y=&lag=`, `/api/outlook`): the numbers behind the app's Insights, Patterns and Predictions tabs, which used to be computed in Dart from 0-filled data. Weekly summaries use calendar weeks and need 3 days per week to report a change; insight rules are skipped when their metric is missing; a benchmark is always the week's average (the app labels it "Avg"); comparisons against a baseline need 3 readings. Correlations reuse `analytics_engine.lagged_pairs`/`pearson_correlation`/`categorize_strength`. The outlook's tomorrow-body-battery heuristic reports its accuracy as a backtest (`mean_abs_error` over the last 60 days), never an invented confidence.
 - **New endpoints** go in `api_server.py` (FastAPI routes) and must be added to `ENDPOINT_LIST` (the 404 body). The `unknown_path` golden treats `ENDPOINT_LIST` as a superset check, so adding an endpoint doesn't break the contract test.
