@@ -10,7 +10,7 @@ class TodayScreen extends StatefulWidget {
   const TodayScreen({super.key, this.service});
 
   /// Defaults to the app-wide [healthApiService]; injectable for tests.
-  final HealthApiService? service;
+  final HealthDataSource? service;
 
   @override
   State<TodayScreen> createState() => _TodayScreenState();
@@ -25,7 +25,7 @@ class _TodayScreenState extends State<TodayScreen> {
   _Fetched? _load;
   bool _isLoading = true;
 
-  HealthApiService get _service => widget.service ?? healthApiService;
+  HealthDataSource get _service => widget.service ?? healthApiService;
 
   @override
   void initState() {

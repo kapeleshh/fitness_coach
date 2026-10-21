@@ -9,7 +9,7 @@ class InsightsFeedScreen extends StatefulWidget {
   const InsightsFeedScreen({super.key, this.service});
 
   /// Defaults to the app-wide [healthApiService]; injectable for tests.
-  final HealthApiService? service;
+  final HealthDataSource? service;
 
   @override
   State<InsightsFeedScreen> createState() => _InsightsFeedScreenState();

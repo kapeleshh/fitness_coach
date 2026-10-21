@@ -10,7 +10,7 @@ class PredictionsCenterScreen extends StatefulWidget {
   const PredictionsCenterScreen({super.key, this.service});
 
   /// Defaults to the app-wide [healthApiService]; injectable for tests.
-  final HealthApiService? service;
+  final HealthDataSource? service;
 
   @override
   State<PredictionsCenterScreen> createState() => _PredictionsCenterScreenState();

@@ -11,7 +11,7 @@ class CoachScreen extends StatefulWidget {
   const CoachScreen({super.key, this.service});
 
   /// Defaults to the app-wide [healthApiService]; injectable for tests.
-  final HealthApiService? service;
+  final HealthDataSource? service;
 
   @override
   State<CoachScreen> createState() => _CoachScreenState();
@@ -40,7 +40,7 @@ class _CoachScreenState extends State<CoachScreen> {
   final _scroll = ScrollController();
   StreamSubscription<String>? _reply;
 
-  HealthApiService get _service => widget.service ?? healthApiService;
+  HealthDataSource get _service => widget.service ?? healthApiService;
   bool get _waiting => _reply != null;
 
   @override
