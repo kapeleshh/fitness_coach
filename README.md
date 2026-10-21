@@ -2,6 +2,11 @@
 
 Turns your Garmin wellness data and your Garmin and Strava workout history into a daily readiness score, a training-load picture and a coach you can ask questions. It all runs locally on your own data.
 
+## Branches
+
+- `main` carries the public Android app, Maru (`com.onelunchdev.maru`), now being built. Its data and engines move onto the phone; the backend stays as the reference the Dart engines in `packages/coach_engine/` are tested against.
+- `personal` carries the self-hosted app this README describes: the backend on your Mac and the app that reads it.
+
 ## What it does
 
 - **Sync**: Garmin Connect wellness (sleep, HRV, resting HR, body battery, stress, steps) and activities, refreshed every 6 hours. Strava history comes from your bulk export, with optional ongoing sync through the Strava API. Activities Garmin uploads to Strava are recognised as duplicates.
@@ -71,6 +76,7 @@ Your data stays on your machine. `data/`, `backend/fitness.db`, `backend/parsed_
 ```bash
 cd backend && uv run pytest && uv run ruff check .
 cd mobile_app && flutter analyze && flutter test
+cd packages/coach_engine && dart analyze && dart test
 ```
 
 Tests use synthetic data only (`backend/tests/synthetic.py`); no real health data belongs in code, tests or docs.
