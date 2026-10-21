@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../config.dart';
-import '../services/health_api_service.dart';
+import '../services/app_data_source.dart';
 import '../theme/app_theme.dart';
 
 /// Chat with the coach. Replies stream in from POST /api/coach/chat. The
@@ -10,7 +10,7 @@ import '../theme/app_theme.dart';
 class CoachScreen extends StatefulWidget {
   const CoachScreen({super.key, this.service});
 
-  /// Defaults to the app-wide [healthApiService]; injectable for tests.
+  /// Defaults to the app-wide [dataSource]; injectable for tests.
   final HealthDataSource? service;
 
   @override
@@ -40,7 +40,7 @@ class _CoachScreenState extends State<CoachScreen> {
   final _scroll = ScrollController();
   StreamSubscription<String>? _reply;
 
-  HealthDataSource get _service => widget.service ?? healthApiService;
+  HealthDataSource get _service => widget.service ?? dataSource;
   bool get _waiting => _reply != null;
 
   @override

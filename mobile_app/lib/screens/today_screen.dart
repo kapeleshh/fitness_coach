@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../config.dart';
-import '../services/health_api_service.dart';
+import '../services/app_data_source.dart';
 import '../theme/app_theme.dart';
 
 /// Home screen: today's readiness (with its training-load note), the last
@@ -9,7 +9,7 @@ import '../theme/app_theme.dart';
 class TodayScreen extends StatefulWidget {
   const TodayScreen({super.key, this.service});
 
-  /// Defaults to the app-wide [healthApiService]; injectable for tests.
+  /// Defaults to the app-wide [dataSource]; injectable for tests.
   final HealthDataSource? service;
 
   @override
@@ -25,7 +25,7 @@ class _TodayScreenState extends State<TodayScreen> {
   _Fetched? _load;
   bool _isLoading = true;
 
-  HealthDataSource get _service => widget.service ?? healthApiService;
+  HealthDataSource get _service => widget.service ?? dataSource;
 
   @override
   void initState() {

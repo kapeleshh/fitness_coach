@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../services/health_api_service.dart';
+import '../services/app_data_source.dart';
 import '../theme/app_theme.dart';
 
 /// Analytics Deep Dive - AI Pattern Analysis from YOUR Garmin data
@@ -38,7 +38,7 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
     setState(() => _isLoading = true);
 
     try {
-      final analytics = await healthApiService.fetchAnalytics();
+      final analytics = await dataSource.fetchAnalytics();
       if (!mounted) return;
       setState(() {
         _correlations = analytics['correlations'];
@@ -596,8 +596,8 @@ class _AnalyticsDeepDiveScreenState extends State<AnalyticsDeepDiveScreen>
           ),
           const SizedBox(height: 8),
           Text(
-            healthApiService.totalDays > 0
-                ? 'Based on ${healthApiService.totalDays} days of your data'
+            dataSource.totalDays > 0
+                ? 'Based on ${dataSource.totalDays} days of your data'
                 : 'Based on your synced Garmin data',
             style: const TextStyle(color: AppTheme.textSecondary),
           ),

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import '../services/health_api_service.dart';
+import '../services/app_data_source.dart';
 import '../theme/app_theme.dart';
 
-/// Dashboard showing YOUR real Garmin data from API
+/// Dashboard showing the stored daily wellness data
 class RealDataDashboard extends StatefulWidget {
-  const RealDataDashboard({super.key});
+  const RealDataDashboard({super.key, this.service});
+
+  /// Defaults to the app-wide [dataSource]; injectable for tests.
+  final HealthDataSource? service;
 
   @override
   State<RealDataDashboard> createState() => _RealDataDashboardState();
@@ -22,13 +25,15 @@ class _RealDataDashboardState extends State<RealDataDashboard> {
     _loadData();
   }
 
+  HealthDataSource get _service => widget.service ?? dataSource;
+
   Future<void> _loadData() async {
-    await healthApiService.refresh();
+    await _service.refresh();
     if (!mounted) return;
     setState(() {
-      _summary = healthApiService.summary;
-      _healthData = healthApiService.healthData;
-      _error = healthApiService.error;
+      _summary = _service.summary;
+      _healthData = _service.healthData;
+      _error = _service.error;
       _isLoading = false;
     });
   }
@@ -43,7 +48,7 @@ class _RealDataDashboardState extends State<RealDataDashboard> {
             children: [
               CircularProgressIndicator(),
               SizedBox(height: 16),
-              Text('Loading your Garmin data...'),
+              Text('Loading your data...'),
             ],
           ),
         ),

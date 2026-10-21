@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../config.dart';
 import '../theme/app_theme.dart';
-import '../services/health_api_service.dart';
+import '../services/app_data_source.dart';
 
 /// Pattern Explorer: correlations computed by the backend (/api/correlations
 /// and /api/correlations/pair) over the days where both metrics were measured.
 class CorrelationExplorerScreen extends StatefulWidget {
   const CorrelationExplorerScreen({super.key, this.service});
 
-  /// Defaults to the app-wide [healthApiService]; injectable for tests.
+  /// Defaults to the app-wide [dataSource]; injectable for tests.
   final HealthDataSource? service;
 
   @override
@@ -26,7 +26,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
   String? _customError;
   bool _customLoading = false;
 
-  HealthDataSource get _service => widget.service ?? healthApiService;
+  HealthDataSource get _service => widget.service ?? dataSource;
 
   static String _describe(Object e) => e is ApiException
       ? e.message
