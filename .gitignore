@@ -17,8 +17,6 @@ build/
 .venv/
 venv/
 env/
-uv.lock
-backend/uv.lock
 
 # Credentials - NEVER commit these
 .env
