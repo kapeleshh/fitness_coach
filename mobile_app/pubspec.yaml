@@ -19,10 +19,27 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^6.1.0
 
+  # On-device data (the public app)
+  coach_engine:
+    path: ../packages/coach_engine
+  coach_store:
+    path: ../packages/coach_store
+  flutter_secure_storage: ^11.2.0
+  path_provider: ^2.1.6
+
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  integration_test:
     sdk: flutter
   flutter_lints: ^3.0.1
 
 flutter:
   uses-material-design: true
+
+# Bundle SQLite3MultipleCiphers so the on-device database is encrypted.
+# coach_store refuses to open a database with a SQLite build that can't.
+hooks:
+  user_defines:
+    sqlite3:
+      source: sqlite3mc

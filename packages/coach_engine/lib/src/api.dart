@@ -3,15 +3,41 @@
 /// data source from the HTTP one.
 ///
 /// Inputs are the NULL-aware wellness records (newest first) and the
-/// activity rows with duplicates. The `/api/summary` and `/api/health-data`
-/// bodies need the legacy 0-filled record shape, which comes with the data
-/// store.
+/// activity rows with duplicates.
 library;
 
 import 'insights.dart';
 import 'json.dart';
+import 'py.dart';
 import 'readiness.dart';
 import 'training_load.dart';
+import 'wellness.dart';
+
+/// `GET /api/health-data`: every record in the legacy 0-filled shape.
+List<Json> healthDataBody(List<Json> wellness) => [for (final r in wellness) legacyFill(r)];
+
+/// `GET /api/summary`: averages over the days that have each metric (null,
+/// not 0, when none do), and the newest day in the legacy 0-filled shape.
+Json summaryBody(List<Json> wellness) {
+  if (wellness.isEmpty) return {'error': 'No data available'};
+
+  num? avg(String key, int digits) {
+    final values = [for (final d in wellness) if (d[key] case final num v) v];
+    return values.isEmpty ? null : pyRound(pySum(values) / values.length, digits);
+  }
+
+  return {
+    'total_days': wellness.length,
+    'date_range': {'start': wellness.last['date'], 'end': wellness.first['date']},
+    'averages': {
+      'sleep_score': avg('sleep_score', 1),
+      'hrv': avg('hrv', 1),
+      'stress': avg('avg_stress', 1),
+      'steps': avg('steps', 0),
+    },
+    'recent_day': legacyFill(wellness.first),
+  };
+}
 
 /// `GET /api/readiness`: today's readiness with the training-load state for
 /// that date and the fused note in the briefing.
