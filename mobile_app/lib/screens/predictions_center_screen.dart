@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import '../config.dart';
 import '../theme/app_theme.dart';
 import '../services/health_api_service.dart';
 
-/// Predictions Center showing forecasts based on YOUR real Garmin data patterns
+/// Predictions Center: tomorrow's body battery from the backend
+/// (/api/outlook), shown with the heuristic's measured error, plus this
+/// week's averages and trends.
 class PredictionsCenterScreen extends StatefulWidget {
-  const PredictionsCenterScreen({super.key});
+  const PredictionsCenterScreen({super.key, this.service});
+
+  /// Defaults to the app-wide [healthApiService]; injectable for tests.
+  final HealthApiService? service;
 
   @override
   State<PredictionsCenterScreen> createState() => _PredictionsCenterScreenState();
@@ -12,9 +18,14 @@ class PredictionsCenterScreen extends StatefulWidget {
 
 class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
   Map<String, dynamic>? _prediction;
-  Map<String, dynamic>? _today;
-  Map<String, double> _weekAvg = {};
+  String? _error;
   bool _isLoading = true;
+
+  Map<String, dynamic>? get _today => _prediction?['today'] as Map<String, dynamic>?;
+  Map<String, dynamic> get _weekAvg =>
+      (_prediction?['weekly'] as Map<String, dynamic>?) ?? const {};
+  Map<String, dynamic> get _trends =>
+      (_prediction?['trends'] as Map<String, dynamic>?) ?? const {};
 
   @override
   void initState() {
@@ -24,16 +35,26 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
 
   Future<void> _loadData() async {
     setState(() => _isLoading = true);
-    
-    await healthApiService.initialize();
-    
+    Map<String, dynamic>? outlook;
+    String? error;
+    try {
+      outlook = await (widget.service ?? healthApiService).fetchOutlook();
+    } on ApiException catch (e) {
+      error = e.message;
+    } catch (e) {
+      debugPrint('Outlook fetch failed: $e');
+      error = "Couldn't reach the API at $apiBaseUrl. Make sure the backend server is running.";
+    }
+    if (!mounted) return;
     setState(() {
-      _prediction = healthApiService.predictTomorrow();
-      _today = healthApiService.today;
-      _weekAvg = healthApiService.getWeeklyAverages();
+      _prediction = outlook;
+      _error = error;
       _isLoading = false;
     });
   }
+
+  /// A whole-number display value, or "—" when the metric wasn't measured.
+  static String _fmt(Object? value) => value is num ? '${value.round()}' : '—';
 
   @override
   Widget build(BuildContext context) {
@@ -64,11 +85,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
                     
                     // Weekly Forecast
                     _buildWeeklyForecast(),
-                    const SizedBox(height: 24),
-                    
-                    // Optimal Times
-                    _buildOptimalTimes(),
-                    
+
                     const SizedBox(height: 100),
                   ],
                 ),
@@ -78,27 +95,31 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
   }
 
   Widget _buildTomorrowPrediction() {
-    if (_prediction == null || _prediction!['confidence'] == 0) {
+    if (_prediction == null || _prediction!['available'] != true) {
       return Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
         ),
-        child: const Column(
+        child: Column(
           children: [
-            Icon(Icons.hourglass_empty, size: 48, color: AppTheme.textTertiary),
-            SizedBox(height: 12),
+            Icon(_error != null ? Icons.cloud_off : Icons.hourglass_empty,
+                size: 48, color: AppTheme.textTertiary),
+            const SizedBox(height: 12),
             Text(
-              'Need more data for predictions',
-              style: TextStyle(color: AppTheme.textSecondary),
+              _error ?? (_prediction?['message'] as String?) ?? 'Need more data for predictions',
+              textAlign: TextAlign.center,
+              style: const TextStyle(color: AppTheme.textSecondary),
             ),
           ],
         ),
       );
     }
 
-    final intensity = _prediction!['recommendedIntensity'] as String;
+    final intensity = _prediction!['recommended_intensity'] as String;
+    final predicted = _prediction!['predicted_body_battery'] as num;
+    final backtest = _prediction!['backtest'] as Map<String, dynamic>?;
     Color intensityColor;
     IconData intensityIcon;
     
@@ -169,7 +190,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
                       width: 70,
                       height: 70,
                       child: CircularProgressIndicator(
-                        value: (_prediction!['predictedBodyBattery'] ?? 50) / 100,
+                        value: (predicted / 100).clamp(0, 1).toDouble(),
                         strokeWidth: 6,
                         backgroundColor: Colors.white.withValues(alpha: 0.3),
                         valueColor: const AlwaysStoppedAnimation(Colors.white),
@@ -179,7 +200,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '${_prediction!['predictedBodyBattery'] ?? 50}',
+                          '$predicted',
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 24,
@@ -226,8 +247,12 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
                         color: Colors.white.withValues(alpha: 0.2),
                         borderRadius: BorderRadius.circular(20),
                       ),
+                      // Measured by replaying the same heuristic over past days.
                       child: Text(
-                        '${_prediction!['confidence']}% Confidence',
+                        backtest == null
+                            ? 'Accuracy not measured yet'
+                            : 'Usually off by ~${(backtest['mean_abs_error'] as num).round()} '
+                                '(tested on ${backtest['days']} days)',
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 12,
@@ -315,10 +340,10 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
                 const SizedBox(height: 12),
                 Row(
                   children: [
-                    _miniStatusCard('Sleep', '${_today!['sleep_score'] ?? 0}', AppTheme.sleepColor),
-                    _miniStatusCard('Battery', '${_today!['body_battery_end'] ?? 0}', AppTheme.bodyBatteryColor),
-                    _miniStatusCard('Stress', '${_today!['avg_stress'] ?? 0}', AppTheme.stressColor),
-                    _miniStatusCard('HRV', '${_today!['hrv']?.round() ?? 0}', AppTheme.hrvColor),
+                    _miniStatusCard('Sleep', _fmt(_today!['sleep_score']), AppTheme.sleepColor),
+                    _miniStatusCard('Battery', _fmt(_today!['body_battery_end']), AppTheme.bodyBatteryColor),
+                    _miniStatusCard('Stress', _fmt(_today!['avg_stress']), AppTheme.stressColor),
+                    _miniStatusCard('HRV', _fmt(_today!['hrv']), AppTheme.hrvColor),
                   ],
                 ),
               ],
@@ -332,7 +357,8 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
   Widget _buildFactorCard(Map<String, dynamic> factor) {
     final impact = factor['impact'] as String;
     final isPositive = impact == 'positive';
-    final isNeutral = impact == 'neutral';
+    // "unknown": the metric wasn't measured, so it can't push either way.
+    final isNeutral = impact == 'neutral' || impact == 'unknown';
     
     Color impactColor = isPositive 
         ? AppTheme.successColor 
@@ -429,7 +455,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
   }
 
   Widget _buildWeeklyForecast() {
-    if (_weekAvg.isEmpty) return const SizedBox();
+    if (_weekAvg.values.every((v) => v == null)) return const SizedBox();
     
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -453,34 +479,34 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
             children: [
               _buildForecastRow(
                 'Sleep Trend',
-                _weekAvg['sleep'] ?? 0,
+                _weekAvg['sleep'] as num?,
                 100,
                 AppTheme.sleepColor,
-                healthApiService.getTrend('sleep'),
+                _trends['sleep'] as String? ?? 'unknown',
               ),
               const Divider(height: 24),
               _buildForecastRow(
                 'HRV Baseline',
-                _weekAvg['hrv'] ?? 0,
+                _weekAvg['hrv'] as num?,
                 100,
                 AppTheme.hrvColor,
-                healthApiService.getTrend('hrv'),
+                _trends['hrv'] as String? ?? 'unknown',
               ),
               const Divider(height: 24),
               _buildForecastRow(
                 'Stress Pattern',
-                _weekAvg['stress'] ?? 0,
+                _weekAvg['stress'] as num?,
                 100,
                 AppTheme.stressColor,
-                healthApiService.getTrend('stress'),
+                _trends['stress'] as String? ?? 'unknown',
               ),
               const Divider(height: 24),
               _buildForecastRow(
                 'Activity Level',
-                _weekAvg['steps'] ?? 0,
+                _weekAvg['steps'] as num?,
                 15000,
                 AppTheme.activityColor,
-                healthApiService.getTrend('steps'),
+                _trends['steps'] as String? ?? 'unknown',
               ),
             ],
           ),
@@ -489,7 +515,7 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
     );
   }
 
-  Widget _buildForecastRow(String label, double value, double max, Color color, String trend) {
+  Widget _buildForecastRow(String label, num? value, double max, Color color, String trend) {
     String trendEmoji;
     String trendText;
     
@@ -502,9 +528,13 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
         trendEmoji = '📉';
         trendText = 'Declining';
         break;
-      default:
+      case 'stable':
         trendEmoji = '➡️';
         trendText = 'Stable';
+        break;
+      default:
+        trendEmoji = '·';
+        trendText = 'Not enough data yet';
     }
     
     return Row(
@@ -546,9 +576,11 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                label.contains('Step') 
-                    ? '${(value / 1000).toStringAsFixed(1)}k' 
-                    : value.round().toString(),
+                value == null
+                    ? '—'
+                    : label.contains('Activity')
+                        ? '${(value / 1000).toStringAsFixed(1)}k'
+                        : value.round().toString(),
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
@@ -559,110 +591,10 @@ class _PredictionsCenterScreenState extends State<PredictionsCenterScreen> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(4),
                 child: LinearProgressIndicator(
-                  value: (value / max).clamp(0, 1),
+                  value: ((value ?? 0) / max).clamp(0, 1).toDouble(),
                   backgroundColor: color.withValues(alpha: 0.2),
                   valueColor: AlwaysStoppedAnimation(color),
                   minHeight: 6,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildOptimalTimes() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          '⏰ Optimal Times',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-            color: AppTheme.textPrimary,
-          ),
-        ),
-        const SizedBox(height: 16),
-        Container(
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Column(
-            children: [
-              _buildTimeRecommendation(
-                '🏃 Best Workout Time',
-                '7:00 - 9:00 AM',
-                'Body Battery typically peaks in morning',
-                AppTheme.activityColor,
-              ),
-              const Divider(height: 24),
-              _buildTimeRecommendation(
-                '😴 Optimal Bedtime',
-                '10:30 PM',
-                'Based on your sleep pattern analysis',
-                AppTheme.sleepColor,
-              ),
-              const Divider(height: 24),
-              _buildTimeRecommendation(
-                '🧘 Recovery Window',
-                '2:00 - 4:00 PM',
-                'When stress tends to peak - good for breaks',
-                AppTheme.bodyBatteryColor,
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildTimeRecommendation(String title, String time, String reason, Color color) {
-    return Row(
-      children: [
-        Container(
-          width: 50,
-          height: 50,
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Center(
-            child: Text(
-              title.split(' ').first,
-              style: const TextStyle(fontSize: 20),
-            ),
-          ),
-        ),
-        const SizedBox(width: 12),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title.replaceFirst(RegExp(r'^[^\s]+\s'), ''),
-                style: const TextStyle(
-                  fontWeight: FontWeight.w500,
-                  color: AppTheme.textSecondary,
-                  fontSize: 13,
-                ),
-              ),
-              Text(
-                time,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  color: color,
-                ),
-              ),
-              Text(
-                reason,
-                style: const TextStyle(
-                  fontSize: 12,
-                  color: AppTheme.textTertiary,
                 ),
               ),
             ],

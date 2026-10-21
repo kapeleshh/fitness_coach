@@ -21,6 +21,7 @@ from fastapi.responses import JSONResponse, StreamingResponse
 
 import coach
 import db
+import insights_engine
 import readiness_engine
 import strava_sync
 import training_load_engine
@@ -65,6 +66,10 @@ ENDPOINT_LIST = [
     "GET  /api/readiness/YYYY-MM-DD",
     "GET  /api/training-load",
     "GET  /api/training-load/history",
+    "GET  /api/insights",
+    "GET  /api/correlations",
+    "GET  /api/correlations/pair?x=METRIC&y=METRIC&lag=0",
+    "GET  /api/outlook",
     "GET  /api/activities",
     "GET  /api/activities/SOURCE:ID",
     "GET  /api/sync/status",
@@ -249,25 +254,26 @@ def health_data_single(date_str: str):
 
 @app.get("/api/summary")
 def summary():
-    data = db.get_all_days(legacy_zero_fill=True)
-
-    def _safe_avg(items, key):
-        vals = [d[key] for d in items if (d.get(key) or 0) > 0]
-        return sum(vals) / len(vals) if vals else 0
-
-    if not data:
+    records = db.get_all_days()
+    if not records:
         return {"error": "No data available"}
 
+    def _avg(key, digits):
+        # Over the days that have the metric; null (not 0) when none do.
+        vals = [d[key] for d in records if d.get(key) is not None]
+        return round(sum(vals) / len(vals), digits) if vals else None
+
     return {
-        "total_days": len(data),
-        "date_range": {"start": data[-1]["date"], "end": data[0]["date"]},
+        "total_days": len(records),
+        "date_range": {"start": records[-1]["date"], "end": records[0]["date"]},
         "averages": {
-            "sleep_score": round(_safe_avg(data, "sleep_score"), 1),
-            "hrv": round(_safe_avg(data, "hrv"), 1),
-            "stress": round(_safe_avg(data, "avg_stress"), 1),
-            "steps": round(_safe_avg(data, "steps"), 0),
+            "sleep_score": _avg("sleep_score", 1),
+            "hrv": _avg("hrv", 1),
+            "stress": _avg("avg_stress", 1),
+            "steps": _avg("steps", 0),
         },
-        "recent_day": data[0],
+        # The day itself keeps the legacy 0-filled shape the contract pins.
+        "recent_day": db.get_day(records[0]["date"], legacy_zero_fill=True),
     }
 
 
@@ -346,6 +352,48 @@ def training_load_today():
 @app.get("/api/training-load/history")
 def training_load_history(days: int = 90):
     return training_load_engine.training_load_history(days=days)
+
+
+# ========== INSIGHTS ENDPOINTS ==========
+# The numbers behind the app's Insights, Patterns and Predictions tabs, which
+# the app used to compute on the device from 0-filled data.
+
+@app.get("/api/insights")
+def insights():
+    records = db.get_all_days()
+    week = insights_engine.weekly_summary(records)
+    readiness = readiness_engine.readiness_today(records)
+    latest = records[0] if records else {}
+    return {
+        "date": week["date"],
+        "readiness": {k: readiness.get(k) for k in ("score", "band", "label")},
+        "today": {k: latest.get(k) for k in ("sleep_score", "hrv", "avg_stress")},
+        "insights": insights_engine.insights(records, week),
+        "weekly": week,
+    }
+
+
+@app.get("/api/correlations")
+def correlations():
+    records = db.get_all_days()
+    return {"days": len(records),
+            "correlations": insights_engine.discover_correlations(records)}
+
+
+@app.get("/api/correlations/pair")
+def correlation_pair(x: str | None = None, y: str | None = None, lag: int = 0):
+    for metric in (x, y):
+        if metric not in insights_engine.CORRELATION_METRICS:
+            return _error(f"Unknown or missing metric: {metric!r}", status=400)
+    if not 0 <= lag <= insights_engine.MAX_LAG_DAYS:
+        return _error(f"lag must be 0-{insights_engine.MAX_LAG_DAYS} days", status=400)
+    return {"metric1": x, "metric2": y, "lag_days": lag,
+            **insights_engine.correlation(db.get_all_days(), x, y, lag)}
+
+
+@app.get("/api/outlook")
+def outlook():
+    return insights_engine.outlook(db.get_all_days())
 
 
 # ========== ACTIVITY ENDPOINTS ==========

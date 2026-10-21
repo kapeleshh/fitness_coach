@@ -39,49 +39,6 @@ void main() {
   });
 
   group('HealthApiService', () {
-    test('calculateCorrelation finds a perfect positive correlation', () {
-      final service = HealthApiService();
-      service.setHealthDataForTest(List.generate(
-        10,
-        (i) => {
-          'date': '2026-01-${(i + 1).toString().padLeft(2, '0')}',
-          'sleep_score': 50 + i,
-          'hrv': 40 + i * 2,
-        },
-      ));
-
-      final result = service.calculateCorrelation('sleep_score', 'hrv');
-
-      expect(result['strength'], 'strong');
-      expect(result['correlation'], closeTo(1.0, 1e-9));
-      expect(result['sampleSize'], 10);
-    });
-
-    test('calculateCorrelation reports insufficient data on empty set', () {
-      final service = HealthApiService();
-      service.setHealthDataForTest([]);
-
-      final result = service.calculateCorrelation('sleep_score', 'hrv');
-
-      expect(result['strength'], 'insufficient_data');
-      expect(result['correlation'], 0.0);
-    });
-
-    test('calculateHealthScore combines weighted metrics into 0-100', () {
-      final service = HealthApiService();
-
-      final score = service.calculateHealthScore({
-        'sleep_score': 80,
-        'hrv': 60,
-        'body_battery_start': 70,
-        'avg_stress': 30,
-        'steps': 8000,
-      });
-
-      // 80*0.25 + 60*0.20 + 70*0.20 + (100-30)*0.20 + 80*0.15 = 72
-      expect(score, 72);
-    });
-
     test('fetchReadiness decodes UTF-8 even without a charset', () async {
       final service = HealthApiService(
         client: MockClient((_) async => http.Response.bytes(
@@ -135,6 +92,22 @@ void main() {
       expect(sent, {'question': 'Train today?'});
     });
 
+    test('fetchCorrelationPair asks the backend for the pair and lag', () async {
+      Uri? asked;
+      final service = HealthApiService(
+        client: MockClient((request) async {
+          asked = request.url;
+          return http.Response('{"strength": "insufficient_data"}', 200,
+              headers: {'content-type': 'application/json'});
+        }),
+      );
+
+      await service.fetchCorrelationPair('sleep_score', 'hrv', lag: 1);
+
+      expect(asked!.path, '/api/correlations/pair');
+      expect(asked!.queryParameters, {'x': 'sleep_score', 'y': 'hrv', 'lag': '1'});
+    });
+
     test('askCoach surfaces a non-JSON error status', () {
       final service = HealthApiService(
         client: MockClient.streaming((_, __) async => http.StreamedResponse(
@@ -150,14 +123,5 @@ void main() {
       );
     });
 
-    test('getWeeklyAverages ignores missing (zero) values', () {
-      final service = HealthApiService();
-      service.setHealthDataForTest([
-        {'date': '2026-01-02', 'sleep_score': 80},
-        {'date': '2026-01-01', 'sleep_score': 0}, // missing day
-      ]);
-
-      expect(service.getWeeklyAverages()['sleep'], 80.0);
-    });
   });
 }
