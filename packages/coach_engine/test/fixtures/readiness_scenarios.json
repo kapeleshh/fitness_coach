@@ -1,0 +1,8320 @@
+[
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.884,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.82,
+     "weight": 0.35
+    }
+   },
+   "band": "green",
+   "baseline_status": "full",
+   "briefing": "GREEN — readiness 86/100 (high confidence). Main limiter: sleep score 82; support morning body battery 72. Recovery looks good — train as planned; quality/hard work is fine.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 0.9640000000000001,
+     "value": 72
+    },
+    "hrv": {
+     "available": true,
+     "baseline_ms": 54.7,
+     "cv_7": 7.9,
+     "cv_penalty": 0.0,
+     "cv_ratio": 1.07,
+     "n_days": 60,
+     "pct_dev": 0.4,
+     "source": "baseline",
+     "sub": 0.85,
+     "value_ms": 54.9,
+     "z": 0.05
+    },
+    "resting_hr": {
+     "available": true,
+     "baseline": 50.0,
+     "delta_bpm": 0.0,
+     "n_days": 60,
+     "sub": 0.85,
+     "value": 50.0,
+     "zr": 0.0
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": false,
+     "tst_min": 420
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.82,
+     "value": 82
+    }
+   },
+   "confidence": "high",
+   "data_completeness": 1.0,
+   "date": "2026-07-07",
+   "days_to_full": 0,
+   "drivers": {
+    "limiter": "sleep_score",
+    "support": "body_battery"
+   },
+   "flags": [],
+   "label": "Train as planned",
+   "score": 86,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "normal_full",
+  "records": [
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-08",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-31",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.564,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.82,
+     "weight": 0.35
+    }
+   },
+   "band": "amber",
+   "baseline_status": "full",
+   "briefing": "AMBER — readiness 65/100 (high confidence). Main limiter: HRV 43ms, -19% vs your 60-day baseline (z -1.6); support morning body battery 72. Recovery is slightly down — keep it easy-to-moderate and skip the hard session.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 0.9640000000000001,
+     "value": 72
+    },
+    "hrv": {
+     "available": true,
+     "baseline_ms": 53.2,
+     "cv_7": 24.3,
+     "cv_penalty": 0.15,
+     "cv_ratio": 3.31,
+     "n_days": 60,
+     "pct_dev": -18.6,
+     "source": "baseline",
+     "sub": 0.20948330194937823,
+     "value_ms": 43.3,
+     "z": -1.65
+    },
+    "resting_hr": {
+     "available": true,
+     "baseline": 50.0,
+     "delta_bpm": 0.0,
+     "n_days": 60,
+     "sub": 0.85,
+     "value": 50.0,
+     "zr": 0.0
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": false,
+     "tst_min": 420
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.82,
+     "value": 82
+    }
+   },
+   "confidence": "high",
+   "data_completeness": 1.0,
+   "date": "2026-07-07",
+   "days_to_full": 0,
+   "drivers": {
+    "limiter": "hrv",
+    "support": "body_battery"
+   },
+   "flags": [],
+   "label": "Train easy",
+   "score": 65,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "suppressed",
+  "records": [
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 38.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 38.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 38.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 38.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 38.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-08",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-31",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.315,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.82,
+     "weight": 0.35
+    }
+   },
+   "band": "red",
+   "baseline_status": "full",
+   "briefing": "Heads-up — HRV down and resting HR up (possible illness/overreaching): RED — readiness 35/100 (high confidence). Main limiter: HRV 46ms, -14% vs your 60-day baseline (z -1.2); support morning body battery 72. Recovery is low — rest or light active recovery, and check sleep/illness/life stress.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 0.9640000000000001,
+     "value": 72
+    },
+    "hrv": {
+     "available": true,
+     "baseline_ms": 53.6,
+     "cv_7": 27.2,
+     "cv_penalty": 0.15,
+     "cv_ratio": 3.71,
+     "n_days": 60,
+     "pct_dev": -13.9,
+     "source": "baseline",
+     "sub": 0.3943336159720797,
+     "value_ms": 46.1,
+     "z": -1.18
+    },
+    "resting_hr": {
+     "available": true,
+     "baseline": 50.5,
+     "delta_bpm": 9.5,
+     "n_days": 60,
+     "sub": 0.0,
+     "value": 60.0,
+     "zr": 4.32
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": false,
+     "tst_min": 420
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.82,
+     "value": 82
+    }
+   },
+   "confidence": "high",
+   "data_completeness": 1.0,
+   "date": "2026-07-07",
+   "days_to_full": 0,
+   "drivers": {
+    "limiter": "hrv",
+    "support": "body_battery"
+   },
+   "flags": [
+    "body_battery_capped",
+    "illness_watch"
+   ],
+   "label": "Rest / recover",
+   "score": 35,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "illness",
+  "records": [
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 34.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 60,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 34.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 60,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 34.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 60,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-08",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-31",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.893,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.82,
+     "weight": 0.35
+    }
+   },
+   "band": "green",
+   "baseline_status": "cold_start",
+   "briefing": "GREEN — readiness 87/100 (provisional — using Garmin signals while your baseline builds (18d to go)). Main limiter: sleep score 82; support morning body battery 72. Recovery looks good — train as planned; quality/hard work is fine.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 0.9640000000000001,
+     "value": 72
+    },
+    "hrv": {
+     "available": true,
+     "baseline_ms": null,
+     "cv_7": null,
+     "cv_penalty": 0.0,
+     "cv_ratio": null,
+     "n_days": 10,
+     "pct_dev": null,
+     "source": "status",
+     "sub": 0.85,
+     "value_ms": null,
+     "z": null
+    },
+    "resting_hr": {
+     "available": false,
+     "baseline": null,
+     "delta_bpm": null,
+     "n_days": 10,
+     "sub": null,
+     "value": null,
+     "zr": null
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": false,
+     "tst_min": 420
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.82,
+     "value": 82
+    }
+   },
+   "confidence": "medium",
+   "data_completeness": 0.87,
+   "date": "2026-07-07",
+   "days_to_full": 18,
+   "drivers": {
+    "limiter": "sleep_score",
+    "support": "body_battery"
+   },
+   "flags": [],
+   "label": "Train as planned",
+   "score": 87,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "cold_start",
+  "records": [
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.884,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.82,
+     "weight": 0.35
+    }
+   },
+   "band": "green",
+   "baseline_status": "full",
+   "briefing": "GREEN — readiness 86/100 (medium confidence). Main limiter: sleep score 82; support morning body battery 72. Recovery looks good — train as planned; quality/hard work is fine.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 0.9640000000000001,
+     "value": 72
+    },
+    "hrv": {
+     "available": true,
+     "baseline_ms": null,
+     "cv_7": null,
+     "cv_penalty": 0.0,
+     "cv_ratio": null,
+     "n_days": 55,
+     "pct_dev": null,
+     "source": "status",
+     "sub": 0.85,
+     "value_ms": null,
+     "z": null
+    },
+    "resting_hr": {
+     "available": true,
+     "baseline": 50.0,
+     "delta_bpm": 0.0,
+     "n_days": 60,
+     "sub": 0.85,
+     "value": 50.0,
+     "zr": 0.0
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": false,
+     "tst_min": 420
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.82,
+     "value": 82
+    }
+   },
+   "confidence": "medium",
+   "data_completeness": 1.0,
+   "date": "2026-07-07",
+   "days_to_full": 0,
+   "drivers": {
+    "limiter": "sleep_score",
+    "support": "body_battery"
+   },
+   "flags": [
+    "stale_hrv"
+   ],
+   "label": "Train as planned",
+   "score": 86,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "stale_hrv",
+  "records": [
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 90,
+    "hrv": null,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": null,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": null,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": null,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": null,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-08",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-31",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.884,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.5,
+     "weight": 0.35
+    }
+   },
+   "band": "green",
+   "baseline_status": "full",
+   "briefing": "GREEN — readiness 75/100 (high confidence). Main limiter: sleep score 92; support morning body battery 72. Recovery looks good — train as planned; quality/hard work is fine.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 0.9640000000000001,
+     "value": 72
+    },
+    "hrv": {
+     "available": true,
+     "baseline_ms": 54.7,
+     "cv_7": 7.9,
+     "cv_penalty": 0.0,
+     "cv_ratio": 1.07,
+     "n_days": 60,
+     "pct_dev": 0.4,
+     "source": "baseline",
+     "sub": 0.85,
+     "value_ms": 54.9,
+     "z": 0.05
+    },
+    "resting_hr": {
+     "available": true,
+     "baseline": 50.0,
+     "delta_bpm": 0.0,
+     "n_days": 60,
+     "sub": 0.85,
+     "value": 50.0,
+     "zr": 0.0
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": true,
+     "tst_min": 220
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.5,
+     "value": 92
+    }
+   },
+   "confidence": "high",
+   "data_completeness": 1.0,
+   "date": "2026-07-07",
+   "days_to_full": 0,
+   "drivers": {
+    "limiter": "sleep_score",
+    "support": "body_battery"
+   },
+   "flags": [],
+   "label": "Train as planned",
+   "score": 75,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "short_sleep",
+  "records": [
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 40,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 120,
+    "rem_sleep_minutes": 60,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-08",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-31",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 92
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.918,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.82,
+     "weight": 0.35
+    }
+   },
+   "band": "green",
+   "baseline_status": "full",
+   "briefing": "GREEN — readiness 88/100 (medium confidence). Main limiter: sleep score 82; support morning body battery 72. Recovery looks good — train as planned; quality/hard work is fine.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 0.9640000000000001,
+     "value": 72
+    },
+    "hrv": {
+     "available": false,
+     "baseline_ms": null,
+     "cv_7": null,
+     "cv_penalty": 0.0,
+     "cv_ratio": null,
+     "n_days": 52,
+     "pct_dev": null,
+     "source": null,
+     "sub": null,
+     "value_ms": null,
+     "z": null
+    },
+    "resting_hr": {
+     "available": true,
+     "baseline": 50.0,
+     "delta_bpm": 0.0,
+     "n_days": 60,
+     "sub": 0.85,
+     "value": 50.0,
+     "zr": 0.0
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": false,
+     "tst_min": 420
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.82,
+     "value": 82
+    }
+   },
+   "confidence": "medium",
+   "data_completeness": 0.675,
+   "date": "2026-07-07",
+   "days_to_full": 0,
+   "drivers": {
+    "limiter": "sleep_score",
+    "support": "body_battery"
+   },
+   "flags": [],
+   "label": "Train as planned",
+   "score": 88,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "missing_hrv",
+  "records": [
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 90,
+    "hrv": null,
+    "hrv_status": null,
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": null,
+    "hrv_status": null,
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": null,
+    "hrv_status": null,
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": null,
+    "hrv_status": null,
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": null,
+    "hrv_status": null,
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": null,
+    "hrv_status": null,
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": null,
+    "hrv_status": null,
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": null,
+    "hrv_status": null,
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-08",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-31",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": false,
+     "score": null,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": false,
+     "score": null,
+     "weight": 0.35
+    }
+   },
+   "band": "unknown",
+   "baseline_status": "cold_start",
+   "briefing": "UNKNOWN — no readiness score. No HRV, body battery or sleep recorded for 2026-07-07. Sync your watch and check back.",
+   "components": {},
+   "confidence": "none",
+   "data_completeness": 0.0,
+   "date": "2026-07-07",
+   "drivers": {
+    "limiter": null,
+    "support": null
+   },
+   "flags": [],
+   "label": "Not enough data yet",
+   "score": null
+  },
+  "name": "insufficient",
+  "records": [
+   {
+    "body_battery_start": null,
+    "date": "2026-07-07",
+    "hrv": null,
+    "hrv_status": null,
+    "resting_hr": null,
+    "sleep_score": null
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.884,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.82,
+     "weight": 0.35
+    }
+   },
+   "band": "green",
+   "baseline_status": "warming",
+   "briefing": "GREEN — readiness 86/100 (medium confidence, baseline still building (14d to go)). Main limiter: sleep score 82; support morning body battery 72. Recovery looks good — train as planned; quality/hard work is fine.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 0.9640000000000001,
+     "value": 72
+    },
+    "hrv": {
+     "available": true,
+     "baseline_ms": 54.9,
+     "cv_7": 7.9,
+     "cv_penalty": 0.0,
+     "cv_ratio": 1.0,
+     "n_days": 14,
+     "pct_dev": 0.0,
+     "source": "blend",
+     "sub": 0.85,
+     "value_ms": 54.9,
+     "z": 0.0
+    },
+    "resting_hr": {
+     "available": true,
+     "baseline": 50.0,
+     "delta_bpm": 0.0,
+     "n_days": 14,
+     "sub": 0.85,
+     "value": 50.0,
+     "zr": 0.0
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": false,
+     "tst_min": 420
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.82,
+     "value": 82
+    }
+   },
+   "confidence": "medium",
+   "data_completeness": 1.0,
+   "date": "2026-07-07",
+   "days_to_full": 14,
+   "drivers": {
+    "limiter": "sleep_score",
+    "support": "body_battery"
+   },
+   "flags": [],
+   "label": "Train as planned",
+   "score": 86,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "warming_unknown",
+  "records": [
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.646,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.82,
+     "weight": 0.35
+    }
+   },
+   "band": "green",
+   "baseline_status": "warming",
+   "briefing": "GREEN — readiness 71/100 (medium confidence, baseline still building (8d to go)). Main limiter: resting HR +10 bpm vs baseline (62 bpm); support morning body battery 72. Recovery looks good — train as planned; quality/hard work is fine.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 0.9640000000000001,
+     "value": 72
+    },
+    "hrv": {
+     "available": true,
+     "baseline_ms": 51.3,
+     "cv_7": 27.2,
+     "cv_penalty": 0.075,
+     "cv_ratio": 3.77,
+     "n_days": 20,
+     "pct_dev": -10.2,
+     "source": "blend",
+     "sub": 0.7618795050375589,
+     "value_ms": 46.1,
+     "z": -0.57
+    },
+    "resting_hr": {
+     "available": true,
+     "baseline": 51.8,
+     "delta_bpm": 10.2,
+     "n_days": 20,
+     "sub": 0.18127969581173842,
+     "value": 62.0,
+     "zr": 2.32
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": false,
+     "tst_min": 420
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.82,
+     "value": 82
+    }
+   },
+   "confidence": "medium",
+   "data_completeness": 1.0,
+   "date": "2026-07-07",
+   "days_to_full": 8,
+   "drivers": {
+    "limiter": "resting_hr",
+    "support": "body_battery"
+   },
+   "flags": [
+    "body_battery_capped"
+   ],
+   "label": "Train as planned",
+   "score": 71,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "warming_illness",
+  "records": [
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 34.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 62,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 34.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 62,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 34.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 62,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "UNKNOWN",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.578,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.82,
+     "weight": 0.35
+    }
+   },
+   "band": "amber",
+   "baseline_status": "full",
+   "briefing": "AMBER — readiness 66/100 (high confidence). Main limiter: HRV 50ms, -8% vs your 60-day baseline (z -1.1); support morning body battery 95. Recovery is slightly down — keep it easy-to-moderate and skip the hard session.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 1.0,
+     "value": 95
+    },
+    "hrv": {
+     "available": true,
+     "baseline_ms": 54.1,
+     "cv_7": 0.0,
+     "cv_penalty": 0.0,
+     "cv_ratio": 0.0,
+     "n_days": 60,
+     "pct_dev": -7.5,
+     "source": "baseline",
+     "sub": 0.6028252753010435,
+     "value_ms": 50.0,
+     "z": -1.05
+    },
+    "resting_hr": {
+     "available": true,
+     "baseline": 50.4,
+     "delta_bpm": 2.6,
+     "n_days": 60,
+     "sub": 0.4787500000000003,
+     "value": 53.0,
+     "zr": 1.32
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": false,
+     "tst_min": 420
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.82,
+     "value": 82
+    }
+   },
+   "confidence": "high",
+   "data_completeness": 1.0,
+   "date": "2026-07-07",
+   "days_to_full": 0,
+   "drivers": {
+    "limiter": "hrv",
+    "support": "body_battery"
+   },
+   "flags": [
+    "body_battery_capped"
+   ],
+   "label": "Train easy",
+   "score": 66,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "body_battery_capped",
+  "records": [
+   {
+    "body_battery_start": 95,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 50.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 53,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 50.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 53,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 50.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 53,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 50.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 53,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 50.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 53,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 50.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 53,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 50.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 53,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-08",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-31",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.895,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.82,
+     "weight": 0.35
+    }
+   },
+   "band": "green",
+   "baseline_status": "full",
+   "briefing": "GREEN — readiness 87/100 (high confidence). Main limiter: sleep score 82; support morning body battery 95. Recovery looks good — train as planned; quality/hard work is fine.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 1.0,
+     "value": 95
+    },
+    "hrv": {
+     "available": true,
+     "baseline_ms": 54.7,
+     "cv_7": 7.9,
+     "cv_penalty": 0.0,
+     "cv_ratio": 1.07,
+     "n_days": 60,
+     "pct_dev": 0.4,
+     "source": "baseline",
+     "sub": 0.85,
+     "value_ms": 54.9,
+     "z": 0.05
+    },
+    "resting_hr": {
+     "available": true,
+     "baseline": 50.0,
+     "delta_bpm": 0.0,
+     "n_days": 60,
+     "sub": 0.85,
+     "value": 50.0,
+     "zr": 0.0
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": false,
+     "tst_min": 420
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.82,
+     "value": 82
+    }
+   },
+   "confidence": "high",
+   "data_completeness": 1.0,
+   "date": "2026-07-07",
+   "days_to_full": 0,
+   "drivers": {
+    "limiter": "sleep_score",
+    "support": "body_battery"
+   },
+   "flags": [],
+   "label": "Train as planned",
+   "score": 87,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "body_battery_normal",
+  "records": [
+   {
+    "body_battery_start": 95,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-08",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-31",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.542,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.96,
+     "weight": 0.35
+    }
+   },
+   "band": "red",
+   "baseline_status": "full",
+   "briefing": "RED — readiness 45/100 (high confidence). Main limiter: HRV 35ms, -32% vs your 60-day baseline (z -2.5); support sleep score 96. Recovery is low — rest or light active recovery, and check sleep/illness/life stress.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 1.0,
+     "value": 95
+    },
+    "hrv": {
+     "available": true,
+     "baseline_ms": 51.9,
+     "cv_7": 0.0,
+     "cv_penalty": 0.0,
+     "cv_ratio": 0.0,
+     "n_days": 60,
+     "pct_dev": -32.5,
+     "source": "baseline",
+     "sub": 0.1433723802724764,
+     "value_ms": 35.0,
+     "z": -2.46
+    },
+    "resting_hr": {
+     "available": true,
+     "baseline": 50.0,
+     "delta_bpm": 0.0,
+     "n_days": 60,
+     "sub": 0.85,
+     "value": 50.0,
+     "zr": 0.0
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": false,
+     "tst_min": 420
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.96,
+     "value": 96
+    }
+   },
+   "confidence": "high",
+   "data_completeness": 1.0,
+   "date": "2026-07-07",
+   "days_to_full": 0,
+   "drivers": {
+    "limiter": "hrv",
+    "support": "sleep_score"
+   },
+   "flags": [
+    "hrv_suppressed"
+   ],
+   "label": "Rest / recover",
+   "score": 45,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "severe_hrv",
+  "records": [
+   {
+    "body_battery_start": 95,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 35.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 96
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 35.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 35.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 35.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 35.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 35.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 35.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-08",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-31",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.884,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.82,
+     "weight": 0.35
+    }
+   },
+   "band": "green",
+   "baseline_status": "full",
+   "briefing": "GREEN — readiness 86/100 (high confidence). Main limiter: sleep score 82; support morning body battery 72. Recovery looks good — train as planned; quality/hard work is fine.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 0.9640000000000001,
+     "value": 72
+    },
+    "hrv": {
+     "available": true,
+     "baseline_ms": 54.5,
+     "cv_7": 7.9,
+     "cv_penalty": 0.0,
+     "cv_ratio": 1.03,
+     "n_days": 30,
+     "pct_dev": 0.6,
+     "source": "baseline",
+     "sub": 0.85,
+     "value_ms": 54.9,
+     "z": 0.08
+    },
+    "resting_hr": {
+     "available": true,
+     "baseline": 50.0,
+     "delta_bpm": 0.0,
+     "n_days": 30,
+     "sub": 0.85,
+     "value": 50.0,
+     "zr": 0.0
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": false,
+     "tst_min": 420
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.82,
+     "value": 82
+    }
+   },
+   "confidence": "high",
+   "data_completeness": 1.0,
+   "date": "2026-07-07",
+   "days_to_full": 0,
+   "drivers": {
+    "limiter": "sleep_score",
+    "support": "body_battery"
+   },
+   "flags": [],
+   "label": "Train as planned",
+   "score": 86,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "malformed_date",
+  "records": [
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 53.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 57.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 59.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 61.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 49.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-08",
+    "deep_sleep_minutes": 90,
+    "hrv": 51.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 70,
+    "date": "not-a-date",
+    "hrv": 50,
+    "hrv_status": "BALANCED",
+    "resting_hr": 50,
+    "sleep_score": 80
+   }
+  ]
+ },
+ {
+  "expected": {
+   "axes": {
+    "autonomic": {
+     "present": true,
+     "score": 0.884,
+     "weight": 0.65
+    },
+    "sleep": {
+     "present": true,
+     "score": 0.82,
+     "weight": 0.35
+    }
+   },
+   "band": "green",
+   "baseline_status": "full",
+   "briefing": "GREEN — readiness 86/100 (high confidence). Main limiter: sleep score 82; support morning body battery 72. Recovery looks good — train as planned; quality/hard work is fine.",
+   "components": {
+    "body_battery": {
+     "available": true,
+     "sub": 0.9640000000000001,
+     "value": 72
+    },
+    "hrv": {
+     "available": true,
+     "baseline_ms": 55.0,
+     "cv_7": 0.0,
+     "cv_penalty": 0.0,
+     "cv_ratio": null,
+     "n_days": 40,
+     "pct_dev": 0.0,
+     "source": "baseline",
+     "sub": 0.85,
+     "value_ms": 55.0,
+     "z": 0.0
+    },
+    "resting_hr": {
+     "available": true,
+     "baseline": 50.0,
+     "delta_bpm": 0.0,
+     "n_days": 40,
+     "sub": 0.85,
+     "value": 50.0,
+     "zr": 0.0
+    },
+    "sleep_duration": {
+     "available": true,
+     "guard_applied": false,
+     "tst_min": 420
+    },
+    "sleep_score": {
+     "available": true,
+     "sub": 0.82,
+     "value": 82
+    }
+   },
+   "confidence": "high",
+   "data_completeness": 1.0,
+   "date": "2026-07-07",
+   "days_to_full": 0,
+   "drivers": {
+    "limiter": "sleep_score",
+    "support": "body_battery"
+   },
+   "flags": [],
+   "label": "Train as planned",
+   "score": 86,
+   "weights_effective": {
+    "autonomic": 0.65,
+    "sleep": 0.35
+   }
+  },
+  "name": "no_jitter",
+  "records": [
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-07-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-28",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-27",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-26",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-25",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-24",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-23",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-22",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-21",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-20",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-19",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-18",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-17",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-16",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-15",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-14",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-13",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-12",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-11",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-10",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-09",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-08",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-07",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-06",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-05",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-04",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-03",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-02",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-06-01",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-31",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-30",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   },
+   {
+    "body_battery_start": 72,
+    "date": "2026-05-29",
+    "deep_sleep_minutes": 90,
+    "hrv": 55.0,
+    "hrv_status": "BALANCED",
+    "light_sleep_minutes": 240,
+    "rem_sleep_minutes": 90,
+    "resting_hr": 50,
+    "sleep_score": 82
+   }
+  ]
+ }
+]
