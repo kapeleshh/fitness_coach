@@ -93,6 +93,44 @@ def numerics() -> dict[str, list]:
             "median": medians, "log": logs, "exp": exps}
 
 
+def readiness_scenarios() -> list[dict]:
+    """The scenarios of tests/test_readiness.py (illness, cold start, stale
+    HRV, short sleep, ...) with readiness_today's full answer for each, so
+    the Dart port is checked on branches the 90-day dataset never reaches."""
+    import readiness_engine
+    from tests.test_readiness import _series, _set_recent
+
+    insufficient = [{"date": "2026-07-07", "hrv": None, "hrv_status": None,
+                     "resting_hr": None, "sleep_score": None, "body_battery_start": None}]
+    malformed = _series(30) + [{"date": "not-a-date", "hrv": 50, "hrv_status": "BALANCED",
+                                "resting_hr": 50, "sleep_score": 80, "body_battery_start": 70}]
+    bb_capped = _set_recent(_set_recent(_series(60, bb=72), 7, hrv=50.0, resting_hr=53),
+                            1, hrv=50.0, resting_hr=53, body_battery_start=95)
+    severe = _set_recent(_set_recent(_series(60, bb=72), 7, hrv=35.0),
+                         1, hrv=35.0, body_battery_start=95, sleep_score=96)
+    scenarios = {
+        "normal_full": _series(60),
+        "suppressed": _set_recent(_series(60), 5, hrv=38.0),
+        "illness": _set_recent(_series(60), 3, hrv=34.0, resting_hr=60),
+        "cold_start": _series(10),
+        "stale_hrv": _set_recent(_series(60), 5, hrv=None, hrv_status="BALANCED"),
+        "short_sleep": _set_recent(_series(60, sleep=92), 1, deep_sleep_minutes=40,
+                                   light_sleep_minutes=120, rem_sleep_minutes=60),
+        "missing_hrv": _set_recent(_series(60), 8, hrv=None, hrv_status=None),
+        "insufficient": insufficient,
+        "warming_unknown": _series(14, status="UNKNOWN"),
+        "warming_illness": _set_recent(_series(20, status="UNKNOWN"), 3, hrv=34.0,
+                                       resting_hr=62),
+        "body_battery_capped": bb_capped,
+        "body_battery_normal": _set_recent(_series(60, bb=72), 1, body_battery_start=95),
+        "severe_hrv": severe,
+        "malformed_date": malformed,
+        "no_jitter": _series(40, jitter=False),
+    }
+    return [{"name": name, "records": rows, "expected": readiness_engine.readiness_today(rows)}
+            for name, rows in scenarios.items()]
+
+
 def build_fixtures(raw_activities: list[dict]) -> dict[str, object]:
     """Fixture name -> JSON value, read from a database holding only the
     synthetic dataset."""
@@ -114,6 +152,7 @@ def build_fixtures(raw_activities: list[dict]) -> dict[str, object]:
         "activities": db.get_activities(include_duplicates=True),
         "readiness": {r["date"]: readiness_engine.score_date(wellness, r["date"])
                       for r in wellness},
+        "readiness_scenarios": readiness_scenarios(),
         "training_load": training_load_engine.compute(),
         # Expected API bodies, keyed by request path
         "api": api,
