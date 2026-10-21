@@ -2,20 +2,13 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import '../config.dart';
+import 'health_data_source.dart';
 
-/// A non-200 response from the API, carrying the server's `error` message.
-class ApiException implements Exception {
-  ApiException(this.message);
+export 'health_data_source.dart';
 
-  final String message;
-
-  @override
-  String toString() => message;
-}
-
-/// Centralized API service for fetching real Garmin health data.
-/// The single data-access layer for all screens.
-class HealthApiService extends ChangeNotifier {
+/// The [HealthDataSource] that reads the self-hosted backend over HTTP.
+/// Non-200 responses become [ApiException]s carrying the server's `error`.
+class HealthApiService extends HealthDataSource {
   /// [client] is injectable for tests (package:http/testing.dart MockClient).
   HealthApiService({http.Client? client}) : _client = client ?? http.Client();
 
@@ -34,25 +27,23 @@ class HealthApiService extends ChangeNotifier {
   DateTime? _lastSync;
   
   // Getters
+  @override
   List<Map<String, dynamic>> get healthData => _healthData;
+  @override
   Map<String, dynamic>? get summary => _summary;
   bool get isLoading => _isLoading;
+  @override
   String? get error => _error;
   DateTime? get lastSync => _lastSync;
-  int get totalDays => _healthData.length;
-  
+
   /// Get today's data
-  Map<String, dynamic>? get today => 
+  Map<String, dynamic>? get today =>
       _healthData.isNotEmpty ? _healthData.first : null;
-  
+
   /// Get yesterday's data
-  Map<String, dynamic>? get yesterday => 
+  Map<String, dynamic>? get yesterday =>
       _healthData.length > 1 ? _healthData[1] : null;
-  
-  /// Get last 7 days
-  List<Map<String, dynamic>> get last7Days => 
-      _healthData.take(7).toList();
-  
+
   /// Get last 30 days
   List<Map<String, dynamic>> get last30Days => 
       _healthData.take(30).toList();
@@ -63,6 +54,7 @@ class HealthApiService extends ChangeNotifier {
   }
 
   /// Force refresh data from API
+  @override
   Future<void> refresh() async {
     _isLoading = true;
     _error = null;
@@ -103,6 +95,7 @@ class HealthApiService extends ChangeNotifier {
   /// Fetch the backend analytics endpoints (correlations, anomalies,
   /// weekly patterns, baselines). Returns a map keyed by endpoint name.
   /// Throws on connection failure so callers can render an error state.
+  @override
   Future<Map<String, Map<String, dynamic>>> fetchAnalytics() async {
     const endpoints = ['correlations', 'anomalies', 'weekly', 'baselines'];
     final responses = await Future.wait(endpoints.map(
@@ -128,45 +121,41 @@ class HealthApiService extends ChangeNotifier {
 
   // ============= READINESS, TRAINING LOAD, COACH =============
 
-  /// Today's readiness, including the `training_load` object and the
-  /// briefing with the training-load note appended.
+  @override
   Future<Map<String, dynamic>> fetchReadiness() => _getJson('/api/readiness');
 
-  /// Point-in-time readiness for the last [days] scored days, newest first.
+  @override
   Future<Map<String, dynamic>> fetchReadinessHistory({int days = 14}) =>
       _getJson('/api/readiness/history?days=$days');
 
-  /// Current fitness/fatigue/form, the last 7 days and recent sessions.
+  @override
   Future<Map<String, dynamic>> fetchTrainingLoad() =>
       _getJson('/api/training-load');
 
   // Insights, Patterns and Predictions used to compute their numbers on the
   // device from 0-filled data; the backend now does it, with missing = null.
 
-  /// Readiness, today's key metrics, rule-based insights, and this week
-  /// against last week.
+  @override
   Future<Map<String, dynamic>> fetchInsights() => _getJson('/api/insights');
 
-  /// The curated correlations, strongest first, plus the number of `days`.
+  @override
   Future<Map<String, dynamic>> fetchCorrelations() =>
       _getJson('/api/correlations');
 
-  /// Correlation between any two daily metrics, [x] on a day against [y]
-  /// [lag] days later.
+  @override
   Future<Map<String, dynamic>> fetchCorrelationPair(String x, String y, {int lag = 0}) {
     final query = Uri(queryParameters: {'x': x, 'y': y, 'lag': '$lag'}).query;
     return _getJson('/api/correlations/pair?$query');
   }
 
-  /// Tomorrow's predicted body battery, with the heuristic's measured error.
+  @override
   Future<Map<String, dynamic>> fetchOutlook() => _getJson('/api/outlook');
 
-  /// Stream the coach's reply to [question] as it is generated.
-  ///
   /// The server builds all grounding context itself, so only the question is
-  /// sent, and each question is answered independently. Throws
-  /// [ApiException] with the server's message before any text arrives if the
-  /// request is refused (e.g. 503 when no language model is reachable).
+  /// sent, and each question is answered independently. A refused request
+  /// (e.g. 503 when no language model is reachable) carries the server's
+  /// message.
+  @override
   Stream<String> askCoach(String question) async* {
     final request = http.Request('POST', Uri.parse('$apiBaseUrl/api/coach/chat'))
       ..headers['Content-Type'] = 'application/json'
@@ -260,5 +249,5 @@ class HealthApiService extends ChangeNotifier {
   }
 }
 
-// Singleton instance
-final healthApiService = HealthApiService();
+// Singleton instance. Typed as the interface so screens depend only on it.
+final HealthDataSource healthApiService = HealthApiService();

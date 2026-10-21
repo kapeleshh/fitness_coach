@@ -9,7 +9,7 @@ class CorrelationExplorerScreen extends StatefulWidget {
   const CorrelationExplorerScreen({super.key, this.service});
 
   /// Defaults to the app-wide [healthApiService]; injectable for tests.
-  final HealthApiService? service;
+  final HealthDataSource? service;
 
   @override
   State<CorrelationExplorerScreen> createState() => _CorrelationExplorerScreenState();
@@ -26,7 +26,7 @@ class _CorrelationExplorerScreenState extends State<CorrelationExplorerScreen> {
   String? _customError;
   bool _customLoading = false;
 
-  HealthApiService get _service => widget.service ?? healthApiService;
+  HealthDataSource get _service => widget.service ?? healthApiService;
 
   static String _describe(Object e) => e is ApiException
       ? e.message
