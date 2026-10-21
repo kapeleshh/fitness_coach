@@ -11,6 +11,13 @@
 /// Records are the NULL-aware wellness rows (newest first) as JSON maps, and
 /// results are the same JSON maps the Python engine returns. Retune the
 /// constants here, at the top, as in the Python module.
+///
+/// One addition has no Python counterpart: a night with no Garmin sleep
+/// score but with sleep stages (Health Connect data) gets an estimated score
+/// from duration, efficiency and time awake ([estimateSleepScore]). It is
+/// flagged `sleep_estimated`, named as an estimate in the briefing, and
+/// lowers confidence one step. Nights with a Garmin score are scored exactly
+/// as in Python.
 library;
 
 import 'dart:math' as math;
@@ -65,6 +72,19 @@ const coldStartDropZ = -2.5;
 
 const bandGreenMin = 70;
 const bandAmberMin = 50;
+
+// ---------- Sleep score estimate (no Python counterpart) ----------
+// Used only when a night has no Garmin sleep score, as with Health Connect
+// data. Method and sources: docs/decisions/0002-sleep-score-estimate.md.
+// Sub-scores are piecewise linear between these (input, sub-score) points
+// and flat beyond the ends.
+const sleepDurationCurve = [(0, 0.0), (300, 0.35), (360, 0.60), (420, 0.85), (480, 1.0)]; // TST min
+const sleepEfficiencyCurve = [(0.65, 0.20), (0.75, 0.50), (0.85, 0.85), (0.90, 1.0)]; // TST / TIB
+const sleepWasoCurve = [(20, 1.0), (50, 0.60), (90, 0.30)]; // awake minutes after sleep onset
+const sleepEstimateWDuration = 0.5;
+const sleepEstimateWEfficiency = 0.3;
+const sleepEstimateWWaso = 0.2;
+const sleepEfficiencyMaxOverrun = 1.05; // TST may exceed time in bed by rounding, not more
 
 const _confidenceTiers = ['none', 'low', 'medium', 'high'];
 
@@ -150,6 +170,73 @@ const _bandGuidance = {
 
 String _demote(String conf, [int steps = 1]) =>
     _confidenceTiers[math.max(0, _confidenceTiers.indexOf(conf) - steps)];
+
+/// [x] mapped through a piecewise-linear curve of (input, value) points in
+/// ascending input order, flat beyond the first and last points.
+double _piecewise(num x, List<(num, double)> points) {
+  if (x <= points.first.$1) return points.first.$2;
+  for (var i = 1; i < points.length; i++) {
+    final (x1, y1) = points[i];
+    if (x <= x1) {
+      final (x0, y0) = points[i - 1];
+      return y0 + (y1 - y0) * (x - x0) / (x1 - x0);
+    }
+  }
+  return points.last.$2;
+}
+
+DateTime? _sleepTime(Object? value) => switch (value) {
+      int ms => DateTime.fromMillisecondsSinceEpoch(ms, isUtc: true),
+      String text => DateTime.tryParse(text),
+      _ => null,
+    };
+
+/// An estimated 0-100 sleep score for a night with no Garmin sleep score,
+/// from total sleep time (the stage minutes), sleep efficiency (when the
+/// sleep start and end times are known) and minutes awake. Null when the
+/// stage minutes are missing. See docs/decisions/0002-sleep-score-estimate.md.
+Json? estimateSleepScore(Json day) {
+  final stages = [
+    for (final k in ['deep_sleep_minutes', 'light_sleep_minutes', 'rem_sleep_minutes']) day[k],
+  ];
+  if (stages.any((s) => s is! num)) return null;
+  final tst = pySum(stages.cast<num>());
+  if (tst <= 0) return null;
+
+  final parts = <(double, double)>[(sleepEstimateWDuration, _piecewise(tst, sleepDurationCurve))];
+  final durationSub = parts.first.$2;
+
+  double? efficiency, efficiencySub;
+  final start = _sleepTime(day['sleep_start_time']);
+  final end = _sleepTime(day['sleep_end_time']);
+  if (start != null && end != null) {
+    final inBed = end.difference(start).inSeconds / 60.0;
+    if (inBed > 0 && tst <= inBed * sleepEfficiencyMaxOverrun) {
+      efficiency = math.min(tst / inBed, 1.0);
+      efficiencySub = _piecewise(efficiency, sleepEfficiencyCurve);
+      parts.add((sleepEstimateWEfficiency, efficiencySub));
+    }
+  }
+
+  final waso = day['awake_minutes'];
+  double? wasoSub;
+  if (waso is num && waso >= 0) {
+    wasoSub = _piecewise(waso, sleepWasoCurve);
+    parts.add((sleepEstimateWWaso, wasoSub));
+  }
+
+  final composite =
+      pySum([for (final (w, s) in parts) w * s]) / pySum([for (final (w, _) in parts) w]);
+  return {
+    'score': pyRound(100 * _clamp(composite)) as int,
+    'tst_min': tst,
+    'efficiency': efficiency == null ? null : pyRound(efficiency, 3),
+    'waso_min': waso is num ? waso : null,
+    'duration_sub': pyRound(durationSub, 3),
+    'efficiency_sub': efficiencySub == null ? null : pyRound(efficiencySub, 3),
+    'waso_sub': wasoSub == null ? null : pyRound(wasoSub, 3),
+  };
+}
 
 /// Score readiness for [targetDate] (`YYYY-MM-DD`) using only records up to
 /// that date. Returns the full readiness object.
@@ -276,8 +363,16 @@ Json scoreDate(List<Json> records, String targetDate) {
   }
 
   // ---------- Sleep axis ----------
-  final sleepVal = today['sleep_score'] as num?;
+  // Without Garmin's sleep score (e.g. Health Connect data), estimate one
+  // from the night itself; it is flagged and lowers confidence below.
+  var sleepVal = today['sleep_score'] as num?;
+  final sleepEstimate = sleepVal == null ? estimateSleepScore(today) : null;
+  if (sleepEstimate != null) sleepVal = sleepEstimate['score'] as int;
   final sleep = <String, Object?>{'available': false, 'sub': null, 'value': sleepVal};
+  if (sleepEstimate != null) {
+    sleep.addAll({'estimated': true, 'estimate': sleepEstimate});
+    flags.add('sleep_estimated');
+  }
   final sleepDur = <String, Object?>{'available': false, 'tst_min': null, 'guard_applied': false};
   if (sleepVal != null) {
     var sub = _clamp(sleepVal / 100.0);
@@ -388,6 +483,7 @@ Json scoreDate(List<Json> records, String targetDate) {
     confidence = 'medium';
   }
   if (flags.contains('stale_hrv')) confidence = _demote(confidence);
+  if (flags.contains('sleep_estimated')) confidence = _demote(confidence);
 
   // ---------- Drivers (limiter / support) ----------
   final driverParts = <(String, num, num)>[
@@ -488,7 +584,8 @@ String? _componentPhrase(String name, Json c) {
       return 'morning body battery ${pyStr(c['value'])}';
     case 'sleep_score':
       if (!c.containsKey('value')) return null;
-      return 'sleep score ${pyStr(c['value'])}';
+      final label = c['estimated'] == true ? 'estimated sleep score' : 'sleep score';
+      return '$label ${pyStr(c['value'])}';
   }
   return null;
 }
