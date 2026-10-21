@@ -1,0 +1,14 @@
+name: coach_engine
+description: >-
+  Readiness, training load, insights and activity dedup for the Maru app, in
+  pure Dart so they run on the phone. Ported from backend/ and checked against
+  the Python engines' outputs.
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: ^3.8.0
+
+dev_dependencies:
+  lints: ^6.1.0
+  test: ^1.30.0

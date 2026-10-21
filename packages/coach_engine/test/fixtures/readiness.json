@@ -1,0 +1,6396 @@
+{
+ "2026-04-09": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.629,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.86,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "cold_start",
+  "briefing": "GREEN — readiness 71/100 (provisional — using Garmin signals while your baseline builds (27d to go)). Main limiter: Garmin HRV status; support sleep score 86. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.8440000000000001,
+    "value": 62
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": null,
+    "cv_7": null,
+    "cv_penalty": 0.0,
+    "cv_ratio": null,
+    "n_days": 1,
+    "pct_dev": null,
+    "source": "status",
+    "sub": 0.5,
+    "value_ms": null,
+    "z": null
+   },
+   "resting_hr": {
+    "available": false,
+    "baseline": null,
+    "delta_bpm": null,
+    "n_days": 1,
+    "sub": null,
+    "value": null,
+    "zr": null
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 370
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.86,
+    "value": 86
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 0.87,
+  "date": "2026-04-09",
+  "days_to_full": 27,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 71,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-10": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.688,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.92,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "cold_start",
+  "briefing": "GREEN — readiness 77/100 (provisional — using Garmin signals while your baseline builds (26d to go)). Main limiter: Garmin HRV status; support morning body battery 91. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 91
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": null,
+    "cv_7": null,
+    "cv_penalty": 0.0,
+    "cv_ratio": null,
+    "n_days": 2,
+    "pct_dev": null,
+    "source": "status",
+    "sub": 0.5,
+    "value_ms": null,
+    "z": null
+   },
+   "resting_hr": {
+    "available": false,
+    "baseline": null,
+    "delta_bpm": null,
+    "n_days": 2,
+    "sub": null,
+    "value": null,
+    "zr": null
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 393
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.92,
+    "value": 92
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 0.87,
+  "date": "2026-04-10",
+  "days_to_full": 26,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 77,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-11": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.803,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.92,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "cold_start",
+  "briefing": "GREEN — readiness 84/100 (provisional — using Garmin signals while your baseline builds (25d to go)). Main limiter: morning body battery 52; support sleep score 92. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.724,
+    "value": 52
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": null,
+    "cv_7": null,
+    "cv_penalty": 0.0,
+    "cv_ratio": null,
+    "n_days": 3,
+    "pct_dev": null,
+    "source": "status",
+    "sub": 0.85,
+    "value_ms": null,
+    "z": null
+   },
+   "resting_hr": {
+    "available": false,
+    "baseline": null,
+    "delta_bpm": null,
+    "n_days": 3,
+    "sub": null,
+    "value": null,
+    "zr": null
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 383
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.92,
+    "value": 92
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 0.87,
+  "date": "2026-04-11",
+  "days_to_full": 25,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 84,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-12": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.848,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.61,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "cold_start",
+  "briefing": "GREEN — readiness 76/100 (provisional — using Garmin signals while your baseline builds (24d to go)). Main limiter: sleep score 61; support Garmin HRV status. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.8440000000000001,
+    "value": 62
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": null,
+    "cv_7": null,
+    "cv_penalty": 0.0,
+    "cv_ratio": null,
+    "n_days": 4,
+    "pct_dev": null,
+    "source": "status",
+    "sub": 0.85,
+    "value_ms": null,
+    "z": null
+   },
+   "resting_hr": {
+    "available": false,
+    "baseline": null,
+    "delta_bpm": null,
+    "n_days": 4,
+    "sub": null,
+    "value": null,
+    "zr": null
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 485
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.61,
+    "value": 61
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 0.87,
+  "date": "2026-04-12",
+  "days_to_full": 24,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 76,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-13": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.688,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.76,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "cold_start",
+  "briefing": "GREEN — readiness 71/100 (provisional — using Garmin signals while your baseline builds (23d to go)). Main limiter: Garmin HRV status; support morning body battery 76. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 76
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": null,
+    "cv_7": null,
+    "cv_penalty": 0.0,
+    "cv_ratio": null,
+    "n_days": 5,
+    "pct_dev": null,
+    "source": "status",
+    "sub": 0.5,
+    "value_ms": null,
+    "z": null
+   },
+   "resting_hr": {
+    "available": false,
+    "baseline": null,
+    "delta_bpm": null,
+    "n_days": 5,
+    "sub": null,
+    "value": null,
+    "zr": null
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 349
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.76,
+    "value": 76
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 0.87,
+  "date": "2026-04-13",
+  "days_to_full": 23,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 71,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-14": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.486,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.81,
+    "weight": 0.35
+   }
+  },
+  "band": "amber",
+  "baseline_status": "cold_start",
+  "briefing": "AMBER — readiness 60/100 (provisional — using Garmin signals while your baseline builds (22d to go)). Main limiter: Garmin HRV status; support morning body battery 58. Recovery is slightly down — keep it easy-to-moderate and skip the hard session.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.796,
+    "value": 58
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": null,
+    "cv_7": null,
+    "cv_penalty": 0.0,
+    "cv_ratio": null,
+    "n_days": 6,
+    "pct_dev": null,
+    "source": "status",
+    "sub": 0.3,
+    "value_ms": null,
+    "z": null
+   },
+   "resting_hr": {
+    "available": false,
+    "baseline": null,
+    "delta_bpm": null,
+    "n_days": 6,
+    "sub": null,
+    "value": null,
+    "zr": null
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 398
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.81,
+    "value": 81
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 0.87,
+  "date": "2026-04-14",
+  "days_to_full": 22,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train easy",
+  "score": 60,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-15": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.688,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.74,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "cold_start",
+  "briefing": "GREEN — readiness 71/100 (provisional — using Garmin signals while your baseline builds (21d to go)). Main limiter: Garmin HRV status; support morning body battery 92. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 92
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": null,
+    "cv_7": null,
+    "cv_penalty": 0.0,
+    "cv_ratio": null,
+    "n_days": 7,
+    "pct_dev": null,
+    "source": "status",
+    "sub": 0.5,
+    "value_ms": null,
+    "z": null
+   },
+   "resting_hr": {
+    "available": false,
+    "baseline": null,
+    "delta_bpm": null,
+    "n_days": 7,
+    "sub": null,
+    "value": null,
+    "zr": null
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 423
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.74,
+    "value": 74
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 0.87,
+  "date": "2026-04-15",
+  "days_to_full": 21,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 71,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-16": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.816,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.65,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "cold_start",
+  "briefing": "GREEN — readiness 76/100 (provisional — using Garmin signals while your baseline builds (20d to go)). Main limiter: sleep score 65; support Garmin HRV status. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.76,
+    "value": 55
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": null,
+    "cv_7": null,
+    "cv_penalty": 0.0,
+    "cv_ratio": null,
+    "n_days": 8,
+    "pct_dev": null,
+    "source": "status",
+    "sub": 0.85,
+    "value_ms": null,
+    "z": null
+   },
+   "resting_hr": {
+    "available": false,
+    "baseline": null,
+    "delta_bpm": null,
+    "n_days": 8,
+    "sub": null,
+    "value": null,
+    "zr": null
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 366
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.65,
+    "value": 65
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 0.87,
+  "date": "2026-04-16",
+  "days_to_full": 20,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 76,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-17": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.688,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.79,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "cold_start",
+  "briefing": "GREEN — readiness 72/100 (provisional — using Garmin signals while your baseline builds (19d to go)). Main limiter: Garmin HRV status; support morning body battery 90. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 90
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": null,
+    "cv_7": null,
+    "cv_penalty": 0.0,
+    "cv_ratio": null,
+    "n_days": 9,
+    "pct_dev": null,
+    "source": "status",
+    "sub": 0.5,
+    "value_ms": null,
+    "z": null
+   },
+   "resting_hr": {
+    "available": false,
+    "baseline": null,
+    "delta_bpm": null,
+    "n_days": 9,
+    "sub": null,
+    "value": null,
+    "zr": null
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 379
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.79,
+    "value": 79
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 0.87,
+  "date": "2026-04-17",
+  "days_to_full": 19,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 72,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-18": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.441,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.87,
+    "weight": 0.35
+   }
+  },
+  "band": "amber",
+  "baseline_status": "cold_start",
+  "briefing": "AMBER — readiness 59/100 (provisional — using Garmin signals while your baseline builds (18d to go)). Main limiter: Garmin HRV status; support sleep score 87. Recovery is slightly down — keep it easy-to-moderate and skip the hard session.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.676,
+    "value": 48
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": null,
+    "cv_7": null,
+    "cv_penalty": 0.0,
+    "cv_ratio": null,
+    "n_days": 10,
+    "pct_dev": null,
+    "source": "status",
+    "sub": 0.3,
+    "value_ms": null,
+    "z": null
+   },
+   "resting_hr": {
+    "available": false,
+    "baseline": null,
+    "delta_bpm": null,
+    "n_days": 10,
+    "sub": null,
+    "value": null,
+    "zr": null
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 342
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.87,
+    "value": 87
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 0.87,
+  "date": "2026-04-18",
+  "days_to_full": 18,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train easy",
+  "score": 59,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-19": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.906,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.88,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "cold_start",
+  "briefing": "GREEN — readiness 90/100 (provisional — using Garmin signals while your baseline builds (17d to go)). Main limiter: Garmin HRV status; support morning body battery 94. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 94
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": null,
+    "cv_7": null,
+    "cv_penalty": 0.0,
+    "cv_ratio": null,
+    "n_days": 11,
+    "pct_dev": null,
+    "source": "status",
+    "sub": 0.85,
+    "value_ms": null,
+    "z": null
+   },
+   "resting_hr": {
+    "available": false,
+    "baseline": null,
+    "delta_bpm": null,
+    "n_days": 11,
+    "sub": null,
+    "value": null,
+    "zr": null
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 341
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.88,
+    "value": 88
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 0.87,
+  "date": "2026-04-19",
+  "days_to_full": 17,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 90,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-20": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.776,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.64,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "cold_start",
+  "briefing": "GREEN — readiness 73/100 (provisional — using Garmin signals while your baseline builds (16d to go)). Main limiter: sleep score 64; support Garmin HRV status. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.652,
+    "value": 46
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": null,
+    "cv_7": null,
+    "cv_penalty": 0.0,
+    "cv_ratio": null,
+    "n_days": 12,
+    "pct_dev": null,
+    "source": "status",
+    "sub": 0.85,
+    "value_ms": null,
+    "z": null
+   },
+   "resting_hr": {
+    "available": false,
+    "baseline": null,
+    "delta_bpm": null,
+    "n_days": 12,
+    "sub": null,
+    "value": null,
+    "zr": null
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 401
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.64,
+    "value": 64
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 0.87,
+  "date": "2026-04-20",
+  "days_to_full": 16,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 73,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-21": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.688,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.58,
+    "weight": 0.35
+   }
+  },
+  "band": "amber",
+  "baseline_status": "cold_start",
+  "briefing": "AMBER — readiness 65/100 (provisional — using Garmin signals while your baseline builds (15d to go)). Main limiter: Garmin HRV status; support morning body battery 93. Recovery is slightly down — keep it easy-to-moderate and skip the hard session.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 93
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": null,
+    "cv_7": null,
+    "cv_penalty": 0.0,
+    "cv_ratio": null,
+    "n_days": 13,
+    "pct_dev": null,
+    "source": "status",
+    "sub": 0.5,
+    "value_ms": null,
+    "z": null
+   },
+   "resting_hr": {
+    "available": false,
+    "baseline": null,
+    "delta_bpm": null,
+    "n_days": 13,
+    "sub": null,
+    "value": null,
+    "zr": null
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 349
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.58,
+    "value": 58
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 0.87,
+  "date": "2026-04-21",
+  "days_to_full": 15,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train easy",
+  "score": 65,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-22": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.796,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.71,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "warming",
+  "briefing": "GREEN — readiness 77/100 (medium confidence, baseline still building (14d to go)). Main limiter: sleep score 71; support resting HR -1 bpm vs baseline (53 bpm). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.6880000000000001,
+    "value": 49
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 57.2,
+    "cv_7": 19.2,
+    "cv_penalty": 0.01,
+    "cv_ratio": 1.35,
+    "n_days": 14,
+    "pct_dev": 2.5,
+    "source": "blend",
+    "sub": 0.8396094457899872,
+    "value_ms": 58.7,
+    "z": 0.15
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.6,
+    "delta_bpm": -0.6,
+    "n_days": 14,
+    "sub": 0.85,
+    "value": 53.0,
+    "zr": -0.14
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 477
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.71,
+    "value": 71
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-04-22",
+  "days_to_full": 14,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "resting_hr"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 77,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-23": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.504,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.67,
+    "weight": 0.35
+   }
+  },
+  "band": "amber",
+  "baseline_status": "warming",
+  "briefing": "AMBER — readiness 56/100 (medium confidence, baseline still building (13d to go)). Main limiter: HRV 59ms, +3% vs your 60-day baseline (z +0.2); support resting HR +0 bpm vs baseline (54 bpm). Recovery is slightly down — keep it easy-to-moderate and skip the hard session.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.5800000000000001,
+    "value": 40
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 56.9,
+    "cv_7": 19.3,
+    "cv_penalty": 0.019,
+    "cv_ratio": 1.44,
+    "n_days": 15,
+    "pct_dev": 3.0,
+    "source": "blend",
+    "sub": 0.32016288663835657,
+    "value_ms": 58.6,
+    "z": 0.18
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.7,
+    "delta_bpm": 0.0,
+    "n_days": 15,
+    "sub": 0.85,
+    "value": 53.7,
+    "zr": 0.0
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 451
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.67,
+    "value": 67
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-04-23",
+  "days_to_full": 13,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "resting_hr"
+  },
+  "flags": [],
+  "label": "Train easy",
+  "score": 56,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-24": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.845,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.63,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "warming",
+  "briefing": "GREEN — readiness 77/100 (medium confidence, baseline still building (12d to go)). Main limiter: sleep score 63; support morning body battery 66. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.892,
+    "value": 66
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 57.7,
+    "cv_7": 20.0,
+    "cv_penalty": 0.035,
+    "cv_ratio": 1.6,
+    "n_days": 16,
+    "pct_dev": 4.8,
+    "source": "blend",
+    "sub": 0.8151885321603748,
+    "value_ms": 60.5,
+    "z": 0.28
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.2,
+    "delta_bpm": -1.9,
+    "n_days": 16,
+    "sub": 0.85,
+    "value": 51.3,
+    "zr": -0.42
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 392
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.63,
+    "value": 63
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-04-24",
+  "days_to_full": 12,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 77,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-25": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.593,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.64,
+    "weight": 0.35
+   }
+  },
+  "band": "amber",
+  "baseline_status": "warming",
+  "briefing": "AMBER — readiness 61/100 (medium confidence, baseline still building (11d to go)). Main limiter: HRV 61ms, +4% vs your 60-day baseline (z +0.2); support resting HR -2 bpm vs baseline (52 bpm). Recovery is slightly down — keep it easy-to-moderate and skip the hard session.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.76,
+    "value": 55
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.7,
+    "cv_7": 21.3,
+    "cv_penalty": 0.028,
+    "cv_ratio": 1.53,
+    "n_days": 17,
+    "pct_dev": 4.4,
+    "source": "blend",
+    "sub": 0.3894998618736302,
+    "value_ms": 61.3,
+    "z": 0.25
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.3,
+    "delta_bpm": -1.6,
+    "n_days": 17,
+    "sub": 0.85,
+    "value": 51.7,
+    "zr": -0.37
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 426
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.64,
+    "value": 64
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-04-25",
+  "days_to_full": 11,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "resting_hr"
+  },
+  "flags": [],
+  "label": "Train easy",
+  "score": 61,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-26": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.878,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.57,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "warming",
+  "briefing": "GREEN — readiness 77/100 (medium confidence, baseline still building (10d to go)). Main limiter: sleep score 57; support morning body battery 88. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 88
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.4,
+    "cv_7": 21.9,
+    "cv_penalty": 0.035,
+    "cv_ratio": 1.6,
+    "n_days": 18,
+    "pct_dev": 4.8,
+    "source": "blend",
+    "sub": 0.8151454481305027,
+    "value_ms": 62.2,
+    "z": 0.26
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.4,
+    "delta_bpm": -1.4,
+    "n_days": 18,
+    "sub": 0.85,
+    "value": 52.0,
+    "zr": -0.32
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 413
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.57,
+    "value": 57
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-04-26",
+  "days_to_full": 10,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 77,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-27": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.796,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.81,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "warming",
+  "briefing": "GREEN — readiness 80/100 (medium confidence, baseline still building (9d to go)). Main limiter: morning body battery 51; support resting HR -1 bpm vs baseline (52 bpm). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.712,
+    "value": 51
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.2,
+    "cv_7": 20.6,
+    "cv_penalty": 0.025,
+    "cv_ratio": 1.5,
+    "n_days": 19,
+    "pct_dev": 6.6,
+    "source": "blend",
+    "sub": 0.8250643650253028,
+    "value_ms": 63.1,
+    "z": 0.37
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.1,
+    "delta_bpm": -1.1,
+    "n_days": 19,
+    "sub": 0.85,
+    "value": 52.0,
+    "zr": -0.24
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 432
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.81,
+    "value": 81
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-04-27",
+  "days_to_full": 9,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "resting_hr"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 80,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-28": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.874,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.68,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "warming",
+  "briefing": "GREEN — readiness 81/100 (medium confidence, baseline still building (8d to go)). Main limiter: sleep score 68; support morning body battery 68. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.916,
+    "value": 68
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.2,
+    "cv_7": 15.7,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.05,
+    "n_days": 20,
+    "pct_dev": 11.0,
+    "source": "blend",
+    "sub": 0.8577222648879811,
+    "value_ms": 65.7,
+    "z": 0.62
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.1,
+    "delta_bpm": -0.8,
+    "n_days": 20,
+    "sub": 0.85,
+    "value": 52.3,
+    "zr": -0.19
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 418
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.68,
+    "value": 68
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-04-28",
+  "days_to_full": 8,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 81,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-29": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.884,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.62,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "warming",
+  "briefing": "GREEN — readiness 79/100 (medium confidence, baseline still building (7d to go)). Main limiter: sleep score 62; support morning body battery 72. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.9640000000000001,
+    "value": 72
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.7,
+    "cv_7": 14.8,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.89,
+    "n_days": 21,
+    "pct_dev": 8.8,
+    "source": "blend",
+    "sub": 0.85,
+    "value_ms": 64.9,
+    "z": 0.5
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.3,
+    "delta_bpm": -0.3,
+    "n_days": 21,
+    "sub": 0.85,
+    "value": 53.0,
+    "zr": -0.08
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 392
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.62,
+    "value": 62
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-04-29",
+  "days_to_full": 7,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 79,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-04-30": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.905,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.73,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "warming",
+  "briefing": "GREEN — readiness 84/100 (medium confidence, baseline still building (6d to go)). Main limiter: sleep score 73; support morning body battery 87. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 87
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.3,
+    "cv_7": 12.0,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.73,
+    "n_days": 22,
+    "pct_dev": 13.5,
+    "source": "blend",
+    "sub": 0.8701866616849255,
+    "value_ms": 68.4,
+    "z": 0.74
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.1,
+    "delta_bpm": 0.2,
+    "n_days": 22,
+    "sub": 0.85,
+    "value": 53.3,
+    "zr": 0.06
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 377
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.73,
+    "value": 73
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-04-30",
+  "days_to_full": 6,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 84,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-01": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.784,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.81,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "warming",
+  "briefing": "GREEN — readiness 79/100 (medium confidence, baseline still building (5d to go)). Main limiter: morning body battery 42; support HRV 67ms, +11% vs your 60-day baseline (z +0.6). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.6040000000000001,
+    "value": 42
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.5,
+    "cv_7": 12.3,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.74,
+    "n_days": 23,
+    "pct_dev": 11.2,
+    "source": "blend",
+    "sub": 0.8629202372489375,
+    "value_ms": 67.2,
+    "z": 0.63
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.8,
+    "delta_bpm": -2.4,
+    "n_days": 23,
+    "sub": 0.8566046911161049,
+    "value": 50.3,
+    "zr": -0.54
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 356
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.81,
+    "value": 81
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-05-01",
+  "days_to_full": 5,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 79,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-02": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.811,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.92,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "warming",
+  "briefing": "GREEN — readiness 85/100 (medium confidence, baseline still building (4d to go)). Main limiter: morning body battery 48; support sleep score 92. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.676,
+    "value": 48
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.4,
+    "cv_7": 11.9,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.68,
+    "n_days": 24,
+    "pct_dev": 7.2,
+    "source": "blend",
+    "sub": 0.8499999999999999,
+    "value_ms": 64.7,
+    "z": 0.42
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.8,
+    "delta_bpm": -4.1,
+    "n_days": 24,
+    "sub": 0.9140142367051625,
+    "value": 48.7,
+    "zr": -0.93
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 347
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.92,
+    "value": 92
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-05-02",
+  "days_to_full": 4,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 85,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-03": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.774,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.73,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "warming",
+  "briefing": "GREEN — readiness 76/100 (medium confidence, baseline still building (3d to go)). Main limiter: sleep score 73; support resting HR -4 bpm vs baseline (48 bpm). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.748,
+    "value": 54
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.4,
+    "cv_7": 10.8,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.61,
+    "n_days": 25,
+    "pct_dev": 4.5,
+    "source": "blend",
+    "sub": 0.7321428571428571,
+    "value_ms": 63.1,
+    "z": 0.27
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.5,
+    "delta_bpm": -4.2,
+    "n_days": 25,
+    "sub": 0.9156832250934104,
+    "value": 48.3,
+    "zr": -0.94
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 456
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.73,
+    "value": 73
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-05-03",
+  "days_to_full": 3,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "resting_hr"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 76,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-04": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.794,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.56,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "warming",
+  "briefing": "GREEN — readiness 71/100 (medium confidence, baseline still building (2d to go)). Main limiter: sleep score 56; support HRV 62ms, +3% vs your 60-day baseline (z +0.2). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.664,
+    "value": 47
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.0,
+    "cv_7": 13.4,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.77,
+    "n_days": 26,
+    "pct_dev": 3.4,
+    "source": "blend",
+    "sub": 0.85,
+    "value_ms": 62.0,
+    "z": 0.2
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.7,
+    "delta_bpm": -0.7,
+    "n_days": 26,
+    "sub": 0.85,
+    "value": 52.0,
+    "zr": -0.16
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 429
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.56,
+    "value": 56
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-05-04",
+  "days_to_full": 2,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 71,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-05": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.845,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.87,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "warming",
+  "briefing": "GREEN — readiness 85/100 (medium confidence, baseline still building (1d to go)). Main limiter: morning body battery 61; support sleep score 87. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.8320000000000001,
+    "value": 61
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.5,
+    "cv_7": 14.2,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.84,
+    "n_days": 27,
+    "pct_dev": 6.1,
+    "source": "blend",
+    "sub": 0.85,
+    "value_ms": 64.2,
+    "z": 0.36
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.8,
+    "delta_bpm": 0.2,
+    "n_days": 27,
+    "sub": 0.85,
+    "value": 53.0,
+    "zr": 0.05
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 448
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.87,
+    "value": 87
+   }
+  },
+  "confidence": "medium",
+  "data_completeness": 1.0,
+  "date": "2026-05-05",
+  "days_to_full": 1,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 85,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-06": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.882,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.63,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 79/100 (high confidence). Main limiter: sleep score 63; support morning body battery 79. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 79
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.4,
+    "cv_7": 14.4,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.86,
+    "n_days": 28,
+    "pct_dev": 4.0,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 62.8,
+    "z": 0.24
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.9,
+    "delta_bpm": 2.8,
+    "n_days": 28,
+    "sub": 0.783364992985063,
+    "value": 55.7,
+    "zr": 0.65
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 389
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.63,
+    "value": 63
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-06",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 79,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-07": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.859,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.84,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 85/100 (high confidence). Main limiter: sleep score 84; support morning body battery 65. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.88,
+    "value": 65
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.3,
+    "cv_7": 12.3,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.73,
+    "n_days": 29,
+    "pct_dev": 0.1,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 60.4,
+    "z": 0.01
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.9,
+    "delta_bpm": 1.8,
+    "n_days": 29,
+    "sub": 0.85,
+    "value": 54.7,
+    "zr": 0.42
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 382
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.84,
+    "value": 84
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-07",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 85,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-08": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.895,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.8,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 86/100 (high confidence). Main limiter: sleep score 80; support morning body battery 86. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 86
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.8,
+    "cv_7": 15.3,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.92,
+    "n_days": 30,
+    "pct_dev": -3.3,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 57.9,
+    "z": -0.21
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.8,
+    "delta_bpm": 0.2,
+    "n_days": 30,
+    "sub": 0.85,
+    "value": 53.0,
+    "zr": 0.05
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 440
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.8,
+    "value": 80
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-08",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 86,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-09": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.805,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.5,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 70/100 (high confidence). Main limiter: sleep score 91; support HRV 58ms, -3% vs your 60-day baseline (z -0.2). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.7,
+    "value": 50
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.8,
+    "cv_7": 15.2,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.94,
+    "n_days": 31,
+    "pct_dev": -3.1,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 58.0,
+    "z": -0.2
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.9,
+    "delta_bpm": 0.1,
+    "n_days": 31,
+    "sub": 0.85,
+    "value": 53.0,
+    "zr": 0.03
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": true,
+    "tst_min": 298
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.5,
+    "value": 91
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-09",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 70,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-10": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.848,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.9,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 87/100 (high confidence). Main limiter: morning body battery 62; support sleep score 90. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.8440000000000001,
+    "value": 62
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.3,
+    "cv_7": 18.3,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.15,
+    "n_days": 32,
+    "pct_dev": -0.9,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 59.7,
+    "z": -0.06
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.7,
+    "delta_bpm": -1.7,
+    "n_days": 32,
+    "sub": 0.85,
+    "value": 51.0,
+    "zr": -0.41
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 417
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.9,
+    "value": 90
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-10",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 87,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-11": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.805,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.78,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 80/100 (high confidence). Main limiter: morning body battery 50; support HRV 61ms, +2% vs your 60-day baseline (z +0.1). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.7,
+    "value": 50
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.2,
+    "cv_7": 16.2,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.0,
+    "n_days": 33,
+    "pct_dev": 1.6,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 61.2,
+    "z": 0.1
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.8,
+    "delta_bpm": -0.4,
+    "n_days": 33,
+    "sub": 0.85,
+    "value": 52.3,
+    "zr": -0.1
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 388
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.78,
+    "value": 78
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-11",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 80,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-12": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.794,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.66,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 75/100 (high confidence). Main limiter: sleep score 66; support HRV 61ms, +1% vs your 60-day baseline (z +0.1). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.664,
+    "value": 47
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.6,
+    "cv_7": 16.4,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.01,
+    "n_days": 34,
+    "pct_dev": 1.1,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 61.3,
+    "z": 0.07
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.8,
+    "delta_bpm": -0.5,
+    "n_days": 34,
+    "sub": 0.85,
+    "value": 52.3,
+    "zr": -0.12
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 458
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.66,
+    "value": 66
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-12",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 75,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-13": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.895,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.78,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 85/100 (high confidence). Main limiter: sleep score 78; support morning body battery 80. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 80
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.9,
+    "cv_7": 16.6,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.04,
+    "n_days": 35,
+    "pct_dev": 2.9,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 62.7,
+    "z": 0.18
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.7,
+    "delta_bpm": -0.4,
+    "n_days": 35,
+    "sub": 0.85,
+    "value": 52.3,
+    "zr": -0.09
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 460
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.78,
+    "value": 78
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-13",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 85,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-14": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.809,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.86,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 83/100 (high confidence). Main limiter: morning body battery 51; support sleep score 86. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.712,
+    "value": 51
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.7,
+    "cv_7": 17.4,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.1,
+    "n_days": 36,
+    "pct_dev": 2.3,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 62.1,
+    "z": 0.14
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.6,
+    "delta_bpm": -1.3,
+    "n_days": 36,
+    "sub": 0.85,
+    "value": 51.3,
+    "zr": -0.32
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 427
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.86,
+    "value": 86
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-14",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 83,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-15": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.881,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.63,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 79/100 (high confidence). Main limiter: sleep score 63; support morning body battery 70. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.9400000000000001,
+    "value": 70
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.5,
+    "cv_7": 14.2,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.88,
+    "n_days": 37,
+    "pct_dev": 5.2,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 63.7,
+    "z": 0.32
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.6,
+    "delta_bpm": -2.6,
+    "n_days": 37,
+    "sub": 0.8720517000255844,
+    "value": 50.0,
+    "zr": -0.65
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 437
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.63,
+    "value": 63
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-15",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 79,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-16": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.852,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.88,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 86/100 (high confidence). Main limiter: HRV 61ms, +1% vs your 60-day baseline (z +0.1); support sleep score 88. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.8560000000000001,
+    "value": 63
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.0,
+    "cv_7": 19.9,
+    "cv_penalty": 0.001,
+    "cv_ratio": 1.25,
+    "n_days": 38,
+    "pct_dev": 1.1,
+    "source": "baseline",
+    "sub": 0.8494444051937606,
+    "value_ms": 60.6,
+    "z": 0.06
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.6,
+    "delta_bpm": -1.6,
+    "n_days": 38,
+    "sub": 0.85,
+    "value": 51.0,
+    "zr": -0.39
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 477
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.88,
+    "value": 88
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-16",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 86,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-17": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.895,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.9,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 90/100 (high confidence). Main limiter: HRV 59ms, -1% vs your 60-day baseline (z -0.1); support morning body battery 93. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 93
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.1,
+    "cv_7": 18.0,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.11,
+    "n_days": 39,
+    "pct_dev": -1.4,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 59.3,
+    "z": -0.09
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.5,
+    "delta_bpm": -1.2,
+    "n_days": 39,
+    "sub": 0.85,
+    "value": 51.3,
+    "zr": -0.31
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 415
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.9,
+    "value": 90
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-17",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 90,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-18": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.884,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.82,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 86/100 (high confidence). Main limiter: sleep score 82; support morning body battery 72. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.9640000000000001,
+    "value": 72
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.8,
+    "cv_7": 19.5,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.22,
+    "n_days": 40,
+    "pct_dev": -3.2,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 57.9,
+    "z": -0.2
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.5,
+    "delta_bpm": -0.9,
+    "n_days": 40,
+    "sub": 0.85,
+    "value": 51.7,
+    "zr": -0.22
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 376
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.82,
+    "value": 82
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-18",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 86,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-19": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.895,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.83,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 87/100 (high confidence). Main limiter: sleep score 83; support morning body battery 79. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 79
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.7,
+    "cv_7": 16.0,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.0,
+    "n_days": 41,
+    "pct_dev": -7.1,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 55.5,
+    "z": -0.45
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.7,
+    "delta_bpm": 1.3,
+    "n_days": 41,
+    "sub": 0.85,
+    "value": 54.0,
+    "zr": 0.34
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 407
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.83,
+    "value": 83
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-19",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 87,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-20": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.836,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.68,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 78/100 (high confidence). Main limiter: sleep score 68; support HRV 56ms, -7% vs your 60-day baseline (z -0.4). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.808,
+    "value": 59
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.0,
+    "cv_7": 17.7,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.11,
+    "n_days": 42,
+    "pct_dev": -6.8,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 55.9,
+    "z": -0.43
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.7,
+    "delta_bpm": 2.0,
+    "n_days": 42,
+    "sub": 0.8450086824262497,
+    "value": 54.7,
+    "zr": 0.51
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 483
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.68,
+    "value": 68
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-20",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 78,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-21": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.779,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.59,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 71/100 (high confidence). Main limiter: sleep score 59; support resting HR +0 bpm vs baseline (53 bpm). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.616,
+    "value": 43
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.7,
+    "cv_7": 19.1,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.2,
+    "n_days": 43,
+    "pct_dev": -8.1,
+    "source": "baseline",
+    "sub": 0.8485591426892952,
+    "value_ms": 54.9,
+    "z": -0.5
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.6,
+    "delta_bpm": 0.4,
+    "n_days": 43,
+    "sub": 0.85,
+    "value": 53.0,
+    "zr": 0.11
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 383
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.59,
+    "value": 59
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-21",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "resting_hr"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 71,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-22": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.857,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.92,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 88/100 (high confidence). Main limiter: HRV 57ms, -5% vs your 60-day baseline (z -0.3); support sleep score 92. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.8680000000000001,
+    "value": 64
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.9,
+    "cv_7": 21.0,
+    "cv_penalty": 0.017,
+    "cv_ratio": 1.34,
+    "n_days": 44,
+    "pct_dev": -5.3,
+    "source": "baseline",
+    "sub": 0.8328890144465957,
+    "value_ms": 56.7,
+    "z": -0.33
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.4,
+    "delta_bpm": -3.4,
+    "n_days": 44,
+    "sub": 0.9029677899661768,
+    "value": 49.0,
+    "zr": -0.85
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 449
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.92,
+    "value": 92
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-22",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 88,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-23": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.808,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.86,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 83/100 (high confidence). Main limiter: morning body battery 44; support resting HR -5 bpm vs baseline (47 bpm). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.628,
+    "value": 44
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.9,
+    "cv_7": 16.9,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.03,
+    "n_days": 45,
+    "pct_dev": -0.8,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 59.4,
+    "z": -0.05
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.3,
+    "delta_bpm": -5.3,
+    "n_days": 45,
+    "sub": 0.9739344608034427,
+    "value": 47.0,
+    "zr": -1.33
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 492
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.86,
+    "value": 86
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-23",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "resting_hr"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 83,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-24": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.91,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.7,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 84/100 (high confidence). Main limiter: sleep score 70; support morning body battery 94. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 94
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.9,
+    "cv_7": 16.8,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.03,
+    "n_days": 46,
+    "pct_dev": -1.7,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 58.9,
+    "z": -0.11
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.3,
+    "delta_bpm": -3.9,
+    "n_days": 46,
+    "sub": 0.9244187483190058,
+    "value": 48.3,
+    "zr": -1.0
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 461
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.7,
+    "value": 70
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-24",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 84,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-25": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.809,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.79,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 80/100 (high confidence). Main limiter: morning body battery 51; support HRV 60ms, +0% vs your 60-day baseline (z +0.0). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.712,
+    "value": 51
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.9,
+    "cv_7": 15.1,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.93,
+    "n_days": 47,
+    "pct_dev": 0.4,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 60.1,
+    "z": 0.02
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.4,
+    "delta_bpm": 0.2,
+    "n_days": 47,
+    "sub": 0.85,
+    "value": 52.7,
+    "zr": 0.06
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 467
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.79,
+    "value": 79
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-25",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 80,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-26": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.83,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.82,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 83/100 (high confidence). Main limiter: morning body battery 57; support HRV 62ms, +3% vs your 60-day baseline (z +0.2). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.784,
+    "value": 57
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.0,
+    "cv_7": 14.6,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.9,
+    "n_days": 48,
+    "pct_dev": 2.7,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 61.6,
+    "z": 0.17
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.4,
+    "delta_bpm": 1.6,
+    "n_days": 48,
+    "sub": 0.85,
+    "value": 54.0,
+    "zr": 0.4
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 475
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.82,
+    "value": 82
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-26",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 83,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-27": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.775,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.74,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 76/100 (high confidence). Main limiter: sleep score 74; support HRV 58ms, -4% vs your 60-day baseline (z -0.2). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.712,
+    "value": 51
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.7,
+    "cv_7": 16.2,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.99,
+    "n_days": 49,
+    "pct_dev": -3.7,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 57.5,
+    "z": -0.23
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.5,
+    "delta_bpm": 3.5,
+    "n_days": 49,
+    "sub": 0.683478479181304,
+    "value": 56.0,
+    "zr": 0.87
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 367
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.74,
+    "value": 74
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-27",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 76,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-28": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.895,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.58,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 78/100 (high confidence). Main limiter: sleep score 58; support morning body battery 88. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 88
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.9,
+    "cv_7": 15.1,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.91,
+    "n_days": 50,
+    "pct_dev": 2.0,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 61.1,
+    "z": 0.12
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.4,
+    "delta_bpm": 0.2,
+    "n_days": 50,
+    "sub": 0.85,
+    "value": 52.7,
+    "zr": 0.06
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 431
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.58,
+    "value": 58
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-28",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 78,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-29": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.866,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.69,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 80/100 (high confidence). Main limiter: sleep score 69; support morning body battery 67. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.904,
+    "value": 67
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.2,
+    "cv_7": 16.5,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.0,
+    "n_days": 51,
+    "pct_dev": 2.6,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 61.7,
+    "z": 0.15
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.5,
+    "delta_bpm": 1.5,
+    "n_days": 51,
+    "sub": 0.85,
+    "value": 54.0,
+    "zr": 0.37
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 433
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.69,
+    "value": 69
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-29",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 80,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-30": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.831,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.56,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 74/100 (high confidence). Main limiter: sleep score 56; support HRV 62ms, +4% vs your 60-day baseline (z +0.2). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.808,
+    "value": 59
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.2,
+    "cv_7": 16.2,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.99,
+    "n_days": 52,
+    "pct_dev": 3.7,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 62.4,
+    "z": 0.22
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.7,
+    "delta_bpm": 2.3,
+    "n_days": 52,
+    "sub": 0.8166591316257792,
+    "value": 55.0,
+    "zr": 0.57
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 399
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.56,
+    "value": 56
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-30",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 74,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-05-31": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.78,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.63,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 73/100 (high confidence). Main limiter: sleep score 63; support HRV 60ms, +1% vs your 60-day baseline (z +0.1). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.784,
+    "value": 57
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.0,
+    "cv_7": 19.0,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.18,
+    "n_days": 53,
+    "pct_dev": 0.8,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 60.5,
+    "z": 0.05
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.7,
+    "delta_bpm": 4.3,
+    "n_days": 53,
+    "sub": 0.5981961764751216,
+    "value": 57.0,
+    "zr": 1.06
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 403
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.63,
+    "value": 63
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-05-31",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 73,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-01": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.852,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.78,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 83/100 (high confidence). Main limiter: sleep score 78; support morning body battery 63. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.8560000000000001,
+    "value": 63
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.1,
+    "cv_7": 18.6,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.16,
+    "n_days": 54,
+    "pct_dev": 2.4,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 61.5,
+    "z": 0.14
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.6,
+    "delta_bpm": 1.4,
+    "n_days": 54,
+    "sub": 0.85,
+    "value": 54.0,
+    "zr": 0.34
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 476
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.78,
+    "value": 78
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-01",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 83,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-02": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.896,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.74,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 84/100 (high confidence). Main limiter: sleep score 74; support morning body battery 80. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 80
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.0,
+    "cv_7": 19.2,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.21,
+    "n_days": 55,
+    "pct_dev": 0.1,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 60.0,
+    "z": 0.0
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.5,
+    "delta_bpm": -2.2,
+    "n_days": 55,
+    "sub": 0.855534050220123,
+    "value": 50.3,
+    "zr": -0.54
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 363
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.74,
+    "value": 74
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-02",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 84,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-03": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.915,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.73,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 85/100 (high confidence). Main limiter: sleep score 73; support morning body battery 92. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 92
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.8,
+    "cv_7": 16.9,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.05,
+    "n_days": 56,
+    "pct_dev": 2.2,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 61.2,
+    "z": 0.13
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.4,
+    "delta_bpm": -4.8,
+    "n_days": 56,
+    "sub": 0.9485449305088784,
+    "value": 47.7,
+    "zr": -1.16
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 396
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.73,
+    "value": 73
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-03",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 85,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-04": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.78,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.73,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 76/100 (high confidence). Main limiter: morning body battery 43; support HRV 57ms, -4% vs your 60-day baseline (z -0.3). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.616,
+    "value": 43
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.5,
+    "cv_7": 19.6,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.21,
+    "n_days": 57,
+    "pct_dev": -4.5,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 56.8,
+    "z": -0.27
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.6,
+    "delta_bpm": -0.6,
+    "n_days": 57,
+    "sub": 0.85,
+    "value": 52.0,
+    "zr": -0.13
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 431
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.73,
+    "value": 73
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-04",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 76,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-05": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.895,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.84,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 88/100 (high confidence). Main limiter: sleep score 84; support morning body battery 82. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 82
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.7,
+    "cv_7": 18.1,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.11,
+    "n_days": 58,
+    "pct_dev": -5.5,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 56.4,
+    "z": -0.34
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.6,
+    "delta_bpm": 2.0,
+    "n_days": 58,
+    "sub": 0.85,
+    "value": 54.7,
+    "zr": 0.48
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 471
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.84,
+    "value": 84
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-05",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 88,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-06": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.806,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.6,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 73/100 (high confidence). Main limiter: sleep score 60; support HRV 55ms, -7% vs your 60-day baseline (z -0.5). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.796,
+    "value": 58
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.6,
+    "cv_7": 17.7,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.1,
+    "n_days": 59,
+    "pct_dev": -7.4,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 55.2,
+    "z": -0.46
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.6,
+    "delta_bpm": 3.4,
+    "n_days": 59,
+    "sub": 0.7094586429746811,
+    "value": 56.0,
+    "zr": 0.81
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 359
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.6,
+    "value": 60
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-06",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 73,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-07": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.758,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.87,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 80/100 (high confidence). Main limiter: morning body battery 42; support sleep score 87. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.6040000000000001,
+    "value": 42
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.3,
+    "cv_7": 18.9,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.15,
+    "n_days": 60,
+    "pct_dev": -8.0,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 54.6,
+    "z": -0.49
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.7,
+    "delta_bpm": 2.9,
+    "n_days": 60,
+    "sub": 0.7603498270829111,
+    "value": 55.7,
+    "zr": 0.7
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 390
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.87,
+    "value": 87
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-07",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 80,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-08": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.847,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.55,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 74/100 (high confidence). Main limiter: sleep score 55; support morning body battery 72. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.9640000000000001,
+    "value": 72
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.4,
+    "cv_7": 17.8,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.11,
+    "n_days": 60,
+    "pct_dev": -10.6,
+    "source": "baseline",
+    "sub": 0.775636496552559,
+    "value_ms": 53.2,
+    "z": -0.67
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.7,
+    "delta_bpm": 2.0,
+    "n_days": 60,
+    "sub": 0.85,
+    "value": 54.7,
+    "zr": 0.48
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 446
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.55,
+    "value": 55
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-08",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 74,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-09": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.751,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.9,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 80/100 (high confidence). Main limiter: resting HR +5 bpm vs baseline (58 bpm); support morning body battery 75. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 75
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.5,
+    "cv_7": 18.1,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.13,
+    "n_days": 60,
+    "pct_dev": -9.7,
+    "source": "baseline",
+    "sub": 0.8003717246559148,
+    "value_ms": 53.7,
+    "z": -0.61
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.7,
+    "delta_bpm": 4.9,
+    "n_days": 60,
+    "sub": 0.5514950171038795,
+    "value": 57.7,
+    "zr": 1.16
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 371
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.9,
+    "value": 90
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-09",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "resting_hr",
+   "support": "body_battery"
+  },
+  "flags": [
+   "body_battery_capped"
+  ],
+  "label": "Train as planned",
+  "score": 80,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-10": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.846,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.84,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 84/100 (high confidence). Main limiter: resting HR +3 bpm vs baseline (55 bpm); support morning body battery 65. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.88,
+    "value": 65
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.6,
+    "cv_7": 17.9,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.11,
+    "n_days": 60,
+    "pct_dev": -7.7,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 55.0,
+    "z": -0.48
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.6,
+    "delta_bpm": 2.7,
+    "n_days": 60,
+    "sub": 0.7838478991433057,
+    "value": 55.3,
+    "zr": 0.65
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 363
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.84,
+    "value": 84
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-10",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "resting_hr",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 84,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-11": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.764,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.82,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 78/100 (high confidence). Main limiter: morning body battery 45; support HRV 59ms, -2% vs your 60-day baseline (z -0.1). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.64,
+    "value": 45
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.0,
+    "cv_7": 15.9,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.97,
+    "n_days": 60,
+    "pct_dev": -2.0,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 58.8,
+    "z": -0.13
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.5,
+    "delta_bpm": 3.1,
+    "n_days": 60,
+    "sub": 0.7351570559788164,
+    "value": 55.7,
+    "zr": 0.76
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 430
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.82,
+    "value": 82
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-11",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 78,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-12": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.776,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.73,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 76/100 (high confidence). Main limiter: morning body battery 42; support HRV 58ms, -3% vs your 60-day baseline (z -0.2). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.6040000000000001,
+    "value": 42
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 60.0,
+    "cv_7": 13.8,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.85,
+    "n_days": 60,
+    "pct_dev": -3.4,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 57.9,
+    "z": -0.21
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.5,
+    "delta_bpm": -1.1,
+    "n_days": 60,
+    "sub": 0.85,
+    "value": 51.3,
+    "zr": -0.27
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 463
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.73,
+    "value": 73
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-12",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 76,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-13": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.823,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.9,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 85/100 (high confidence). Main limiter: morning body battery 55; support sleep score 90. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.76,
+    "value": 55
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.8,
+    "cv_7": 14.2,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.86,
+    "n_days": 60,
+    "pct_dev": -3.7,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 57.6,
+    "z": -0.23
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.7,
+    "delta_bpm": 1.0,
+    "n_days": 60,
+    "sub": 0.85,
+    "value": 53.7,
+    "zr": 0.23
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 438
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.9,
+    "value": 90
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-13",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 85,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-14": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.794,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.57,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 72/100 (high confidence). Main limiter: sleep score 57; support HRV 59ms, -1% vs your 60-day baseline (z -0.1). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.676,
+    "value": 48
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.7,
+    "cv_7": 11.0,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.65,
+    "n_days": 60,
+    "pct_dev": -1.3,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 58.9,
+    "z": -0.08
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.7,
+    "delta_bpm": 2.3,
+    "n_days": 60,
+    "sub": 0.8330644936598879,
+    "value": 55.0,
+    "zr": 0.54
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 393
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.57,
+    "value": 57
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-14",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 72,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-15": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.816,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.82,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 82/100 (high confidence). Main limiter: resting HR +6 bpm vs baseline (58 bpm); support morning body battery 73. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.9760000000000001,
+    "value": 73
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.6,
+    "cv_7": 13.8,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.82,
+    "n_days": 60,
+    "pct_dev": -3.2,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 57.7,
+    "z": -0.2
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.8,
+    "delta_bpm": 5.5,
+    "n_days": 60,
+    "sub": 0.4934433668132131,
+    "value": 58.3,
+    "zr": 1.29
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 437
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.82,
+    "value": 82
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-15",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "resting_hr",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 82,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-16": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.81,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.86,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 83/100 (high confidence). Main limiter: resting HR +4 bpm vs baseline (57 bpm); support sleep score 86. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.8320000000000001,
+    "value": 61
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.5,
+    "cv_7": 14.8,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.88,
+    "n_days": 60,
+    "pct_dev": -5.4,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 56.2,
+    "z": -0.33
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.9,
+    "delta_bpm": 3.8,
+    "n_days": 60,
+    "sub": 0.6749947199234653,
+    "value": 56.7,
+    "zr": 0.89
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 406
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.86,
+    "value": 86
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-16",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "resting_hr",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 83,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-17": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.783,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.76,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 78/100 (high confidence). Main limiter: morning body battery 44; support HRV 56ms, -5% vs your 60-day baseline (z -0.3). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.628,
+    "value": 44
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.3,
+    "cv_7": 14.8,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.88,
+    "n_days": 60,
+    "pct_dev": -5.2,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 56.3,
+    "z": -0.31
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.0,
+    "delta_bpm": 1.3,
+    "n_days": 60,
+    "sub": 0.85,
+    "value": 54.3,
+    "zr": 0.32
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 396
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.76,
+    "value": 76
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-17",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 78,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-18": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.762,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.62,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 71/100 (high confidence). Main limiter: sleep score 62; support resting HR -1 bpm vs baseline (52 bpm). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.676,
+    "value": 48
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.9,
+    "cv_7": 14.7,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.88,
+    "n_days": 60,
+    "pct_dev": -10.8,
+    "source": "baseline",
+    "sub": 0.777823729485062,
+    "value_ms": 52.5,
+    "z": -0.66
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.8,
+    "delta_bpm": -0.8,
+    "n_days": 60,
+    "sub": 0.85,
+    "value": 52.0,
+    "zr": -0.21
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 398
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.62,
+    "value": 62
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-18",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "resting_hr"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 71,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-19": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.703,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.92,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 78/100 (high confidence). Main limiter: morning body battery 41; support sleep score 92. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.5920000000000001,
+    "value": 41
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.0,
+    "cv_7": 11.2,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.67,
+    "n_days": 60,
+    "pct_dev": -13.2,
+    "source": "baseline",
+    "sub": 0.7040933874256515,
+    "value_ms": 51.2,
+    "z": -0.82
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.8,
+    "delta_bpm": -2.4,
+    "n_days": 60,
+    "sub": 0.864979866844294,
+    "value": 50.3,
+    "zr": -0.6
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 347
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.92,
+    "value": 92
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-19",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 78,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-20": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.781,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.76,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 77/100 (high confidence). Main limiter: HRV 51ms, -14% vs your 60-day baseline (z -0.9); support morning body battery 66. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.892,
+    "value": 66
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 59.1,
+    "cv_7": 11.2,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.69,
+    "n_days": 60,
+    "pct_dev": -13.5,
+    "source": "baseline",
+    "sub": 0.6869126888238969,
+    "value_ms": 51.1,
+    "z": -0.86
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.8,
+    "delta_bpm": -2.1,
+    "n_days": 60,
+    "sub": 0.8521824776872943,
+    "value": 50.7,
+    "zr": -0.51
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 461
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.76,
+    "value": 76
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-20",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 77,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-21": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.811,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.83,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 82/100 (high confidence). Main limiter: HRV 51ms, -13% vs your 60-day baseline (z -0.8); support morning body battery 73. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.9760000000000001,
+    "value": 73
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.8,
+    "cv_7": 11.2,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.69,
+    "n_days": 60,
+    "pct_dev": -13.0,
+    "source": "baseline",
+    "sub": 0.6967882772344896,
+    "value_ms": 51.1,
+    "z": -0.84
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.9,
+    "delta_bpm": 0.5,
+    "n_days": 60,
+    "sub": 0.85,
+    "value": 53.3,
+    "zr": 0.12
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 468
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.83,
+    "value": 83
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-21",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "hrv",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 82,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-22": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.779,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.64,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 73/100 (high confidence). Main limiter: sleep score 64; support morning body battery 91. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 91
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.9,
+    "cv_7": 11.3,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.69,
+    "n_days": 60,
+    "pct_dev": -10.0,
+    "source": "baseline",
+    "sub": 0.7885023736412882,
+    "value_ms": 53.0,
+    "z": -0.64
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.9,
+    "delta_bpm": 3.1,
+    "n_days": 60,
+    "sub": 0.7403787194389303,
+    "value": 56.0,
+    "zr": 0.74
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 319
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.64,
+    "value": 64
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-22",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [
+   "body_battery_capped"
+  ],
+  "label": "Train as planned",
+  "score": 73,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-23": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.758,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.79,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 77/100 (high confidence). Main limiter: resting HR +5 bpm vs baseline (58 bpm); support HRV 55ms, -6% vs your 60-day baseline (z -0.4). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.724,
+    "value": 52
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.8,
+    "cv_7": 13.3,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.81,
+    "n_days": 60,
+    "pct_dev": -6.5,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 55.0,
+    "z": -0.41
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.1,
+    "delta_bpm": 4.6,
+    "n_days": 60,
+    "sub": 0.5776339912982501,
+    "value": 57.7,
+    "zr": 1.11
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 418
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.79,
+    "value": 79
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-23",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "resting_hr",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 77,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-24": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.895,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.77,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 85/100 (high confidence). Main limiter: sleep score 77; support morning body battery 78. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 78
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.6,
+    "cv_7": 13.5,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.84,
+    "n_days": 60,
+    "pct_dev": -6.0,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 55.1,
+    "z": -0.39
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.0,
+    "delta_bpm": 0.7,
+    "n_days": 60,
+    "sub": 0.85,
+    "value": 53.7,
+    "zr": 0.17
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 440
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.77,
+    "value": 77
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-24",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 85,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-25": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.895,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.72,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 83/100 (high confidence). Main limiter: sleep score 72; support morning body battery 82. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 82
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.1,
+    "cv_7": 13.5,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.83,
+    "n_days": 60,
+    "pct_dev": -5.1,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 55.1,
+    "z": -0.33
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.9,
+    "delta_bpm": -1.5,
+    "n_days": 60,
+    "sub": 0.85,
+    "value": 51.3,
+    "zr": -0.36
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 413
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.72,
+    "value": 72
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-25",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 83,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-26": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.794,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.92,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 84/100 (high confidence). Main limiter: morning body battery 42; support sleep score 92. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.6040000000000001,
+    "value": 42
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.2,
+    "cv_7": 14.7,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.9,
+    "n_days": 60,
+    "pct_dev": -2.7,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 56.7,
+    "z": -0.17
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.9,
+    "delta_bpm": -4.6,
+    "n_days": 60,
+    "sub": 0.9375774444208327,
+    "value": 48.3,
+    "zr": -1.08
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 423
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.92,
+    "value": 92
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-26",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "sleep_score"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 84,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-27": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.798,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.72,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 77/100 (high confidence). Main limiter: sleep score 72; support resting HR -3 bpm vs baseline (50 bpm). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.652,
+    "value": 46
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.3,
+    "cv_7": 14.5,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.89,
+    "n_days": 60,
+    "pct_dev": 0.0,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 58.3,
+    "z": 0.0
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.8,
+    "delta_bpm": -3.2,
+    "n_days": 60,
+    "sub": 0.8869514967168918,
+    "value": 49.7,
+    "zr": -0.75
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 419
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.72,
+    "value": 72
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-27",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "resting_hr"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 77,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-28": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.859,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.74,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 82/100 (high confidence). Main limiter: sleep score 74; support morning body battery 65. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.88,
+    "value": 65
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.0,
+    "cv_7": 14.7,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.89,
+    "n_days": 60,
+    "pct_dev": 0.4,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 58.3,
+    "z": 0.02
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.8,
+    "delta_bpm": -1.8,
+    "n_days": 60,
+    "sub": 0.85,
+    "value": 51.0,
+    "zr": -0.42
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 387
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.74,
+    "value": 74
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-28",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 82,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-29": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.78,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.58,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 71/100 (high confidence). Main limiter: sleep score 58; support HRV 56ms, -3% vs your 60-day baseline (z -0.2). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.616,
+    "value": 43
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 57.5,
+    "cv_7": 17.9,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.12,
+    "n_days": 60,
+    "pct_dev": -2.9,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 55.8,
+    "z": -0.18
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 52.9,
+    "delta_bpm": -0.2,
+    "n_days": 60,
+    "sub": 0.85,
+    "value": 52.7,
+    "zr": -0.05
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 333
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.58,
+    "value": 58
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-29",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 71,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-06-30": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.791,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.84,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 81/100 (high confidence). Main limiter: morning body battery 51; support HRV 55ms, -5% vs your 60-day baseline (z -0.3). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.712,
+    "value": 51
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 57.4,
+    "cv_7": 16.9,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.06,
+    "n_days": 60,
+    "pct_dev": -4.7,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 54.7,
+    "z": -0.3
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.1,
+    "delta_bpm": 2.9,
+    "n_days": 60,
+    "sub": 0.7601192816556087,
+    "value": 56.0,
+    "zr": 0.7
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 376
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.84,
+    "value": 84
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-06-30",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "body_battery",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 81,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-07-01": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.851,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.59,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 76/100 (high confidence). Main limiter: sleep score 59; support morning body battery 95. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 95
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 57.4,
+    "cv_7": 16.5,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.03,
+    "n_days": 60,
+    "pct_dev": -5.8,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 54.1,
+    "z": -0.37
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.2,
+    "delta_bpm": 4.1,
+    "n_days": 60,
+    "sub": 0.6310409338965646,
+    "value": 57.3,
+    "zr": 0.99
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 410
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.59,
+    "value": 59
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-07-01",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 76,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-07-02": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.828,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.63,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 76/100 (high confidence). Main limiter: sleep score 63; support morning body battery 74. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.988,
+    "value": 74
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 57.6,
+    "cv_7": 18.2,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.1,
+    "n_days": 60,
+    "pct_dev": 2.2,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 58.9,
+    "z": 0.13
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.4,
+    "delta_bpm": 5.0,
+    "n_days": 60,
+    "sub": 0.5347967657513583,
+    "value": 58.3,
+    "zr": 1.2
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 431
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.63,
+    "value": 63
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-07-02",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 76,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-07-03": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.895,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.87,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 89/100 (high confidence). Main limiter: resting HR +2 bpm vs baseline (55 bpm); support morning body battery 86. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 86
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.0,
+    "cv_7": 20.4,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.24,
+    "n_days": 60,
+    "pct_dev": 3.6,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 60.1,
+    "z": 0.21
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.3,
+    "delta_bpm": 2.1,
+    "n_days": 60,
+    "sub": 0.8492993074693576,
+    "value": 55.3,
+    "zr": 0.5
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 379
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.87,
+    "value": 87
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-07-03",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "resting_hr",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 89,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-07-04": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.857,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.69,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 80/100 (high confidence). Main limiter: sleep score 69; support morning body battery 65. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.88,
+    "value": 65
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 57.9,
+    "cv_7": 20.3,
+    "cv_penalty": 0.003,
+    "cv_ratio": 1.27,
+    "n_days": 60,
+    "pct_dev": 3.6,
+    "source": "baseline",
+    "sub": 0.8469392201019383,
+    "value_ms": 59.9,
+    "z": 0.21
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.3,
+    "delta_bpm": 2.0,
+    "n_days": 60,
+    "sub": 0.85,
+    "value": 55.3,
+    "zr": 0.48
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 425
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.69,
+    "value": 69
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-07-04",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 80,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-07-05": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.884,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.59,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 78/100 (high confidence). Main limiter: sleep score 59; support morning body battery 82. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 82
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.0,
+    "cv_7": 19.1,
+    "cv_penalty": 0.0,
+    "cv_ratio": 1.18,
+    "n_days": 60,
+    "pct_dev": 8.2,
+    "source": "baseline",
+    "sub": 0.85,
+    "value_ms": 62.8,
+    "z": 0.47
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.4,
+    "delta_bpm": 2.6,
+    "n_days": 60,
+    "sub": 0.795903518937949,
+    "value": 56.0,
+    "zr": 0.62
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 400
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.59,
+    "value": 59
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-07-05",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 78,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-07-06": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.775,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.61,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 72/100 (high confidence). Main limiter: sleep score 61; support HRV 66ms, +14% vs your 60-day baseline (z +0.8). Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 0.64,
+    "value": 45
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.1,
+    "cv_7": 13.1,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.79,
+    "n_days": 60,
+    "pct_dev": 13.9,
+    "source": "baseline",
+    "sub": 0.8902329431852646,
+    "value_ms": 66.2,
+    "z": 0.77
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.4,
+    "delta_bpm": 3.6,
+    "n_days": 60,
+    "sub": 0.6892424433728339,
+    "value": 57.0,
+    "zr": 0.86
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 402
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.61,
+    "value": 61
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-07-06",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "hrv"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 72,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ },
+ "2026-07-07": {
+  "axes": {
+   "autonomic": {
+    "present": true,
+    "score": 0.907,
+    "weight": 0.65
+   },
+   "sleep": {
+    "present": true,
+    "score": 0.56,
+    "weight": 0.35
+   }
+  },
+  "band": "green",
+  "baseline_status": "full",
+  "briefing": "GREEN — readiness 79/100 (high confidence). Main limiter: sleep score 56; support morning body battery 80. Recovery looks good — train as planned; quality/hard work is fine.",
+  "components": {
+   "body_battery": {
+    "available": true,
+    "sub": 1.0,
+    "value": 80
+   },
+   "hrv": {
+    "available": true,
+    "baseline_ms": 58.2,
+    "cv_7": 15.6,
+    "cv_penalty": 0.0,
+    "cv_ratio": 0.96,
+    "n_days": 60,
+    "pct_dev": 11.7,
+    "source": "baseline",
+    "sub": 0.8740328661351869,
+    "value_ms": 65.0,
+    "z": 0.66
+   },
+   "resting_hr": {
+    "available": true,
+    "baseline": 53.3,
+    "delta_bpm": -0.3,
+    "n_days": 60,
+    "sub": 0.85,
+    "value": 53.0,
+    "zr": -0.07
+   },
+   "sleep_duration": {
+    "available": true,
+    "guard_applied": false,
+    "tst_min": 374
+   },
+   "sleep_score": {
+    "available": true,
+    "sub": 0.56,
+    "value": 56
+   }
+  },
+  "confidence": "high",
+  "data_completeness": 1.0,
+  "date": "2026-07-07",
+  "days_to_full": 0,
+  "drivers": {
+   "limiter": "sleep_score",
+   "support": "body_battery"
+  },
+  "flags": [],
+  "label": "Train as planned",
+  "score": 79,
+  "weights_effective": {
+   "autonomic": 0.65,
+   "sleep": 0.35
+  }
+ }
+}

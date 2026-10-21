@@ -1,0 +1,3199 @@
+{
+ "params": {
+  "max_hr": 188.0,
+  "max_hr_source": "observed",
+  "trimp_sex": "male"
+ },
+ "series": [
+  {
+   "acwr": null,
+   "atl": 0.0,
+   "confidence": "none",
+   "ctl": 0.0,
+   "date": "2026-01-31",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": null,
+   "history_days": 0,
+   "load": 73.0,
+   "measured_share": null,
+   "tsb": 0.0
+  },
+  {
+   "acwr": null,
+   "atl": 9.7,
+   "confidence": "low",
+   "ctl": 1.7,
+   "date": "2026-02-01",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": null,
+   "history_days": 1,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -8.0
+  },
+  {
+   "acwr": null,
+   "atl": 8.4,
+   "confidence": "low",
+   "ctl": 1.7,
+   "date": "2026-02-02",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": null,
+   "history_days": 2,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -6.7
+  },
+  {
+   "acwr": null,
+   "atl": 7.3,
+   "confidence": "low",
+   "ctl": 1.6,
+   "date": "2026-02-03",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": null,
+   "history_days": 3,
+   "load": 109.0,
+   "measured_share": 1.0,
+   "tsb": -5.7
+  },
+  {
+   "acwr": null,
+   "atl": 20.8,
+   "confidence": "low",
+   "ctl": 4.2,
+   "date": "2026-02-04",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": null,
+   "history_days": 4,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -16.6
+  },
+  {
+   "acwr": null,
+   "atl": 18.1,
+   "confidence": "low",
+   "ctl": 4.1,
+   "date": "2026-02-05",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": null,
+   "history_days": 5,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -14.0
+  },
+  {
+   "acwr": null,
+   "atl": 15.7,
+   "confidence": "low",
+   "ctl": 4.0,
+   "date": "2026-02-06",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": null,
+   "history_days": 6,
+   "load": 31.0,
+   "measured_share": 1.0,
+   "tsb": -11.7
+  },
+  {
+   "acwr": null,
+   "atl": 17.7,
+   "confidence": "low",
+   "ctl": 4.6,
+   "date": "2026-02-07",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": null,
+   "history_days": 7,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -13.1
+  },
+  {
+   "acwr": null,
+   "atl": 15.3,
+   "confidence": "low",
+   "ctl": 4.5,
+   "date": "2026-02-08",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": null,
+   "history_days": 8,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -10.8
+  },
+  {
+   "acwr": null,
+   "atl": 13.3,
+   "confidence": "low",
+   "ctl": 4.4,
+   "date": "2026-02-09",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": null,
+   "history_days": 9,
+   "load": 84.0,
+   "measured_share": 1.0,
+   "tsb": -8.9
+  },
+  {
+   "acwr": null,
+   "atl": 22.7,
+   "confidence": "low",
+   "ctl": 6.3,
+   "date": "2026-02-10",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": -262.6,
+   "history_days": 10,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -16.4
+  },
+  {
+   "acwr": null,
+   "atl": 19.7,
+   "confidence": "low",
+   "ctl": 6.1,
+   "date": "2026-02-11",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": -221.9,
+   "history_days": 11,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -13.6
+  },
+  {
+   "acwr": null,
+   "atl": 17.1,
+   "confidence": "low",
+   "ctl": 6.0,
+   "date": "2026-02-12",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": -185.8,
+   "history_days": 12,
+   "load": 56.0,
+   "measured_share": 1.0,
+   "tsb": -11.1
+  },
+  {
+   "acwr": null,
+   "atl": 22.3,
+   "confidence": "low",
+   "ctl": 7.2,
+   "date": "2026-02-13",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": null,
+   "form_pct": -211.2,
+   "history_days": 13,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -15.1
+  },
+  {
+   "acwr": null,
+   "atl": 19.3,
+   "confidence": "low",
+   "ctl": 7.0,
+   "date": "2026-02-14",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -176.3,
+   "history_days": 14,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -12.3
+  },
+  {
+   "acwr": null,
+   "atl": 16.7,
+   "confidence": "low",
+   "ctl": 6.8,
+   "date": "2026-02-15",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -145.3,
+   "history_days": 15,
+   "load": 112.0,
+   "measured_share": 1.0,
+   "tsb": -9.9
+  },
+  {
+   "acwr": null,
+   "atl": 29.4,
+   "confidence": "low",
+   "ctl": 9.3,
+   "date": "2026-02-16",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -216.4,
+   "history_days": 16,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -20.1
+  },
+  {
+   "acwr": null,
+   "atl": 25.5,
+   "confidence": "low",
+   "ctl": 9.1,
+   "date": "2026-02-17",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -180.9,
+   "history_days": 17,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -16.4
+  },
+  {
+   "acwr": null,
+   "atl": 22.1,
+   "confidence": "low",
+   "ctl": 8.9,
+   "date": "2026-02-18",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -149.4,
+   "history_days": 18,
+   "load": 79.0,
+   "measured_share": 1.0,
+   "tsb": -13.2
+  },
+  {
+   "acwr": null,
+   "atl": 29.7,
+   "confidence": "low",
+   "ctl": 10.5,
+   "date": "2026-02-19",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -182.3,
+   "history_days": 19,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -19.2
+  },
+  {
+   "acwr": null,
+   "atl": 25.7,
+   "confidence": "low",
+   "ctl": 10.3,
+   "date": "2026-02-20",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -150.6,
+   "history_days": 20,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -15.4
+  },
+  {
+   "acwr": null,
+   "atl": 22.3,
+   "confidence": "low",
+   "ctl": 10.0,
+   "date": "2026-02-21",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -122.5,
+   "history_days": 21,
+   "load": 42.0,
+   "measured_share": 1.0,
+   "tsb": -12.3
+  },
+  {
+   "acwr": null,
+   "atl": 24.9,
+   "confidence": "low",
+   "ctl": 10.8,
+   "date": "2026-02-22",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -131.3,
+   "history_days": 22,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -14.1
+  },
+  {
+   "acwr": null,
+   "atl": 21.6,
+   "confidence": "low",
+   "ctl": 10.5,
+   "date": "2026-02-23",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -105.3,
+   "history_days": 23,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -11.1
+  },
+  {
+   "acwr": null,
+   "atl": 18.7,
+   "confidence": "low",
+   "ctl": 10.3,
+   "date": "2026-02-24",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -82.3,
+   "history_days": 24,
+   "load": 18.0,
+   "measured_share": 1.0,
+   "tsb": -8.4
+  },
+  {
+   "acwr": null,
+   "atl": 18.6,
+   "confidence": "low",
+   "ctl": 10.5,
+   "date": "2026-02-25",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -78.2,
+   "history_days": 25,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -8.1
+  },
+  {
+   "acwr": null,
+   "atl": 16.2,
+   "confidence": "low",
+   "ctl": 10.2,
+   "date": "2026-02-26",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -58.2,
+   "history_days": 26,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -6.0
+  },
+  {
+   "acwr": null,
+   "atl": 14.0,
+   "confidence": "low",
+   "ctl": 10.0,
+   "date": "2026-02-27",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -40.4,
+   "history_days": 27,
+   "load": 120.0,
+   "measured_share": 1.0,
+   "tsb": -4.0
+  },
+  {
+   "acwr": 1.6,
+   "atl": 28.1,
+   "confidence": "low",
+   "ctl": 12.6,
+   "date": "2026-02-28",
+   "flags": [
+    "load_spike",
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -123.9,
+   "history_days": 28,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -15.5
+  },
+  {
+   "acwr": 1.29,
+   "atl": 24.4,
+   "confidence": "low",
+   "ctl": 12.3,
+   "date": "2026-03-01",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -98.7,
+   "history_days": 29,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -12.1
+  },
+  {
+   "acwr": 1.04,
+   "atl": 21.1,
+   "confidence": "low",
+   "ctl": 12.0,
+   "date": "2026-03-02",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -76.4,
+   "history_days": 30,
+   "load": 70.0,
+   "measured_share": 1.0,
+   "tsb": -9.1
+  },
+  {
+   "acwr": 1.42,
+   "atl": 27.6,
+   "confidence": "low",
+   "ctl": 13.3,
+   "date": "2026-03-03",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -107.1,
+   "history_days": 31,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -14.3
+  },
+  {
+   "acwr": 1.14,
+   "atl": 24.0,
+   "confidence": "low",
+   "ctl": 13.0,
+   "date": "2026-03-04",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -83.9,
+   "history_days": 32,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -11.0
+  },
+  {
+   "acwr": 0.92,
+   "atl": 20.8,
+   "confidence": "low",
+   "ctl": 12.7,
+   "date": "2026-03-05",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -63.3,
+   "history_days": 33,
+   "load": 82.0,
+   "measured_share": 1.0,
+   "tsb": -8.1
+  },
+  {
+   "acwr": 1.41,
+   "atl": 28.9,
+   "confidence": "low",
+   "ctl": 14.3,
+   "date": "2026-03-06",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -101.5,
+   "history_days": 34,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -14.6
+  },
+  {
+   "acwr": 1.14,
+   "atl": 25.1,
+   "confidence": "low",
+   "ctl": 14.0,
+   "date": "2026-03-07",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -78.9,
+   "history_days": 35,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -11.1
+  },
+  {
+   "acwr": 0.91,
+   "atl": 21.7,
+   "confidence": "low",
+   "ctl": 13.7,
+   "date": "2026-03-08",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -58.8,
+   "history_days": 36,
+   "load": 117.0,
+   "measured_share": 1.0,
+   "tsb": -8.0
+  },
+  {
+   "acwr": 1.58,
+   "atl": 34.4,
+   "confidence": "low",
+   "ctl": 16.1,
+   "date": "2026-03-09",
+   "flags": [
+    "load_spike",
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -113.6,
+   "history_days": 37,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -18.3
+  },
+  {
+   "acwr": 1.27,
+   "atl": 29.8,
+   "confidence": "low",
+   "ctl": 15.7,
+   "date": "2026-03-10",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -89.6,
+   "history_days": 38,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -14.1
+  },
+  {
+   "acwr": 1.02,
+   "atl": 25.9,
+   "confidence": "low",
+   "ctl": 15.4,
+   "date": "2026-03-11",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -68.3,
+   "history_days": 39,
+   "load": 17.0,
+   "measured_share": 1.0,
+   "tsb": -10.5
+  },
+  {
+   "acwr": 0.96,
+   "atl": 24.7,
+   "confidence": "low",
+   "ctl": 15.4,
+   "date": "2026-03-12",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -60.2,
+   "history_days": 40,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -9.3
+  },
+  {
+   "acwr": 0.78,
+   "atl": 21.4,
+   "confidence": "low",
+   "ctl": 15.0,
+   "date": "2026-03-13",
+   "flags": [
+    "warming_up"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -42.3,
+   "history_days": 41,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -6.4
+  },
+  {
+   "acwr": 0.63,
+   "atl": 18.5,
+   "confidence": "high",
+   "ctl": 14.7,
+   "date": "2026-03-14",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -26.3,
+   "history_days": 42,
+   "load": 85.0,
+   "measured_share": 1.0,
+   "tsb": -3.8
+  },
+  {
+   "acwr": 1.24,
+   "atl": 27.4,
+   "confidence": "high",
+   "ctl": 16.3,
+   "date": "2026-03-15",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -67.6,
+   "history_days": 43,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -11.1
+  },
+  {
+   "acwr": 1.0,
+   "atl": 23.7,
+   "confidence": "high",
+   "ctl": 16.0,
+   "date": "2026-03-16",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -48.8,
+   "history_days": 44,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -7.7
+  },
+  {
+   "acwr": 0.8,
+   "atl": 20.6,
+   "confidence": "high",
+   "ctl": 15.6,
+   "date": "2026-03-17",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -32.1,
+   "history_days": 45,
+   "load": 34.0,
+   "measured_share": 1.0,
+   "tsb": -5.0
+  },
+  {
+   "acwr": 0.96,
+   "atl": 22.4,
+   "confidence": "high",
+   "ctl": 16.0,
+   "date": "2026-03-18",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -39.7,
+   "history_days": 46,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -6.4
+  },
+  {
+   "acwr": 0.77,
+   "atl": 19.4,
+   "confidence": "high",
+   "ctl": 15.6,
+   "date": "2026-03-19",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -24.0,
+   "history_days": 47,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -3.8
+  },
+  {
+   "acwr": 0.62,
+   "atl": 16.8,
+   "confidence": "high",
+   "ctl": 15.3,
+   "date": "2026-03-20",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -10.1,
+   "history_days": 48,
+   "load": 75.0,
+   "measured_share": 1.0,
+   "tsb": -1.5
+  },
+  {
+   "acwr": 1.2,
+   "atl": 24.6,
+   "confidence": "high",
+   "ctl": 16.7,
+   "date": "2026-03-21",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -47.3,
+   "history_days": 49,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -7.9
+  },
+  {
+   "acwr": 0.96,
+   "atl": 21.3,
+   "confidence": "high",
+   "ctl": 16.3,
+   "date": "2026-03-22",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -30.7,
+   "history_days": 50,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -5.0
+  },
+  {
+   "acwr": 0.78,
+   "atl": 18.5,
+   "confidence": "high",
+   "ctl": 15.9,
+   "date": "2026-03-23",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -16.1,
+   "history_days": 51,
+   "load": 93.0,
+   "measured_share": 1.0,
+   "tsb": -2.6
+  },
+  {
+   "acwr": 1.39,
+   "atl": 28.4,
+   "confidence": "high",
+   "ctl": 17.7,
+   "date": "2026-03-24",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -60.2,
+   "history_days": 52,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -10.7
+  },
+  {
+   "acwr": 1.12,
+   "atl": 24.6,
+   "confidence": "high",
+   "ctl": 17.3,
+   "date": "2026-03-25",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -42.2,
+   "history_days": 53,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -7.3
+  },
+  {
+   "acwr": 0.9,
+   "atl": 21.3,
+   "confidence": "high",
+   "ctl": 16.9,
+   "date": "2026-03-26",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -26.3,
+   "history_days": 54,
+   "load": 118.0,
+   "measured_share": 1.0,
+   "tsb": -4.4
+  },
+  {
+   "acwr": 1.55,
+   "atl": 34.2,
+   "confidence": "high",
+   "ctl": 19.3,
+   "date": "2026-03-27",
+   "flags": [
+    "load_spike"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -77.5,
+   "history_days": 55,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -14.9
+  },
+  {
+   "acwr": 1.25,
+   "atl": 29.6,
+   "confidence": "high",
+   "ctl": 18.8,
+   "date": "2026-03-28",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -57.6,
+   "history_days": 56,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -10.8
+  },
+  {
+   "acwr": 1.01,
+   "atl": 25.7,
+   "confidence": "high",
+   "ctl": 18.4,
+   "date": "2026-03-29",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -39.9,
+   "history_days": 57,
+   "load": 90.0,
+   "measured_share": 1.0,
+   "tsb": -7.3
+  },
+  {
+   "acwr": 1.41,
+   "atl": 34.3,
+   "confidence": "high",
+   "ctl": 20.1,
+   "date": "2026-03-30",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -70.8,
+   "history_days": 58,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -14.2
+  },
+  {
+   "acwr": 1.14,
+   "atl": 29.7,
+   "confidence": "high",
+   "ctl": 19.6,
+   "date": "2026-03-31",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -51.6,
+   "history_days": 59,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -10.1
+  },
+  {
+   "acwr": 0.92,
+   "atl": 25.7,
+   "confidence": "high",
+   "ctl": 19.1,
+   "date": "2026-04-01",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -34.6,
+   "history_days": 60,
+   "load": 18.0,
+   "measured_share": 1.0,
+   "tsb": -6.6
+  },
+  {
+   "acwr": 0.88,
+   "atl": 24.7,
+   "confidence": "high",
+   "ctl": 19.1,
+   "date": "2026-04-02",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -29.4,
+   "history_days": 61,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -5.6
+  },
+  {
+   "acwr": 0.71,
+   "atl": 21.4,
+   "confidence": "high",
+   "ctl": 18.6,
+   "date": "2026-04-03",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -14.9,
+   "history_days": 62,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -2.8
+  },
+  {
+   "acwr": 0.57,
+   "atl": 18.6,
+   "confidence": "high",
+   "ctl": 18.2,
+   "date": "2026-04-04",
+   "flags": [],
+   "form_band": "neutral",
+   "form_pct": -2.0,
+   "history_days": 63,
+   "load": 36.0,
+   "measured_share": 1.0,
+   "tsb": -0.4
+  },
+  {
+   "acwr": 0.81,
+   "atl": 20.9,
+   "confidence": "high",
+   "ctl": 18.6,
+   "date": "2026-04-05",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -12.1,
+   "history_days": 64,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -2.3
+  },
+  {
+   "acwr": 0.65,
+   "atl": 18.1,
+   "confidence": "high",
+   "ctl": 18.2,
+   "date": "2026-04-06",
+   "flags": [],
+   "form_band": "neutral",
+   "form_pct": 0.4,
+   "history_days": 65,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": 0.1
+  },
+  {
+   "acwr": 0.53,
+   "atl": 15.7,
+   "confidence": "high",
+   "ctl": 17.8,
+   "date": "2026-04-07",
+   "flags": [],
+   "form_band": "fresh",
+   "form_pct": 11.6,
+   "history_days": 66,
+   "load": 107.0,
+   "measured_share": 1.0,
+   "tsb": 2.1
+  },
+  {
+   "acwr": 1.35,
+   "atl": 27.9,
+   "confidence": "high",
+   "ctl": 19.9,
+   "date": "2026-04-08",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -40.2,
+   "history_days": 67,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -8.0
+  },
+  {
+   "acwr": 1.09,
+   "atl": 24.1,
+   "confidence": "high",
+   "ctl": 19.4,
+   "date": "2026-04-09",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -24.5,
+   "history_days": 68,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -4.7
+  },
+  {
+   "acwr": 0.88,
+   "atl": 20.9,
+   "confidence": "high",
+   "ctl": 18.9,
+   "date": "2026-04-10",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -10.5,
+   "history_days": 69,
+   "load": 110.0,
+   "measured_share": 1.0,
+   "tsb": -2.0
+  },
+  {
+   "acwr": 1.49,
+   "atl": 32.8,
+   "confidence": "high",
+   "ctl": 21.1,
+   "date": "2026-04-11",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -55.5,
+   "history_days": 70,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -11.7
+  },
+  {
+   "acwr": 1.2,
+   "atl": 28.4,
+   "confidence": "high",
+   "ctl": 20.6,
+   "date": "2026-04-12",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -38.1,
+   "history_days": 71,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -7.8
+  },
+  {
+   "acwr": 0.97,
+   "atl": 24.6,
+   "confidence": "high",
+   "ctl": 20.1,
+   "date": "2026-04-13",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -22.6,
+   "history_days": 72,
+   "load": 74.0,
+   "measured_share": 1.0,
+   "tsb": -4.5
+  },
+  {
+   "acwr": 1.3,
+   "atl": 31.2,
+   "confidence": "high",
+   "ctl": 21.4,
+   "date": "2026-04-14",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -46.1,
+   "history_days": 73,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -9.8
+  },
+  {
+   "acwr": 1.05,
+   "atl": 27.1,
+   "confidence": "high",
+   "ctl": 20.9,
+   "date": "2026-04-15",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -29.7,
+   "history_days": 74,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -6.2
+  },
+  {
+   "acwr": 0.84,
+   "atl": 23.5,
+   "confidence": "high",
+   "ctl": 20.4,
+   "date": "2026-04-16",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -15.1,
+   "history_days": 75,
+   "load": 26.0,
+   "measured_share": 1.0,
+   "tsb": -3.1
+  },
+  {
+   "acwr": 0.9,
+   "atl": 23.8,
+   "confidence": "high",
+   "ctl": 20.5,
+   "date": "2026-04-17",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -16.0,
+   "history_days": 76,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -3.3
+  },
+  {
+   "acwr": 0.72,
+   "atl": 20.6,
+   "confidence": "high",
+   "ctl": 20.0,
+   "date": "2026-04-18",
+   "flags": [],
+   "form_band": "neutral",
+   "form_pct": -3.0,
+   "history_days": 77,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -0.6
+  },
+  {
+   "acwr": 0.58,
+   "atl": 17.9,
+   "confidence": "high",
+   "ctl": 19.6,
+   "date": "2026-04-19",
+   "flags": [],
+   "form_band": "fresh",
+   "form_pct": 8.6,
+   "history_days": 78,
+   "load": 70.0,
+   "measured_share": 1.0,
+   "tsb": 1.7
+  },
+  {
+   "acwr": 1.09,
+   "atl": 24.8,
+   "confidence": "high",
+   "ctl": 20.7,
+   "date": "2026-04-20",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -19.7,
+   "history_days": 79,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -4.1
+  },
+  {
+   "acwr": 0.88,
+   "atl": 21.5,
+   "confidence": "high",
+   "ctl": 20.3,
+   "date": "2026-04-21",
+   "flags": [],
+   "form_band": "neutral",
+   "form_pct": -6.2,
+   "history_days": 80,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -1.2
+  },
+  {
+   "acwr": 0.71,
+   "atl": 18.7,
+   "confidence": "high",
+   "ctl": 19.8,
+   "date": "2026-04-22",
+   "flags": [],
+   "form_band": "fresh",
+   "form_pct": 5.7,
+   "history_days": 81,
+   "load": 76.0,
+   "measured_share": 1.0,
+   "tsb": 1.1
+  },
+  {
+   "acwr": 1.21,
+   "atl": 26.3,
+   "confidence": "high",
+   "ctl": 21.1,
+   "date": "2026-04-23",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -24.6,
+   "history_days": 82,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -5.2
+  },
+  {
+   "acwr": 0.98,
+   "atl": 22.8,
+   "confidence": "high",
+   "ctl": 20.6,
+   "date": "2026-04-24",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -10.6,
+   "history_days": 83,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -2.2
+  },
+  {
+   "acwr": 0.79,
+   "atl": 19.8,
+   "confidence": "high",
+   "ctl": 20.1,
+   "date": "2026-04-25",
+   "flags": [],
+   "form_band": "neutral",
+   "form_pct": 1.8,
+   "history_days": 84,
+   "load": 64.0,
+   "measured_share": 1.0,
+   "tsb": 0.3
+  },
+  {
+   "acwr": 1.17,
+   "atl": 25.6,
+   "confidence": "high",
+   "ctl": 21.2,
+   "date": "2026-04-26",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -21.2,
+   "history_days": 85,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -4.4
+  },
+  {
+   "acwr": 0.94,
+   "atl": 22.2,
+   "confidence": "high",
+   "ctl": 20.7,
+   "date": "2026-04-27",
+   "flags": [],
+   "form_band": "neutral",
+   "form_pct": -7.6,
+   "history_days": 86,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -1.5
+  },
+  {
+   "acwr": 0.76,
+   "atl": 19.3,
+   "confidence": "high",
+   "ctl": 20.2,
+   "date": "2026-04-28",
+   "flags": [],
+   "form_band": "neutral",
+   "form_pct": 4.4,
+   "history_days": 87,
+   "load": 99.0,
+   "measured_share": 1.0,
+   "tsb": 0.9
+  },
+  {
+   "acwr": 1.38,
+   "atl": 29.9,
+   "confidence": "high",
+   "ctl": 22.0,
+   "date": "2026-04-29",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -35.7,
+   "history_days": 88,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -7.9
+  },
+  {
+   "acwr": 1.12,
+   "atl": 25.9,
+   "confidence": "high",
+   "ctl": 21.5,
+   "date": "2026-04-30",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -20.5,
+   "history_days": 89,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -4.4
+  },
+  {
+   "acwr": 0.9,
+   "atl": 22.5,
+   "confidence": "high",
+   "ctl": 21.0,
+   "date": "2026-05-01",
+   "flags": [],
+   "form_band": "neutral",
+   "form_pct": -7.0,
+   "history_days": 90,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -1.5
+  },
+  {
+   "acwr": 0.72,
+   "atl": 19.5,
+   "confidence": "high",
+   "ctl": 20.5,
+   "date": "2026-05-02",
+   "flags": [],
+   "form_band": "fresh",
+   "form_pct": 5.1,
+   "history_days": 91,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": 1.0
+  },
+  {
+   "acwr": 0.58,
+   "atl": 16.9,
+   "confidence": "high",
+   "ctl": 20.0,
+   "date": "2026-05-03",
+   "flags": [],
+   "form_band": "fresh",
+   "form_pct": 15.7,
+   "history_days": 92,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": 3.1
+  },
+  {
+   "acwr": 0.47,
+   "atl": 14.6,
+   "confidence": "high",
+   "ctl": 19.5,
+   "date": "2026-05-04",
+   "flags": [],
+   "form_band": "transition",
+   "form_pct": 25.2,
+   "history_days": 93,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": 4.9
+  },
+  {
+   "acwr": 0.38,
+   "atl": 12.7,
+   "confidence": "high",
+   "ctl": 19.1,
+   "date": "2026-05-05",
+   "flags": [],
+   "form_band": "transition",
+   "form_pct": 33.6,
+   "history_days": 94,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": 6.4
+  },
+  {
+   "acwr": 0.3,
+   "atl": 11.0,
+   "confidence": "high",
+   "ctl": 18.6,
+   "date": "2026-05-06",
+   "flags": [],
+   "form_band": "transition",
+   "form_pct": 41.0,
+   "history_days": 95,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": 7.6
+  },
+  {
+   "acwr": 0.25,
+   "atl": 9.5,
+   "confidence": "high",
+   "ctl": 18.2,
+   "date": "2026-05-07",
+   "flags": [],
+   "form_band": "transition",
+   "form_pct": 47.6,
+   "history_days": 96,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": 8.7
+  },
+  {
+   "acwr": 0.2,
+   "atl": 8.3,
+   "confidence": "high",
+   "ctl": 17.8,
+   "date": "2026-05-08",
+   "flags": [],
+   "form_band": "transition",
+   "form_pct": 53.5,
+   "history_days": 97,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": 9.5
+  },
+  {
+   "acwr": 0.16,
+   "atl": 7.2,
+   "confidence": "high",
+   "ctl": 17.4,
+   "date": "2026-05-09",
+   "flags": [],
+   "form_band": "transition",
+   "form_pct": 58.7,
+   "history_days": 98,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": 10.2
+  },
+  {
+   "acwr": 0.13,
+   "atl": 6.2,
+   "confidence": "high",
+   "ctl": 16.9,
+   "date": "2026-05-10",
+   "flags": [],
+   "form_band": "transition",
+   "form_pct": 63.4,
+   "history_days": 99,
+   "load": 40.0,
+   "measured_share": 1.0,
+   "tsb": 10.7
+  },
+  {
+   "acwr": 0.79,
+   "atl": 10.7,
+   "confidence": "high",
+   "ctl": 17.5,
+   "date": "2026-05-11",
+   "flags": [],
+   "form_band": "transition",
+   "form_pct": 38.8,
+   "history_days": 100,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": 6.8
+  },
+  {
+   "acwr": 0.64,
+   "atl": 9.3,
+   "confidence": "high",
+   "ctl": 17.1,
+   "date": "2026-05-12",
+   "flags": [],
+   "form_band": "transition",
+   "form_pct": 45.7,
+   "history_days": 101,
+   "load": 96.0,
+   "measured_share": 1.0,
+   "tsb": 7.8
+  },
+  {
+   "acwr": 1.61,
+   "atl": 20.8,
+   "confidence": "high",
+   "ctl": 18.9,
+   "date": "2026-05-13",
+   "flags": [
+    "load_spike"
+   ],
+   "form_band": "neutral",
+   "form_pct": -10.0,
+   "history_days": 102,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -1.9
+  },
+  {
+   "acwr": 1.3,
+   "atl": 18.1,
+   "confidence": "high",
+   "ctl": 18.5,
+   "date": "2026-05-14",
+   "flags": [],
+   "form_band": "neutral",
+   "form_pct": 2.4,
+   "history_days": 103,
+   "load": 106.0,
+   "measured_share": 1.0,
+   "tsb": 0.4
+  },
+  {
+   "acwr": 1.84,
+   "atl": 29.8,
+   "confidence": "high",
+   "ctl": 20.5,
+   "date": "2026-05-15",
+   "flags": [
+    "load_spike"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -44.8,
+   "history_days": 104,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -9.3
+  },
+  {
+   "acwr": 1.49,
+   "atl": 25.8,
+   "confidence": "high",
+   "ctl": 20.1,
+   "date": "2026-05-16",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -28.6,
+   "history_days": 105,
+   "load": 98.0,
+   "measured_share": 1.0,
+   "tsb": -5.7
+  },
+  {
+   "acwr": 1.8,
+   "atl": 35.4,
+   "confidence": "high",
+   "ctl": 21.9,
+   "date": "2026-05-17",
+   "flags": [
+    "load_spike"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -61.7,
+   "history_days": 106,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -13.5
+  },
+  {
+   "acwr": 1.45,
+   "atl": 30.7,
+   "confidence": "high",
+   "ctl": 21.4,
+   "date": "2026-05-18",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -43.6,
+   "history_days": 107,
+   "load": 176.0,
+   "measured_share": 1.0,
+   "tsb": -9.3
+  },
+  {
+   "acwr": 2.0,
+   "atl": 50.0,
+   "confidence": "high",
+   "ctl": 25.0,
+   "date": "2026-05-19",
+   "flags": [
+    "load_spike"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -100.0,
+   "history_days": 108,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -25.0
+  },
+  {
+   "acwr": 1.61,
+   "atl": 43.4,
+   "confidence": "high",
+   "ctl": 24.4,
+   "date": "2026-05-20",
+   "flags": [
+    "load_spike"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -77.5,
+   "history_days": 109,
+   "load": 116.0,
+   "measured_share": 1.0,
+   "tsb": -19.0
+  },
+  {
+   "acwr": 1.78,
+   "atl": 53.0,
+   "confidence": "high",
+   "ctl": 26.6,
+   "date": "2026-05-21",
+   "flags": [
+    "load_spike"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -99.5,
+   "history_days": 110,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -26.4
+  },
+  {
+   "acwr": 1.43,
+   "atl": 46.0,
+   "confidence": "high",
+   "ctl": 26.0,
+   "date": "2026-05-22",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -77.1,
+   "history_days": 111,
+   "load": 81.0,
+   "measured_share": 1.0,
+   "tsb": -20.0
+  },
+  {
+   "acwr": 1.5,
+   "atl": 50.6,
+   "confidence": "high",
+   "ctl": 27.3,
+   "date": "2026-05-23",
+   "flags": [
+    "load_spike"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -85.8,
+   "history_days": 112,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -23.3
+  },
+  {
+   "acwr": 1.21,
+   "atl": 43.9,
+   "confidence": "high",
+   "ctl": 26.6,
+   "date": "2026-05-24",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -65.0,
+   "history_days": 113,
+   "load": 163.0,
+   "measured_share": 1.0,
+   "tsb": -17.3
+  },
+  {
+   "acwr": 1.63,
+   "atl": 59.8,
+   "confidence": "high",
+   "ctl": 29.8,
+   "date": "2026-05-25",
+   "flags": [
+    "load_spike"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -100.4,
+   "history_days": 114,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -30.0
+  },
+  {
+   "acwr": 1.31,
+   "atl": 51.8,
+   "confidence": "high",
+   "ctl": 29.1,
+   "date": "2026-05-26",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -77.9,
+   "history_days": 115,
+   "load": 128.0,
+   "measured_share": 1.0,
+   "tsb": -22.7
+  },
+  {
+   "acwr": 1.53,
+   "atl": 61.9,
+   "confidence": "high",
+   "ctl": 31.4,
+   "date": "2026-05-27",
+   "flags": [
+    "load_spike"
+   ],
+   "form_band": "overreaching",
+   "form_pct": -97.0,
+   "history_days": 116,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -30.5
+  },
+  {
+   "acwr": 1.23,
+   "atl": 53.7,
+   "confidence": "high",
+   "ctl": 30.7,
+   "date": "2026-05-28",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -74.9,
+   "history_days": 117,
+   "load": 133.0,
+   "measured_share": 1.0,
+   "tsb": -23.0
+  },
+  {
+   "acwr": 1.47,
+   "atl": 64.3,
+   "confidence": "high",
+   "ctl": 33.1,
+   "date": "2026-05-29",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -94.0,
+   "history_days": 118,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -31.2
+  },
+  {
+   "acwr": 1.18,
+   "atl": 55.7,
+   "confidence": "high",
+   "ctl": 32.3,
+   "date": "2026-05-30",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -72.3,
+   "history_days": 119,
+   "load": 81.0,
+   "measured_share": 1.0,
+   "tsb": -23.4
+  },
+  {
+   "acwr": 1.25,
+   "atl": 59.1,
+   "confidence": "high",
+   "ctl": 33.5,
+   "date": "2026-05-31",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -76.4,
+   "history_days": 120,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -25.6
+  },
+  {
+   "acwr": 1.01,
+   "atl": 51.2,
+   "confidence": "high",
+   "ctl": 32.7,
+   "date": "2026-06-01",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -56.6,
+   "history_days": 121,
+   "load": 142.0,
+   "measured_share": 1.0,
+   "tsb": -18.5
+  },
+  {
+   "acwr": 1.33,
+   "atl": 63.3,
+   "confidence": "high",
+   "ctl": 35.3,
+   "date": "2026-06-02",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -79.5,
+   "history_days": 122,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -28.0
+  },
+  {
+   "acwr": 1.07,
+   "atl": 54.9,
+   "confidence": "high",
+   "ctl": 34.4,
+   "date": "2026-06-03",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -59.3,
+   "history_days": 123,
+   "load": 184.0,
+   "measured_share": 1.0,
+   "tsb": -20.5
+  },
+  {
+   "acwr": 1.46,
+   "atl": 72.1,
+   "confidence": "high",
+   "ctl": 38.0,
+   "date": "2026-06-04",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -89.9,
+   "history_days": 124,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -34.1
+  },
+  {
+   "acwr": 1.18,
+   "atl": 62.5,
+   "confidence": "high",
+   "ctl": 37.1,
+   "date": "2026-06-05",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -68.5,
+   "history_days": 125,
+   "load": 190.0,
+   "measured_share": 1.0,
+   "tsb": -25.4
+  },
+  {
+   "acwr": 1.5,
+   "atl": 79.4,
+   "confidence": "high",
+   "ctl": 40.7,
+   "date": "2026-06-06",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -95.4,
+   "history_days": 126,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -38.7
+  },
+  {
+   "acwr": 1.21,
+   "atl": 68.9,
+   "confidence": "high",
+   "ctl": 39.7,
+   "date": "2026-06-07",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -73.5,
+   "history_days": 127,
+   "load": 99.0,
+   "measured_share": 1.0,
+   "tsb": -29.2
+  },
+  {
+   "acwr": 1.26,
+   "atl": 72.9,
+   "confidence": "high",
+   "ctl": 41.1,
+   "date": "2026-06-08",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -77.3,
+   "history_days": 128,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -31.8
+  },
+  {
+   "acwr": 1.02,
+   "atl": 63.2,
+   "confidence": "high",
+   "ctl": 40.1,
+   "date": "2026-06-09",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -57.4,
+   "history_days": 129,
+   "load": 111.0,
+   "measured_share": 1.0,
+   "tsb": -23.1
+  },
+  {
+   "acwr": 1.17,
+   "atl": 69.5,
+   "confidence": "high",
+   "ctl": 41.8,
+   "date": "2026-06-10",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -66.4,
+   "history_days": 130,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -27.7
+  },
+  {
+   "acwr": 0.94,
+   "atl": 60.3,
+   "confidence": "high",
+   "ctl": 40.8,
+   "date": "2026-06-11",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -47.7,
+   "history_days": 131,
+   "load": 103.0,
+   "measured_share": 1.0,
+   "tsb": -19.5
+  },
+  {
+   "acwr": 1.1,
+   "atl": 66.0,
+   "confidence": "high",
+   "ctl": 42.3,
+   "date": "2026-06-12",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -56.0,
+   "history_days": 132,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -23.7
+  },
+  {
+   "acwr": 0.88,
+   "atl": 57.2,
+   "confidence": "high",
+   "ctl": 41.3,
+   "date": "2026-06-13",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -38.5,
+   "history_days": 133,
+   "load": 45.0,
+   "measured_share": 1.0,
+   "tsb": -15.9
+  },
+  {
+   "acwr": 0.87,
+   "atl": 55.6,
+   "confidence": "high",
+   "ctl": 41.4,
+   "date": "2026-06-14",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -34.3,
+   "history_days": 134,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -14.2
+  },
+  {
+   "acwr": 0.7,
+   "atl": 48.2,
+   "confidence": "high",
+   "ctl": 40.4,
+   "date": "2026-06-15",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -19.2,
+   "history_days": 135,
+   "load": 119.0,
+   "measured_share": 1.0,
+   "tsb": -7.8
+  },
+  {
+   "acwr": 1.01,
+   "atl": 57.6,
+   "confidence": "high",
+   "ctl": 42.2,
+   "date": "2026-06-16",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -36.3,
+   "history_days": 136,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -15.4
+  },
+  {
+   "acwr": 0.82,
+   "atl": 49.9,
+   "confidence": "high",
+   "ctl": 41.3,
+   "date": "2026-06-17",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -21.0,
+   "history_days": 137,
+   "load": 188.0,
+   "measured_share": 1.0,
+   "tsb": -8.6
+  },
+  {
+   "acwr": 1.28,
+   "atl": 68.3,
+   "confidence": "high",
+   "ctl": 44.7,
+   "date": "2026-06-18",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -52.8,
+   "history_days": 138,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -23.6
+  },
+  {
+   "acwr": 1.03,
+   "atl": 59.2,
+   "confidence": "high",
+   "ctl": 43.7,
+   "date": "2026-06-19",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -35.7,
+   "history_days": 139,
+   "load": 59.0,
+   "measured_share": 1.0,
+   "tsb": -15.5
+  },
+  {
+   "acwr": 1.03,
+   "atl": 59.2,
+   "confidence": "high",
+   "ctl": 44.0,
+   "date": "2026-06-20",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -34.5,
+   "history_days": 140,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -15.2
+  },
+  {
+   "acwr": 0.83,
+   "atl": 51.3,
+   "confidence": "high",
+   "ctl": 43.0,
+   "date": "2026-06-21",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -19.4,
+   "history_days": 141,
+   "load": 70.0,
+   "measured_share": 1.0,
+   "tsb": -8.3
+  },
+  {
+   "acwr": 0.93,
+   "atl": 53.8,
+   "confidence": "high",
+   "ctl": 43.6,
+   "date": "2026-06-22",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -23.3,
+   "history_days": 142,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -10.2
+  },
+  {
+   "acwr": 0.75,
+   "atl": 46.6,
+   "confidence": "high",
+   "ctl": 42.6,
+   "date": "2026-06-23",
+   "flags": [],
+   "form_band": "neutral",
+   "form_pct": -9.5,
+   "history_days": 143,
+   "load": 116.0,
+   "measured_share": 1.0,
+   "tsb": -4.0
+  },
+  {
+   "acwr": 1.04,
+   "atl": 55.9,
+   "confidence": "high",
+   "ctl": 44.3,
+   "date": "2026-06-24",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -26.1,
+   "history_days": 144,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -11.6
+  },
+  {
+   "acwr": 0.84,
+   "atl": 48.4,
+   "confidence": "high",
+   "ctl": 43.3,
+   "date": "2026-06-25",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -11.9,
+   "history_days": 145,
+   "load": 189.0,
+   "measured_share": 1.0,
+   "tsb": -5.1
+  },
+  {
+   "acwr": 1.3,
+   "atl": 67.1,
+   "confidence": "high",
+   "ctl": 46.7,
+   "date": "2026-06-26",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -43.8,
+   "history_days": 146,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -20.4
+  },
+  {
+   "acwr": 1.05,
+   "atl": 58.2,
+   "confidence": "high",
+   "ctl": 45.6,
+   "date": "2026-06-27",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -27.6,
+   "history_days": 147,
+   "load": 184.0,
+   "measured_share": 1.0,
+   "tsb": -12.6
+  },
+  {
+   "acwr": 1.38,
+   "atl": 75.0,
+   "confidence": "high",
+   "ctl": 48.9,
+   "date": "2026-06-28",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -53.4,
+   "history_days": 148,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -26.1
+  },
+  {
+   "acwr": 1.11,
+   "atl": 65.0,
+   "confidence": "high",
+   "ctl": 47.7,
+   "date": "2026-06-29",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -36.2,
+   "history_days": 149,
+   "load": 66.0,
+   "measured_share": 1.0,
+   "tsb": -17.3
+  },
+  {
+   "acwr": 1.1,
+   "atl": 65.1,
+   "confidence": "high",
+   "ctl": 48.1,
+   "date": "2026-06-30",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -35.3,
+   "history_days": 150,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -17.0
+  },
+  {
+   "acwr": 0.89,
+   "atl": 56.4,
+   "confidence": "high",
+   "ctl": 47.0,
+   "date": "2026-07-01",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -20.1,
+   "history_days": 151,
+   "load": 114.0,
+   "measured_share": 1.0,
+   "tsb": -9.4
+  },
+  {
+   "acwr": 1.09,
+   "atl": 64.1,
+   "confidence": "high",
+   "ctl": 48.6,
+   "date": "2026-07-02",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -31.9,
+   "history_days": 152,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -15.5
+  },
+  {
+   "acwr": 0.88,
+   "atl": 55.6,
+   "confidence": "high",
+   "ctl": 47.4,
+   "date": "2026-07-03",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -17.1,
+   "history_days": 153,
+   "load": 200.0,
+   "measured_share": 1.0,
+   "tsb": -8.2
+  },
+  {
+   "acwr": 1.31,
+   "atl": 74.8,
+   "confidence": "high",
+   "ctl": 51.0,
+   "date": "2026-07-04",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -46.6,
+   "history_days": 154,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -23.8
+  },
+  {
+   "acwr": 1.05,
+   "atl": 64.8,
+   "confidence": "high",
+   "ctl": 49.8,
+   "date": "2026-07-05",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -30.1,
+   "history_days": 155,
+   "load": 147.0,
+   "measured_share": 1.0,
+   "tsb": -15.0
+  },
+  {
+   "acwr": 1.26,
+   "atl": 75.8,
+   "confidence": "high",
+   "ctl": 52.1,
+   "date": "2026-07-06",
+   "flags": [],
+   "form_band": "overreaching",
+   "form_pct": -45.4,
+   "history_days": 156,
+   "load": 0.0,
+   "measured_share": 1.0,
+   "tsb": -23.7
+  },
+  {
+   "acwr": 1.02,
+   "atl": 65.7,
+   "confidence": "high",
+   "ctl": 50.9,
+   "date": "2026-07-07",
+   "flags": [],
+   "form_band": "building",
+   "form_pct": -29.1,
+   "history_days": 157,
+   "load": 58.0,
+   "measured_share": 1.0,
+   "tsb": -14.8
+  }
+ ],
+ "sessions": [
+  {
+   "id": "garmin:900000",
+   "load": 58.0,
+   "local_date": "2026-07-07",
+   "method": "garmin_load",
+   "minutes": 40.3,
+   "name": "Synthetic Run",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "running",
+   "start_time_utc": "2026-07-07T11:00:00Z"
+  },
+  {
+   "id": "garmin:900002",
+   "load": 147.0,
+   "local_date": "2026-07-05",
+   "method": "garmin_load",
+   "minutes": 44.6,
+   "name": "Synthetic Ride",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "ride",
+   "sport_type": "road_biking",
+   "start_time_utc": "2026-07-05T14:00:00Z"
+  },
+  {
+   "id": "garmin:900004",
+   "load": 200.0,
+   "local_date": "2026-07-03",
+   "method": "garmin_load",
+   "minutes": 86.4,
+   "name": "Synthetic Swim",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "swim",
+   "sport_type": "lap_swimming",
+   "start_time_utc": "2026-07-03T06:00:00Z"
+  },
+  {
+   "id": "garmin:900006",
+   "load": 114.0,
+   "local_date": "2026-07-01",
+   "method": "garmin_load",
+   "minutes": 45.1,
+   "name": "Synthetic Run",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "running",
+   "start_time_utc": "2026-07-01T06:00:00Z"
+  },
+  {
+   "id": "garmin:900008",
+   "load": 66.0,
+   "local_date": "2026-06-29",
+   "method": "garmin_load",
+   "minutes": 51.0,
+   "name": "Synthetic Ride",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "ride",
+   "sport_type": "road_biking",
+   "start_time_utc": "2026-06-29T15:00:00Z"
+  },
+  {
+   "id": "garmin:900010",
+   "load": 184.0,
+   "local_date": "2026-06-27",
+   "method": "garmin_load",
+   "minutes": 36.6,
+   "name": "Synthetic Swim",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "swim",
+   "sport_type": "lap_swimming",
+   "start_time_utc": "2026-06-27T11:00:00Z"
+  },
+  {
+   "id": "garmin:900012",
+   "load": 189.0,
+   "local_date": "2026-06-25",
+   "method": "garmin_load",
+   "minutes": 66.3,
+   "name": "Synthetic Run",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "running",
+   "start_time_utc": "2026-06-25T16:00:00Z"
+  },
+  {
+   "id": "garmin:900014",
+   "load": 116.0,
+   "local_date": "2026-06-23",
+   "method": "garmin_load",
+   "minutes": 42.3,
+   "name": "Synthetic Ride",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "ride",
+   "sport_type": "road_biking",
+   "start_time_utc": "2026-06-23T18:00:00Z"
+  },
+  {
+   "id": "garmin:900016",
+   "load": 70.0,
+   "local_date": "2026-06-21",
+   "method": "garmin_load",
+   "minutes": 60.6,
+   "name": "Synthetic Swim",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "swim",
+   "sport_type": "lap_swimming",
+   "start_time_utc": "2026-06-21T17:00:00Z"
+  },
+  {
+   "id": "garmin:900018",
+   "load": 59.0,
+   "local_date": "2026-06-19",
+   "method": "garmin_load",
+   "minutes": 63.4,
+   "name": "Synthetic Run",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "running",
+   "start_time_utc": "2026-06-19T08:00:00Z"
+  },
+  {
+   "id": "garmin:900020",
+   "load": 188.0,
+   "local_date": "2026-06-17",
+   "method": "garmin_load",
+   "minutes": 77.5,
+   "name": "Synthetic Ride",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "ride",
+   "sport_type": "road_biking",
+   "start_time_utc": "2026-06-17T11:00:00Z"
+  },
+  {
+   "id": "garmin:900022",
+   "load": 119.0,
+   "local_date": "2026-06-15",
+   "method": "garmin_load",
+   "minutes": 62.4,
+   "name": "Synthetic Swim",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "swim",
+   "sport_type": "lap_swimming",
+   "start_time_utc": "2026-06-15T10:00:00Z"
+  },
+  {
+   "id": "garmin:900024",
+   "load": 45.0,
+   "local_date": "2026-06-13",
+   "method": "garmin_load",
+   "minutes": 78.9,
+   "name": "Synthetic Run",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "running",
+   "start_time_utc": "2026-06-13T10:00:00Z"
+  },
+  {
+   "id": "garmin:900026",
+   "load": 103.0,
+   "local_date": "2026-06-11",
+   "method": "garmin_load",
+   "minutes": 34.0,
+   "name": "Synthetic Ride",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "ride",
+   "sport_type": "road_biking",
+   "start_time_utc": "2026-06-11T13:00:00Z"
+  },
+  {
+   "id": "garmin:900028",
+   "load": 111.0,
+   "local_date": "2026-06-09",
+   "method": "garmin_load",
+   "minutes": 41.4,
+   "name": "Synthetic Swim",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "swim",
+   "sport_type": "lap_swimming",
+   "start_time_utc": "2026-06-09T07:00:00Z"
+  },
+  {
+   "id": "garmin:900030",
+   "load": 99.0,
+   "local_date": "2026-06-07",
+   "method": "garmin_load",
+   "minutes": 58.4,
+   "name": "Synthetic Run",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "running",
+   "start_time_utc": "2026-06-07T17:00:00Z"
+  },
+  {
+   "id": "garmin:900032",
+   "load": 190.0,
+   "local_date": "2026-06-05",
+   "method": "garmin_load",
+   "minutes": 75.0,
+   "name": "Synthetic Ride",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "ride",
+   "sport_type": "road_biking",
+   "start_time_utc": "2026-06-05T09:00:00Z"
+  },
+  {
+   "id": "garmin:900034",
+   "load": 184.0,
+   "local_date": "2026-06-03",
+   "method": "garmin_load",
+   "minutes": 58.6,
+   "name": "Synthetic Swim",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "swim",
+   "sport_type": "lap_swimming",
+   "start_time_utc": "2026-06-03T08:00:00Z"
+  },
+  {
+   "id": "garmin:900036",
+   "load": 142.0,
+   "local_date": "2026-06-01",
+   "method": "garmin_load",
+   "minutes": 89.5,
+   "name": "Synthetic Run",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "running",
+   "start_time_utc": "2026-06-01T13:00:00Z"
+  },
+  {
+   "id": "garmin:900038",
+   "load": 81.0,
+   "local_date": "2026-05-30",
+   "method": "garmin_load",
+   "minutes": 43.0,
+   "name": "Synthetic Ride",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "ride",
+   "sport_type": "road_biking",
+   "start_time_utc": "2026-05-30T06:00:00Z"
+  },
+  {
+   "id": "garmin:900040",
+   "load": 133.0,
+   "local_date": "2026-05-28",
+   "method": "garmin_load",
+   "minutes": 30.0,
+   "name": "Synthetic Swim",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "swim",
+   "sport_type": "lap_swimming",
+   "start_time_utc": "2026-05-28T07:00:00Z"
+  },
+  {
+   "id": "garmin:900042",
+   "load": 128.0,
+   "local_date": "2026-05-26",
+   "method": "garmin_load",
+   "minutes": 55.7,
+   "name": "Synthetic Run",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "running",
+   "start_time_utc": "2026-05-26T15:00:00Z"
+  },
+  {
+   "id": "garmin:900044",
+   "load": 163.0,
+   "local_date": "2026-05-24",
+   "method": "garmin_load",
+   "minutes": 88.0,
+   "name": "Synthetic Ride",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "ride",
+   "sport_type": "road_biking",
+   "start_time_utc": "2026-05-24T07:00:00Z"
+  },
+  {
+   "id": "garmin:900046",
+   "load": 81.0,
+   "local_date": "2026-05-22",
+   "method": "garmin_load",
+   "minutes": 53.4,
+   "name": "Synthetic Swim",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "swim",
+   "sport_type": "lap_swimming",
+   "start_time_utc": "2026-05-22T17:00:00Z"
+  },
+  {
+   "id": "garmin:900048",
+   "load": 116.0,
+   "local_date": "2026-05-20",
+   "method": "garmin_load",
+   "minutes": 77.1,
+   "name": "Synthetic Run",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "running",
+   "start_time_utc": "2026-05-20T08:00:00Z"
+  },
+  {
+   "id": "garmin:900050",
+   "load": 176.0,
+   "local_date": "2026-05-18",
+   "method": "garmin_load",
+   "minutes": 55.0,
+   "name": "Synthetic Ride",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "ride",
+   "sport_type": "road_biking",
+   "start_time_utc": "2026-05-18T14:00:00Z"
+  },
+  {
+   "id": "garmin:900052",
+   "load": 98.0,
+   "local_date": "2026-05-16",
+   "method": "garmin_load",
+   "minutes": 45.2,
+   "name": "Synthetic Swim",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "swim",
+   "sport_type": "lap_swimming",
+   "start_time_utc": "2026-05-16T16:00:00Z"
+  },
+  {
+   "id": "garmin:900054",
+   "load": 106.0,
+   "local_date": "2026-05-14",
+   "method": "garmin_load",
+   "minutes": 32.0,
+   "name": "Synthetic Run",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "running",
+   "start_time_utc": "2026-05-14T17:00:00Z"
+  },
+  {
+   "id": "garmin:900056",
+   "load": 96.0,
+   "local_date": "2026-05-12",
+   "method": "garmin_load",
+   "minutes": 85.2,
+   "name": "Synthetic Ride",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "ride",
+   "sport_type": "road_biking",
+   "start_time_utc": "2026-05-12T13:00:00Z"
+  },
+  {
+   "id": "garmin:900058",
+   "load": 40.0,
+   "local_date": "2026-05-10",
+   "method": "garmin_load",
+   "minutes": 44.0,
+   "name": "Synthetic Swim",
+   "sources": [
+    "garmin",
+    "strava"
+   ],
+   "sport_family": "swim",
+   "sport_type": "lap_swimming",
+   "start_time_utc": "2026-05-10T11:00:00Z"
+  },
+  {
+   "id": "strava:400000",
+   "load": 99.0,
+   "local_date": "2026-04-28",
+   "method": "relative_effort",
+   "minutes": 30.8,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-04-28T07:30:00Z"
+  },
+  {
+   "id": "strava:400001",
+   "load": 64.0,
+   "local_date": "2026-04-25",
+   "method": "relative_effort",
+   "minutes": 33.2,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-04-25T07:30:00Z"
+  },
+  {
+   "id": "strava:400002",
+   "load": 76.0,
+   "local_date": "2026-04-22",
+   "method": "relative_effort",
+   "minutes": 38.6,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-04-22T07:30:00Z"
+  },
+  {
+   "id": "strava:400003",
+   "load": 70.0,
+   "local_date": "2026-04-19",
+   "method": "relative_effort",
+   "minutes": 37.2,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-04-19T07:30:00Z"
+  },
+  {
+   "id": "strava:400004",
+   "load": 26.0,
+   "local_date": "2026-04-16",
+   "method": "relative_effort",
+   "minutes": 47.7,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-04-16T07:30:00Z"
+  },
+  {
+   "id": "strava:400005",
+   "load": 74.0,
+   "local_date": "2026-04-13",
+   "method": "relative_effort",
+   "minutes": 52.0,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-04-13T07:30:00Z"
+  },
+  {
+   "id": "strava:400006",
+   "load": 110.0,
+   "local_date": "2026-04-10",
+   "method": "relative_effort",
+   "minutes": 52.4,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-04-10T07:30:00Z"
+  },
+  {
+   "id": "strava:400007",
+   "load": 107.0,
+   "local_date": "2026-04-07",
+   "method": "relative_effort",
+   "minutes": 30.8,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-04-07T07:30:00Z"
+  },
+  {
+   "id": "strava:400008",
+   "load": 36.0,
+   "local_date": "2026-04-04",
+   "method": "relative_effort",
+   "minutes": 35.8,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-04-04T07:30:00Z"
+  },
+  {
+   "id": "strava:400009",
+   "load": 18.0,
+   "local_date": "2026-04-01",
+   "method": "relative_effort",
+   "minutes": 33.7,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-04-01T07:30:00Z"
+  },
+  {
+   "id": "strava:400010",
+   "load": 90.0,
+   "local_date": "2026-03-29",
+   "method": "relative_effort",
+   "minutes": 35.3,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-03-29T07:30:00Z"
+  },
+  {
+   "id": "strava:400011",
+   "load": 118.0,
+   "local_date": "2026-03-26",
+   "method": "relative_effort",
+   "minutes": 56.8,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-03-26T07:30:00Z"
+  },
+  {
+   "id": "strava:400012",
+   "load": 93.0,
+   "local_date": "2026-03-23",
+   "method": "relative_effort",
+   "minutes": 35.0,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-03-23T07:30:00Z"
+  },
+  {
+   "id": "strava:400013",
+   "load": 75.0,
+   "local_date": "2026-03-20",
+   "method": "relative_effort",
+   "minutes": 65.7,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-03-20T07:30:00Z"
+  },
+  {
+   "id": "strava:400014",
+   "load": 34.0,
+   "local_date": "2026-03-17",
+   "method": "relative_effort",
+   "minutes": 48.9,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-03-17T07:30:00Z"
+  },
+  {
+   "id": "strava:400015",
+   "load": 85.0,
+   "local_date": "2026-03-14",
+   "method": "relative_effort",
+   "minutes": 62.5,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-03-14T07:30:00Z"
+  },
+  {
+   "id": "strava:400016",
+   "load": 17.0,
+   "local_date": "2026-03-11",
+   "method": "relative_effort",
+   "minutes": 33.9,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-03-11T07:30:00Z"
+  },
+  {
+   "id": "strava:400017",
+   "load": 117.0,
+   "local_date": "2026-03-08",
+   "method": "relative_effort",
+   "minutes": 26.0,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-03-08T07:30:00Z"
+  },
+  {
+   "id": "strava:400018",
+   "load": 82.0,
+   "local_date": "2026-03-05",
+   "method": "relative_effort",
+   "minutes": 32.0,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-03-05T07:30:00Z"
+  },
+  {
+   "id": "strava:400019",
+   "load": 70.0,
+   "local_date": "2026-03-02",
+   "method": "relative_effort",
+   "minutes": 34.5,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-03-02T07:30:00Z"
+  },
+  {
+   "id": "strava:400020",
+   "load": 120.0,
+   "local_date": "2026-02-27",
+   "method": "relative_effort",
+   "minutes": 38.3,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-02-27T07:30:00Z"
+  },
+  {
+   "id": "strava:400021",
+   "load": 18.0,
+   "local_date": "2026-02-24",
+   "method": "relative_effort",
+   "minutes": 39.4,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-02-24T07:30:00Z"
+  },
+  {
+   "id": "strava:400022",
+   "load": 42.0,
+   "local_date": "2026-02-21",
+   "method": "relative_effort",
+   "minutes": 42.2,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-02-21T07:30:00Z"
+  },
+  {
+   "id": "strava:400023",
+   "load": 79.0,
+   "local_date": "2026-02-18",
+   "method": "relative_effort",
+   "minutes": 45.0,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-02-18T07:30:00Z"
+  },
+  {
+   "id": "strava:400024",
+   "load": 112.0,
+   "local_date": "2026-02-15",
+   "method": "relative_effort",
+   "minutes": 41.4,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-02-15T07:30:00Z"
+  },
+  {
+   "id": "strava:400025",
+   "load": 56.0,
+   "local_date": "2026-02-12",
+   "method": "relative_effort",
+   "minutes": 65.0,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-02-12T07:30:00Z"
+  },
+  {
+   "id": "strava:400026",
+   "load": 84.0,
+   "local_date": "2026-02-09",
+   "method": "relative_effort",
+   "minutes": 42.7,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-02-09T07:30:00Z"
+  },
+  {
+   "id": "strava:400027",
+   "load": 31.0,
+   "local_date": "2026-02-06",
+   "method": "relative_effort",
+   "minutes": 53.6,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-02-06T07:30:00Z"
+  },
+  {
+   "id": "strava:400028",
+   "load": 109.0,
+   "local_date": "2026-02-03",
+   "method": "relative_effort",
+   "minutes": 29.1,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-02-03T07:30:00Z"
+  },
+  {
+   "id": "strava:400029",
+   "load": 73.0,
+   "local_date": "2026-01-31",
+   "method": "relative_effort",
+   "minutes": 49.1,
+   "name": "Synthetic early run",
+   "sources": [
+    "strava"
+   ],
+   "sport_family": "run",
+   "sport_type": "Run",
+   "start_time_utc": "2026-01-31T07:30:00Z"
+  }
+ ]
+}
