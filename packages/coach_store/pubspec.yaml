@@ -1,0 +1,29 @@
+name: coach_store
+description: >-
+  The Maru app's on-device database: wellness, activities, settings and
+  import runs in an encrypted SQLite file, with the backend's missing-data
+  rules.
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  coach_engine:
+    path: ../coach_engine
+  # 3.6 and later need hooks 2.1+, which needs meta 1.19; Flutter 3.44 pins
+  # meta 1.18. Move up together with Flutter.
+  sqlite3: ">=3.5.2 <3.6.0"
+
+dev_dependencies:
+  lints: ^6.1.0
+  test: ^1.30.0
+
+# Bundle SQLite3MultipleCiphers instead of plain SQLite so databases can be
+# encrypted. An app that uses this package must set the same user define in
+# its own pubspec.yaml: hooks read it from the root package.
+hooks:
+  user_defines:
+    sqlite3:
+      source: sqlite3mc
